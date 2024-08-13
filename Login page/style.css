@@ -117,3 +117,38 @@ margin: -15px 0 15px;
 }
 
 
+.user_details .input-box input:focus,
+.user_details .input_box input:valid{
+border-color: #6663af;
+}
+form .gender_details .gender_title{
+    font-size: 17px;
+    font-weight: 600;
+    
+}
+form .gender_details .category{
+    display: flex;
+    width: 100%;
+    margin: 10px;
+    justify-content: space-between;
+}
+.gender_details .category label{
+display: inline-flex;
+}
+.gender_details .category .dot{
+height: 18px;
+width: 18px;
+background: rgba(255,255,255,.2);
+border-radius: 50%;
+margin-right: 10px;
+border: 5px solid transparent;
+}
+#dot-1:checked ~ .category label .one,
+#dot-2:checked ~ .category label .two,
+#dot-3:checked ~ .category label .three{
+border-color: rgba(0, 0, 0, .2);
+background-color: #bb63b7;
+}
+form input[type="radio"]{
+    display: none;
+}
