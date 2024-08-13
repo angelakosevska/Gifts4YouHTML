@@ -1,8 +1,8 @@
 .grid {
   display: grid;
   height: 100vh;
-  grid-template-columns: auto auto;
-  grid-template-rows: 80px auto;
+  grid-template-columns: 340px auto;
+  grid-template-rows: 80px auto auto;
   grid-template-areas:
     "header header"
     "main leftbar"
@@ -33,7 +33,7 @@
 
 .content {
   color: #242424;
-  background-color: #09ff8c;
+  background-color: #09ff8c00;
   font-weight: 600;
   text-align: center;
   box-sizing: border-box;
@@ -51,7 +51,7 @@ body {
   width: 100%;
   align-items: center;
   gap: 5px;
-  background-color: #131242;
+  background-color: #c693e4;
   color: #fefefe;
 }
 .logo {
@@ -91,4 +91,274 @@ body {
   .days li {
     width: 3.2%;
   }
+}
+
+/* fot calendar */
+
+@import url("https://fonts.googleapis.com/css2?family=Quicksand:wght@400;500;600;700&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+.page-main {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: "Quicksand", sans-serif;
+  user-select: none;
+}
+
+.card {
+  width: 320px;
+  height: fit-content;
+  background-color: #ffffff;
+  border-radius: 15px;
+  box-shadow: 0px 0px 10px #efefef;
+}
+
+.calendar-toolbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px;
+  padding-bottom: 15px;
+  border-bottom: 1px solid #efefef;
+}
+
+.calendar-toolbar > .current-month {
+  font-size: 20px;
+  font-weight: bold;
+  color: #19181a;
+}
+
+.calendar-toolbar > [class$="month-btn"] {
+  width: 40px;
+  text-align: center;
+  line-height: 40px;
+  font-size: 14px;
+  color: #19181a;
+  background: #f8f7fa;
+  border: none;
+  border-radius: 15px;
+}
+
+.weekdays,
+.calendar-days {
+  display: flex;
+  flex-wrap: wrap;
+  padding-inline: 18px;
+}
+.weekdays {
+  padding-top: 12px;
+}
+.calendar-days {
+  padding-bottom: 12px;
+}
+
+.weekday-name,
+[class$="-day"] {
+  width: 40px;
+  height: 40px;
+  color: #19181a;
+  text-align: center;
+  line-height: 40px;
+  font-weight: 500;
+  font-size: 1rem;
+}
+
+.weekday-name {
+  color: #19181a;
+  font-weight: 700;
+}
+
+.current-day {
+  background-color: rgb(112, 71, 235);
+  color: #f8f7fa;
+  border-radius: 40px;
+  font-weight: 700;
+  transition: 0.5s;
+  cursor: pointer;
+}
+
+.padding-day {
+  color: #a5a5a5;
+  user-select: none;
+}
+
+.calendar-toolbar > [class$="month-btn"]:hover,
+.month-day:hover,
+.btn:hover {
+  border-radius: 40px;
+  background-color: #f8f7fa;
+  color: rgb(112, 71, 235);
+  transition: 0.1s;
+  cursor: pointer;
+  box-shadow: inset 0px 0px 0px 1.5px rgb(112, 71, 235);
+}
+
+.calendar-toolbar > [class$="month-btn"]:focus,
+.month-day:focus,
+.btn:focus {
+  border-radius: 40px;
+  background-color: rgb(112, 71, 235);
+  color: #f8f7fa;
+}
+
+.goto-buttons {
+  border-top: 1px solid #efefef;
+  padding-block: 18px;
+  display: flex;
+  justify-content: space-evenly;
+}
+
+.btn {
+  background: #f8f7fa;
+  border: none;
+  border-radius: 40px;
+  padding: 11px 13px;
+  color: #19181a;
+  font-family: "Quicksand", sans-serif;
+  font-weight: 600;
+  font-size: 0.9rem;
+  margin-right: 1px;
+  box-shadow: 0px 0px 0px #efefef;
+}
+/* for posts */
+
+.postsCard {
+  width: 640px;
+  height: fit-content;
+  background-color: #ffffff;
+  border-radius: 15px;
+  border: 1px solid #efefef;
+  box-shadow: 0px 0px 10px #efefef;
+}
+
+/* for footer */
+
+.footer-wrapper {
+  position: bottom;
+  bottom: 0;
+  width: 100%;
+  background-color: #ef5f5c;
+  padding: 1rem 0;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  padding: 10px;
+}
+.copy {
+  color: white;
+  font-size: small;
+  align-items: center;
+  display: flex;
+  gap: 5px;
+}
+.container-footer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+}
+.bg-animation {
+  background: linear-gradient(
+    -90deg,
+    #f8c4d1,
+    #b299f0,
+    #c693e4,
+    #debdef,
+    #cfa0e0,
+    #e5a1d6,
+    #eeacd1,
+    #f2bbbc
+  );
+  background-size: 400% 400%;
+  animation: gradient-animation 10s ease infinite;
+}
+
+@keyframes gradient-animation {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+.icon {
+  text-decoration: none;
+  width: 50px;
+  height: 50px;
+  border-radius: 8px;
+  /* background-color: hsla(209 20% 70% / 20%); */ /* For dark theme */
+  background-color: #ffffff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+  position: relative;
+  box-shadow: rgba(0, 0, 0, 0.1) 0px 10px 15px -3px,
+    rgba(0, 0, 0, 0.05) 0px 4px 6px -2px;
+}
+
+.icon > i {
+  color: #fb5252;
+  font-size: 1.5rem;
+  transition: all 0.2s;
+}
+
+.icon:hover > i {
+  scale: 1.2;
+  color: #f1f1f1;
+}
+
+.icon:before {
+  background: var(--color);
+  content: "";
+  position: absolute;
+  width: 130%;
+  height: 130%;
+  left: -110%;
+  top: 80%;
+  transform: rotate(45deg);
+}
+
+.icon:hover:before {
+  animation: slide 0.7s forwards;
+}
+
+@keyframes slide {
+  50% {
+    left: 10%;
+    top: -40%;
+  }
+
+  100% {
+    left: -15%;
+    top: -15%;
+  }
+}
+
+.icon:has(.fa-instagram) {
+  --color: linear-gradient(45deg, #f9ce34, #ee2a7b, #6228d7);
+}
+.icon:has(.fa-linkedin-in) {
+  --color: #0077b5;
+}
+.icon:has(.fa-youtube) {
+  --color: #ff0000;
+}
+.icon:has(.fa-x-twitter) {
+  --color: #1da1f2;
+}
+.icon:has(.fa-github) {
+  --color: #333;
 }
