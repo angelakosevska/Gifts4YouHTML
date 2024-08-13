@@ -99,6 +99,7 @@ margin: -15px 0 15px;
     font-size: 16px;
     color:#333;
     font-weight: 600;
+    margin: 10px 0;
 }
 
 .window .register-link{
@@ -123,12 +124,11 @@ border-color: #6663af;
 form .gender_details .gender_title{
     font-size: 17px;
     font-weight: 600;
-    
 }
 form .gender_details .category{
     display: flex;
     width: 100%;
-    margin: 10px;
+    margin: 10px 0;
     justify-content: space-between;
 }
 .gender_details .category label{
