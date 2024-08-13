@@ -14,7 +14,7 @@ body {
         justify-content: center;
         align-items: center;
         min-height: 100vh;
-        background: url('sDbxR5aY.jpeg'), no-repeat;
+        background: url('pictures/sDbxR5aY.jpeg'), no-repeat;
         background-size: cover;
         background-position: center;
     }
@@ -50,7 +50,6 @@ body {
     border: 2px solid rgba(255,255,255,.2);
     border-radius: 40px;
     font-size: 16px;
-    color:#fff;
     padding: 20px 45px 20px 20px;
 }
 
