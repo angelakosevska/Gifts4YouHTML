@@ -151,3 +151,10 @@ background-color: #bb63b7;
 form input[type="radio"]{
     display: none;
 }
+@media (max-width: 768px) {
+    .window.responsive {
+        width: 100%;
+        padding: 20px;
+    }
+    /* Additional responsive styling */
+}t
