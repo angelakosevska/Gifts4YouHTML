@@ -2,7 +2,7 @@
   display: grid;
   height: 100vh;
   grid-template-columns: 340px auto;
-  grid-template-rows: 80px auto auto;
+  grid-template-rows: 80px auto 160px;
   grid-template-areas:
     "header header"
     "main leftbar"
@@ -29,6 +29,7 @@
 
 .page-footer {
   grid-area: footer;
+  padding-bottom: 10px;
 }
 
 .content {
