@@ -77,13 +77,25 @@ body{
 .calendar .month .next{
     cursor: pointer;
   margin-top: 50px;  
- 
-  
+  font-size: 14px;
+  width: 40px;
+  text-align: center;
+  line-height: 40px;
+  font-size: 14px;
+  background: #f8f7fa;
+  border: none;
+  border-radius: 40px;
 }
-
+  
 .calendar .month .prev:hover,
 .calendar .month .next:hover{
     color: var(--primary-clr);
+    border-radius: 40px;
+  background-color: #f8f7fa;
+  color: rgb(112, 71, 235);
+  transition: 0.1s;
+  cursor: pointer;
+  box-shadow: inset 0px 0px 0px 1.5px rgb(112, 71, 235);
 }
 .calendar .weekdays{
     width: 100%;
@@ -204,14 +216,12 @@ padding-bottom:10px;
     border: 1px solid var(--primary-clr);
 }
 .calendar .goto-today .goto input{
-    width: 100%;
+   
     height: 30px;
     outline: none;
-    border: none;
-    border-radius: 5px;
-    padding: 0 20px;
+    border: 1px solid var(--primary-clr);
     color: var(--primary-clr);
-    border-radius: 5px;
+   
 }
 .calendar .goto-today button{
     padding: 5px 10px;
@@ -224,9 +234,19 @@ padding-bottom:10px;
 .calendar .goto-today button:hover{
     color: #fff;
     background-color: var(--primary-clr);
+    
 }
 .calendar .goto-today .goto button{
-    border: none;
-    border-radius: 1px solid var(--primary-clr);
-    border-radius: 0;
+    padding: 5px 10px;
+    border: 1px solid var(--primary-clr);
+    border-radius: 5px;
+    font-size: 16px;
+    background-color: transparent;
+    cursor: pointer;
+   
 } 
+.calendar .goto-today .goto button:hover{
+    color: #fff;
+    background-color: var(--primary-clr);
+    
+}
