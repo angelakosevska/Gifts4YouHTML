@@ -45,21 +45,21 @@ body{
 }
 .calendar::before,
 .calendar::after{
-    content: '';
+    content: ' ';
     position: absolute;
     top: 50%;
     left: 100%;
-    width: 12px;
-    height: 97%;
+    width: 11px;
+    height: 98%;
     border-radius: 0 5px 5px 0;
-    background-color: #d3d5d6d7;
+    background-color: #ffffffc6;
     transform:translateY(-50%);
-
+ 
 }
 .calendar::before{
     height: 94%;
-    left: calc(100%+12px);
-    background-color: rgb(153, 153, 153);
+    left: calc(100% + 11px);
+    background-color: #ffffff5b;
 }
 
 .calendar .month{
@@ -199,7 +199,7 @@ padding-bottom:10px;
 
 .calendar .goto-today{
     width: 100%;
-    height: 50px;
+    height: 100px;
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -213,7 +213,7 @@ padding-bottom:10px;
     align-items: center;
     border-radius: 5px;
     overflow: hidden;
-    border: 1px solid var(--primary-clr);
+    
 }
 .calendar .goto-today .goto input{
    
@@ -248,5 +248,94 @@ padding-bottom:10px;
 .calendar .goto-today .goto button:hover{
     color: #fff;
     background-color: var(--primary-clr);
-    
+}
+
+
+
+.container .right{
+    position: relative;
+    width: 40%;
+    min-height: 100%;
+    padding: 20px 0;
+}
+.right .today-date{
+    width: 100%;
+    height: 50px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 40px;
+    padding-left: 70px;
+    margin-top: 50px;
+    margin-bottom: 20px;
+    text-transform: capitalize;
+}
+
+.today-date .event-day{
+    font-size: 2rem;
+    font-weight: 500;
+}
+.today-date .event-date{
+    font-size: 1rem;
+    font-weight: 400;
+    color: #cabcde;
+}
+.events{
+    width: 100%;
+    height: 100%;
+    max-height: 600px;
+    overflow-x: hidden;
+    overflow-y: auto;
+    display:flex;
+    flex-direction: column;
+    padding: 4px;
+}
+.events .event{
+    position: relative;
+    width: 95%;
+    min-height: 70px;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    gap: 5px;
+    padding: 0 20px;
+    padding-left: 50px;
+    color: #fff;
+    cursor: pointer;
+    background: linear-gradient(90deg, #588ec4,transparent);
+}
+
+.events .event:nth-last-child(even){
+    background:transparent;
+}
+.events .event:hover{
+    background: linear-gradient(90deg, var(--primary-clr),transparent);;
+}
+.events .event .title{
+    display: flex;
+    align-items: center;
+    pointer-events: none;
+}
+.events .event .title .event-title{
+    font-size: 1.3rem;
+    font-weight: 400;
+    margin-left: 20px;
+
+}
+.events .event .title i{
+    color: var(--primary-clr);
+    font-size:0.5rem;
+}
+.events .event:hover .title i,
+.events .event:hover .event-time {
+    color: #fff;
+}
+.events .event .event-time{
+    font-size: 0.8rem;
+    font-weight: 400;
+    color: #cabcde;
+    margin-left: 15px;
+    pointer-events: none;
 }
