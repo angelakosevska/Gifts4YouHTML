@@ -1,7 +1,7 @@
 .grid {
   display: grid;
-  grid-template-columns: 400px auto 400px;
-  grid-template-rows: 80px auto 160px;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-rows: 80px 1fr 160px;
   grid-template-areas:
     "header header header"
     "calendar-left posts may-know"
@@ -25,7 +25,8 @@
 .page-posts {
   grid-area: posts;
   margin-bottom: 75px;
-
+  display: flex;
+  justify-content: center;
 }
 
 .page-footer {
@@ -105,7 +106,6 @@ body {
   padding: 0;
 }
 
-
 .card {
   width: 320px;
   height: fit-content;
@@ -171,7 +171,7 @@ body {
 }
 
 .current-day {
-  background-color: rgb(112, 71, 235);
+  background-color: #8c79b7;
   color: #f8f7fa;
   border-radius: 40px;
   font-weight: 700;
@@ -189,17 +189,17 @@ body {
 .btn:hover {
   border-radius: 40px;
   background-color: #f8f7fa;
-  color: rgb(112, 71, 235);
+  color: #8c79b7;
   transition: 0.1s;
   cursor: pointer;
-  box-shadow: inset 0px 0px 0px 1.5px rgb(112, 71, 235);
+  box-shadow: inset 0px 0px 0px 1.5px #8c79b7;
 }
 
 .calendar-toolbar > [class$="month-btn"]:focus,
 .month-day:focus,
 .btn:focus {
   border-radius: 40px;
-  background-color: rgb(112, 71, 235);
+  background-color: #8c79b7;
   color: #f8f7fa;
 }
 
@@ -216,7 +216,6 @@ body {
   border-radius: 40px;
   padding: 11px 13px;
   color: #19181a;
-  font-family: "Quicksand", sans-serif;
   font-weight: 600;
   font-size: 0.9rem;
   margin-right: 1px;
@@ -233,21 +232,65 @@ body {
   box-shadow: 2px 2px 10px #beb6d3;
   padding: 10px 20px;
 }
-.people{
+.people-may-know p {
+}
+.users {
   display: flex;
   flex-direction: column;
-  justify-content: left;
+  gap: 5px;
+}
+.profile-picture-user{
+  width: 45px;
+  height: 45px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+.user {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
   align-items: center;
+  gap: 5px;
+  
+
+}
+.first-last-name {
+  margin: 0;
+  justify-content: left;
+}
+.username{
+  justify-content: left;
+}
+.follow{
+  background: #8c79b7;
+  border: none;
+  border-radius: 40px;
+  padding: 11px 13px;
+  color: #f3f3f3;
+  font-weight: 600;
+  font-size: 0.9rem;
+  margin-right: 1px;
+  box-shadow: 0px 0px 0px #efefef;
+}
+.follow:hover {
+  border-radius: 40px;
+  background-color: #f8f7fa;
+  color: #8c79b7;
+  transition: 0.1s;
+  cursor: pointer;
+  box-shadow: inset 0px 0px 0px 1.5px #8c79b7;
 }
 /* for posts */
 
-.pic-content{
+.pic-content {
   display: flex;
+  flex-direction: column;
+  gap: 10px;
   justify-content: center;
+  max-width: min-content;
 }
 
 .postsCard {
-
   width: 600px;
   max-height: 80vh;
   background-color: #ffffff;
@@ -256,7 +299,6 @@ body {
   box-shadow: 2px 2px 10px #beb6d3;
   padding: 10px 20px;
   overflow: hidden;
-
 }
 
 .top-icons {
@@ -312,11 +354,13 @@ body {
 .footer {
   width: 100%;
   position: relative;
+  bottom: 0;
   background: #8c79b7;
   display: flex;
   justify-content: center;
   align-items: center;
   flex-direction: column;
+
 }
 .bg-animation {
   background: #8c79b7;
@@ -330,6 +374,7 @@ body {
   align-items: center;
   margin: 10px 0;
   flex-wrap: wrap;
+  z-index: 2000;
 }
 
 .social-icon__item,
