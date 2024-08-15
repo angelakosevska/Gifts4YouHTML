@@ -1,7 +1,6 @@
 .grid {
   display: grid;
-
-  grid-template-columns: 340px auto 340px;
+  grid-template-columns: 400px auto 400px;
   grid-template-rows: 80px auto 160px;
   grid-template-areas:
     "header header header"
@@ -10,7 +9,7 @@
   column-gap: 10px;
   row-gap: 10px;
 }
-/*  "hero hero" */
+
 .page-header {
   grid-area: header;
   position: sticky;
@@ -26,6 +25,7 @@
 .page-posts {
   grid-area: posts;
   margin-bottom: 75px;
+
 }
 
 .page-footer {
@@ -34,6 +34,7 @@
 }
 
 .content {
+  display: flex;
   color: #242424;
   background-color: #09ff8c00;
   font-weight: 600;
@@ -41,6 +42,7 @@
   box-sizing: border-box;
   height: 100%;
   padding: 10px;
+  justify-content: center;
 }
 
 body {
@@ -103,13 +105,6 @@ body {
   padding: 0;
 }
 
-.page-main {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  font-family: "Quicksand", sans-serif;
-  user-select: none;
-}
 
 .card {
   width: 320px;
@@ -230,17 +225,30 @@ body {
 
 /* for may-know*/
 .people-may-know {
+  width: 320px;
   height: fit-content;
   background-color: #ffffff;
   border-radius: 15px;
   border: 0px solid #b9b9b9;
   box-shadow: 2px 2px 10px #beb6d3;
+  padding: 10px 20px;
 }
-
+.people{
+  display: flex;
+  flex-direction: column;
+  justify-content: left;
+  align-items: center;
+}
 /* for posts */
 
+.pic-content{
+  display: flex;
+  justify-content: center;
+}
+
 .postsCard {
-  width: 100%;
+
+  width: 600px;
   max-height: 80vh;
   background-color: #ffffff;
   border-radius: 15px;
@@ -248,6 +256,7 @@ body {
   box-shadow: 2px 2px 10px #beb6d3;
   padding: 10px 20px;
   overflow: hidden;
+
 }
 
 .top-icons {
@@ -256,10 +265,10 @@ body {
   justify-content: space-between;
 }
 
-.post-image{
+.post-image {
   width: 100%;
   height: auto;
-  max-height: 100%; 
+  max-height: 100%;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -269,11 +278,32 @@ body {
 
 .post-image img {
   width: 100%;
-  height: auto;
+  height: 400px;
   object-fit: contain;
   max-height: 100%;
   max-width: 100%;
   display: block;
+}
+
+.post-details {
+  display: flex;
+  justify-content: left;
+  align-items: center;
+  padding: 5px;
+  gap: 5px;
+}
+
+.profile-picture {
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+.username {
+  margin: 0;
+}
+.pic-desc {
+  margin: 0;
 }
 /* for footer */
 
