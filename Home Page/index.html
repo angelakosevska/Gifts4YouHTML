@@ -20,12 +20,40 @@
         <div class="content navbarContent">
           <div class="logo">Gift 4 you</div>
           <div class="searchBar">
-            <form>
-              <input type="text" placeholder="Search..." />
-              <button type="submit">Search</button>
+            <form class="search-bar-form">
+              <input type="text" placeholder="Search..." class="input-search" />
+              <button type="submit" class="btn-search">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="16"
+                  height="16"
+                  fill="currentColor"
+                  class="bi bi-search"
+                  viewBox="0 0 16 16"
+                >
+                  <path
+                    d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zm-5.742 1.106a5.5 5.5 0 1 1 0-11 5.5 5.5 0 0 1 0 11z"
+                  />
+                </svg>
+              </button>
             </form>
           </div>
-          <div class="profile">MY Profile</div>
+          <div class="profile">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="40"
+              height="40"
+              fill="currentColor"
+              class="bi bi-person-circle"
+              viewBox="0 0 16 16"
+            >
+              <path d="M11 6a3 3 0 1 1-6 0 3 3 0 0 1 6 0" />
+              <path
+                fill-rule="evenodd"
+                d="M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8m8-7a7 7 0 0 0-5.468 11.37C3.242 11.226 4.805 10 8 10s4.757 1.225 5.468 2.37A7 7 0 0 0 8 1"
+              />
+            </svg>
+          </div>
         </div>
       </header>
 
@@ -35,7 +63,7 @@
             href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css"
             rel="stylesheet"
           />
-          <div class="card">
+          <div class="cardCalendar">
             <div class="calendar-toolbar">
               <button class="prev month-btn">
                 <i class="fas fa-chevron-left"></i>
@@ -115,9 +143,7 @@
               />
               <p class="username">@angela123</p>
               <p class="pic-desc">
-                <i>
-                  Thank you for the best birthday gift love! <b>@bale123</b></i
-                >
+                <i> Thank you for the best birthday gift!</i>
               </p>
             </div>
           </div>
@@ -127,40 +153,52 @@
       <div class="page-may-know">
         <div class="content">
           <div class="people-may-know">
-            <p style="margin-bottom: 10px"><b>People you may know</b></p>
             <div class="users">
-              <div class="user">
+              <div class="one-user">
                 <img
                   class="profile-picture-user"
                   src="https://images.unsplash.com/photo-1667053508464-eb11b394df83?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTV8fHByb2ZpbGUlMjBwaWN0dXJlfGVufDB8fDB8fHww"
                 />
-                <div class="name">
-                  <p class="first-last-name">Angela Kosevska</p>
-                  <p class="username">@angela123</p>
+                <div class="user">
+                  <div class="name">
+                    <p class="first-last-name">
+                      Angela Kosevska Angela Kosevska
+                    </p>
+
+                    <p class="username">@angela123</p>
+                  </div>
+                  <button class="follow">Follow</button>
                 </div>
-                <button class=" follow"> Follow </button>
               </div>
-              <div class="user">
+              <div class="one-user">
                 <img
                   class="profile-picture-user"
                   src="https://images.unsplash.com/photo-1667053508464-eb11b394df83?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTV8fHByb2ZpbGUlMjBwaWN0dXJlfGVufDB8fDB8fHww"
                 />
-                <div class="name">
-                  <p class="first-last-name">Marija Tashevska</p>
-                  <p class="username">@marija123</p>
+                <div class="user">
+                  <div class="name">
+                    <p class="first-last-name">
+                      Angela Kosevska Angela Kosevska
+                    </p>
+
+                    <p class="username">@angela123</p>
+                  </div>
+                  <button class="follow">Follow</button>
                 </div>
-                <button class=" follow"> Follow </button>
               </div>
-              <div class="user">
+              <div class="one-user">
                 <img
                   class="profile-picture-user"
                   src="https://images.unsplash.com/photo-1667053508464-eb11b394df83?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTV8fHByb2ZpbGUlMjBwaWN0dXJlfGVufDB8fDB8fHww"
                 />
-                <div class="name">
-                  <p class="first-last-name">Angela Kosevska</p>
-                  <p class="username">@angela123</p>
+                <div class="user">
+                  <div class="name">
+                    <p class="first-last-name">Angela Kosevska</p>
+
+                    <p class="username">@angela123</p>
+                  </div>
+                  <button class="follow">Follow</button>
                 </div>
-                <button class=" follow"> Follow </button>
               </div>
             </div>
           </div>

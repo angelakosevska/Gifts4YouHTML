@@ -42,6 +42,7 @@
   text-align: center;
   box-sizing: border-box;
   height: 100%;
+
   padding: 10px;
   justify-content: center;
 }
@@ -55,22 +56,66 @@ body {
   width: 100%;
   align-items: center;
   gap: 5px;
-  background-color: #8c79b7;
+  background-color: #f9de8b;
   color: #fefefe;
 }
 .logo {
   width: 30%;
+  color: #8c79b7;
+  font-size: 36px;
+  font-weight: 700;
 }
+
 .searchBar {
-  width: 50%;
+  width: 40%;
+}
+.search-bar-form {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+.input-search {
+  width: 80%;
+  height: 40px;
+  border-top-left-radius: 40px;
+  border-bottom-left-radius: 40px;
+  padding: 10px 20px;
+  border: 2px solid #8c79b7;
+}
+.input-search:focus {
+  outline: none;
+  border: 1px solid #ffffff;
+}
+.btn-search {
+  height: 40px;
+  border-top-right-radius: 40px;
+  border-bottom-right-radius: 40px;
+  padding: 10px 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  outline: none;
+  border: 0px solid #ffffff;
+  background-color: #8c79b7;
+  color: #fefefe;
+}
+.btn-search:hover {
+  background-color: #fefefe;
+  color: #8c79b7;
 }
 .profile {
-  width: 20%;
+  width: 30%;
 }
 
 * {
   box-sizing: border-box;
+
+  margin: 0;
+  padding: 0;
 }
+
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700;800;900&display=swap");
 
 /* Add media queries for smaller screens */
 @media screen and (max-width: 720px) {
@@ -99,14 +144,7 @@ body {
 
 /* fot calendar */
 
-@import url("https://fonts.googleapis.com/css2?family=Quicksand:wght@400;500;600;700&display=swap");
-
-* {
-  margin: 0;
-  padding: 0;
-}
-
-.card {
+.cardCalendar {
   width: 320px;
   height: fit-content;
   background-color: #ffffff;
@@ -223,53 +261,70 @@ body {
 }
 
 /* for may-know*/
+
 .people-may-know {
   width: 320px;
   height: fit-content;
-  background-color: #ffffff;
-  border-radius: 15px;
-  border: 0px solid #b9b9b9;
-  box-shadow: 2px 2px 10px #beb6d3;
-  padding: 10px 20px;
-}
-.people-may-know p {
 }
 .users {
   display: flex;
   flex-direction: column;
-  gap: 5px;
+  gap: 10px;
 }
-.profile-picture-user{
-  width: 45px;
-  height: 45px;
+.profile-picture-user {
+  width: 40px;
+  height: 40px;
   border-radius: 50%;
   object-fit: cover;
 }
+
+.one-user {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  border-left: 2px dotted #a79bc6;
+  box-shadow: -1px 0px 4px #dacff6;
+  padding: 16px;
+  border-top-left-radius: 40px;
+  border-bottom-left-radius: 40px;
+  height: fit-content;
+  width: 100%;
+  gap: 5px;
+}
+
 .user {
   display: flex;
   flex-direction: row;
+  flex-wrap: wrap;
   justify-content: space-evenly;
   align-items: center;
   gap: 5px;
-  
-
+  border-radius: 40px;
+  height: fit-content;
+  width: 100%;
 }
+
 .first-last-name {
   margin: 0;
   justify-content: left;
+  font-weight: 400;
+  font-size: 14px;
 }
-.username{
+.username {
+  margin: 0;
+  padding: 0;
   justify-content: left;
+  font-size: 16px;
 }
-.follow{
+.follow {
   background: #8c79b7;
   border: none;
   border-radius: 40px;
-  padding: 11px 13px;
+  padding: 4px 20px;
   color: #f3f3f3;
   font-weight: 600;
   font-size: 0.9rem;
-  margin-right: 1px;
   box-shadow: 0px 0px 0px #efefef;
 }
 .follow:hover {
@@ -349,8 +404,6 @@ body {
 }
 /* for footer */
 
-@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700;800;900&display=swap");
-
 .footer {
   width: 100%;
   position: relative;
@@ -360,7 +413,6 @@ body {
   justify-content: center;
   align-items: center;
   flex-direction: column;
-
 }
 .bg-animation {
   background: #8c79b7;
@@ -436,7 +488,7 @@ body {
   z-index: 999;
   opacity: 0.5;
   bottom: 10px;
-  animation: animate 4s linear infinite !important;
+  animation: animateWave 4s linear infinite !important;
 }
 
 .wave#wave3 {
@@ -450,7 +502,7 @@ body {
   z-index: 999;
   opacity: 0.7;
   bottom: 20px;
-  animation: animate 3s linear infinite;
+  animation: animateWave 3s linear infinite;
 }
 
 @keyframes animateWaves {
@@ -462,7 +514,7 @@ body {
   }
 }
 
-@keyframes animate {
+@keyframes animateWave {
   0% {
     background-position-x: -1000px;
   }
