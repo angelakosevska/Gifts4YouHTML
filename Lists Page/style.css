@@ -1,5 +1,6 @@
 body {
   margin: 0;
+  background-color: #c4b2ed;
 }
 * {
   box-sizing: border-box;
@@ -20,6 +21,8 @@ body {
   background-color: #f9de8b;
   color: #fefefe;
 }
+
+
 .logo {
   width: 30%;
   color: #8c79b7;
@@ -71,8 +74,7 @@ body {
   justify-content: flex-end;
   padding: 16px;
 }
-
-/*main section*/
+/*main part where everything else goes*/
 main {
   padding: 16px;
   display: flex;
@@ -83,6 +85,70 @@ main {
   gap: 16px;
   justify-content: center;
 }
+.event-container {
+  width: 80%;
+  height: fit-content;
+  background-color: #fff;
+  padding: 40px;
+  box-shadow: 30px 0px 0px -10px #b8a1ef;
+  margin: 16px auto 100px;
+  border-radius: 30px;
+}
+.event-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+h1,
+h2 {
+  color: #333;
+}
+
+#gift-list {
+  list-style-type: none;
+  padding: 0;
+}
+
+.gift-item {
+  display: flex;
+  align-items: center;
+  margin-bottom: 15px;
+  background-color: #fafafa;
+  padding: 10px;
+  border-radius: 5px;
+}
+
+.gift-item img {
+  width: 100px;
+  height: 100px;
+  margin-right: 20px;
+}
+
+.gift-details h3 {
+  margin: 0;
+  color: #555;
+}
+
+.gift-details p {
+  margin: 5px 0;
+  color: #777;
+}
+
+.gift-details a {
+  color: #007bff;
+  text-decoration: none;
+}
+
+.gift-details a:hover {
+  text-decoration: underline;
+}
+
+input[type="checkbox"] {
+  margin-right: 15px;
+  transform: scale(1.5);
+  accent-color: red;
+}
+
 /* for footer */
 
 .footer {

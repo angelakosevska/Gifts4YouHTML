@@ -11,11 +11,11 @@
       crossorigin="anonymous"
     />
 
-    <title>Page</title>
+    <title>List Page</title>
     <link rel="stylesheet" href="style.css" />
   </head>
   <body>
-    <header class="header">
+    <header class="header bg-animation gradient-animation">
       <div class="logo">Gift 4 you</div>
       <div class="searchBar">
         <form class="search-bar-form">
@@ -53,7 +53,83 @@
         </svg>
       </div>
     </header>
-    <main></main>
+    <main>
+      <div class="event-container">
+        <div class="event-top">
+          <h1>Event Title</h1>
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="28"
+            height="28"
+            fill="currentColor"
+            class="bi bi-pencil-square"
+            viewBox="0 0 16 16"
+            style="color: red"
+            class="edit"
+          >
+            <path
+              d="M15.502 1.94a.5.5 0 0 1 0 .706L14.459 3.69l-2-2L13.502.646a.5.5 0 0 1 .707 0l1.293 1.293zm-1.75 2.456-2-2L4.939 9.21a.5.5 0 0 0-.121.196l-.805 2.414a.25.25 0 0 0 .316.316l2.414-.805a.5.5 0 0 0 .196-.12l6.813-6.814z"
+            />
+            <path
+              fill-rule="evenodd"
+              d="M1 13.5A1.5 1.5 0 0 0 2.5 15h11a1.5 1.5 0 0 0 1.5-1.5v-6a.5.5 0 0 0-1 0v6a.5.5 0 0 1-.5.5h-11a.5.5 0 0 1-.5-.5v-11a.5.5 0 0 1 .5-.5H9a.5.5 0 0 0 0-1H2.5A1.5 1.5 0 0 0 1 2.5z"
+            />
+          </svg>
+        </div>
+
+        <p>Date: August 25, 2024</p>
+        <p>Location: 123 Party Lane</p>
+
+        <h2>Gift List</h2>
+        <ul id="gift-list">
+          <li class="gift-item">
+            <input type="checkbox" id="item1" name="item1" class="checkbox" />
+            <label for="item1"></label>
+            <img src="https://via.placeholder.com/100" alt="Item 1" />
+            <div class="gift-details">
+              <h3>Item 1</h3>
+              <p>Description of Item 1</p>
+              <a href="https://example.com" target="_blank">Buy Online</a>
+              <p>Available at Store XYZ</p>
+            </div>
+          </li>
+          <li class="gift-item">
+            <input type="checkbox" id="item1" name="item1" class="checkbox" />
+            <label for="item1"></label>
+            <img src="https://via.placeholder.com/100" alt="Item 1" />
+            <div class="gift-details">
+              <h3>Item 1</h3>
+              <p>Description of Item 1</p>
+              <a href="https://example.com" target="_blank">Buy Online</a>
+              <p>Available at Store XYZ</p>
+            </div>
+          </li>
+          <li class="gift-item">
+            <input type="checkbox" id="item1" name="item1" class="checkbox" />
+            <label for="item1"></label>
+            <img src="https://via.placeholder.com/100" alt="Item 1" />
+            <div class="gift-details">
+              <h3>Item 1</h3>
+              <p>Description of Item 1</p>
+              <a href="https://example.com" target="_blank">Buy Online</a>
+              <p>Available at Store XYZ</p>
+            </div>
+          </li>
+          <li class="gift-item">
+            <input type="checkbox" id="item1" name="item1" class="checkbox" />
+            <label for="item1"></label>
+            <img src="https://via.placeholder.com/100" alt="Item 1" />
+            <div class="gift-details">
+              <h3>Item 1</h3>
+              <p>Description of Item 1</p>
+              <a href="https://example.com" target="_blank">Buy Online</a>
+              <p>Available at Store XYZ</p>
+            </div>
+          </li>
+          <!-- Add more items as needed -->
+        </ul>
+      </div>
+    </main>
     <footer class="page-footer footer">
       <div class="waves">
         <div class="wave" id="wave1"></div>
@@ -103,5 +179,7 @@
       nomodule
       src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"
     ></script>
+
+    <script src="script.js"></script>
   </body>
 </html>
