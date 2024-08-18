@@ -17,12 +17,36 @@ body {
   height: 80px;
   align-items: center;
   gap: 5px;
-  background-color: #f9de8b;
   color: #fefefe;
+}
+.bg-animation {
+  background: linear-gradient(
+    -90deg,
+    #ecc8de,#eca6d0,#ef91c9,#E48AC0
+  );
+  background-size: 400% 400%;
+  animation: gradient-animation 10s ease infinite;
+}
+@keyframes gradient-animation {
+  0% {
+    background-position: 0% 50%;
+  }
+  25% {
+    background-position: 50% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  75% {
+    background-position: 50% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
 }
 .logo {
   width: 30%;
-  color: #8c79b7;
+  color: #ffffff;
   font-size: 36px;
   font-weight: 700;
   padding: 16px;
@@ -96,9 +120,7 @@ main {
   align-items: center;
   flex-direction: column;
 }
-.bg-animation {
-  background: #8c79b7;
-}
+
 
 .social-icon,
 .menu {
