@@ -20,10 +20,7 @@ body {
   color: #fefefe;
 }
 .bg-animation {
-  background: linear-gradient(
-    -90deg,
-    #ecc8de,#eca6d0,#ef91c9,#E48AC0
-  );
+  background: linear-gradient(-90deg, #ecc8de, #eca6d0, #ef91c9, #e48ac0);
   background-size: 400% 400%;
   animation: gradient-animation 10s ease infinite;
 }
@@ -120,7 +117,6 @@ main {
   align-items: center;
   flex-direction: column;
 }
-
 
 .social-icon,
 .menu {

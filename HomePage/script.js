@@ -2,9 +2,13 @@ let currentMonth = document.querySelector(".current-month");
 let calendarDays = document.querySelector(".calendar-days");
 let today = new Date();
 let date = new Date();
+let selectedDateElement = null;
+
 let events = {
-  // Example event data
-  "2024-08-14": [{ name: "Baby Shower", user: "Jane Doe" }],
+  "2024-08-14": [
+    { name: "Baby Shower", user: "Jane Doe" },
+    { name: "Birthday Party", user: "John Smith" },
+  ],
 };
 
 currentMonth.textContent = date.toLocaleDateString("en-US", {
@@ -39,7 +43,6 @@ function renderCalendar() {
     let fullDate = `${date.getFullYear()}-${String(
       date.getMonth() + 1
     ).padStart(2, "0")}-${String(day).padStart(2, "0")}`;
-
     if (i <= startWeekDay) {
       // adding previous month days
       calendarDays.innerHTML += `<div class='padding-day'>${
@@ -52,7 +55,7 @@ function renderCalendar() {
 
       let dayClass =
         date.getTime() === today.getTime() ? "current-day" : "month-day";
-      calendarDays.innerHTML += `<div class='${dayClass}' data-date='${fullDate}'>${day}</div>`;
+        calendarDays.innerHTML += `<div class='${dayClass}' data-date='${fullDate}'>${day}</div>`;
     } else {
       // adding next month days
       calendarDays.innerHTML += `<div class='padding-day'>${
@@ -60,22 +63,31 @@ function renderCalendar() {
       }</div>`;
     }
   }
-
   // Add click event to calendar days
   document.querySelectorAll(".month-day").forEach((dayElement) => {
-    dayElement.addEventListener("click", function () {
+    dayElement.addEventListener("click", function (e) {
       let date = this.getAttribute("data-date");
-      showEventModal(date);
+      showEventPopup(date, e);
     });
   });
 }
 
-function showEventModal(date) {
-  const modal = document.querySelector(".event-modal");
-  const eventList = modal.querySelector(".event-list");
+function showEventPopup(date, event) {
+  const popup = document.getElementById("eventPopup");
+  const preview = popup.querySelector(".event-preview");
   const eventData = events[date] || [];
 
-  eventList.innerHTML =
+  if (selectedDateElement) {
+    selectedDateElement.style.backgroundColor = "";
+    selectedDateElement.style.borderRadius = "";
+    selectedDateElement.style.color = "";
+  }
+  selectedDateElement = event.target;
+  selectedDateElement.style.backgroundColor = "#bda3f8";
+  selectedDateElement.style.borderRadius = "50%";
+  selectedDateElement.style.color = "#0";
+
+  preview.innerHTML =
     eventData.length > 0
       ? eventData
           .map(
@@ -85,14 +97,25 @@ function showEventModal(date) {
           .join("")
       : "<div>No events for this day.</div>";
 
-  modal.style.display = "block";
+  popup.style.display = "block";
+  popup.style.left = `${event.pageX + 10}px`; // Position to the right of the click
+  popup.style.top = `${event.pageY + 10}px`; // Position below the click
 }
 
-// Close modal when clicking outside of it
-window.addEventListener("click", function (event) {
-  const modal = document.querySelector(".event-modal");
-  if (event.target === modal) {
-    modal.style.display = "none";
+// Hide the popup when clicking outside
+document.addEventListener("click", function (event) {
+  const popup = document.getElementById("eventPopup");
+  if (
+    !popup.contains(event.target) &&
+    !event.target.classList.contains("month-day")
+  ) {
+    popup.style.display = "none";
+    if (selectedDateElement) {
+      selectedDateElement.style.backgroundColor = "";
+      selectedDateElement.style.borderRadius = "";
+      selectedDateElement.style.color = "";
+      selectedDateElement = null; // Clear the reference
+    }
   }
 });
 
