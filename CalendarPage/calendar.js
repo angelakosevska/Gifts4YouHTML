@@ -289,24 +289,25 @@ addEventTitle.addEventListener("input", (e) => {
 });
 
 
+
 //allow only time in eventtime from and to
 addEventFrom.addEventListener("input", (e) => {
   addEventFrom.value = addEventFrom.value.replace(/[^0-9:]/g, "");
-  if (addEventFrom.value.length === 2 || addEventFrom.value.length === 5) {
-    addEventFrom.value += "/";
+  if (addEventFrom.value.length === 2) {
+    addEventFrom.value += ":";
   }
-  if (addEventFrom.value.length > 10) {
-    addEventFrom.value = addEventFrom.value.slice(0, 10);
+  if (addEventFrom.value.length > 5) {
+    addEventFrom.value = addEventFrom.value.slice(0, 5);
   }
 });
 
 addEventTo.addEventListener("input", (e) => {
   addEventTo.value = addEventTo.value.replace(/[^0-9:]/g, "");
-  if (addEventTo.value.length === 2 || addEventTo.value.length === 5) {
-    addEventTo.value += "/";
+  if (addEventTo.value.length === 2) {
+    addEventTo.value += ":";
   }
-  if (addEventTo.value.length > 10) {
-    addEventTo.value = addEventTo.value.slice(0, 10);
+  if (addEventTo.value.length > 5) {
+    addEventTo.value = addEventTo.value.slice(0, 5);
   }
 });
 
