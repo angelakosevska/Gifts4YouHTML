@@ -149,3 +149,36 @@ document.querySelectorAll(".btn").forEach(function (element) {
     renderCalendar();
   });
 });
+
+
+//hide
+document.getElementById('toggleCalendar').addEventListener('click', function () {
+  const calendarSection = document.getElementById('calendarSection');
+  const usersSection = document.getElementById('usersSection');
+
+  if (calendarSection.classList.contains('d-none')) {
+    calendarSection.classList.remove('d-none');
+    calendarSection.classList.add('d-block');
+    usersSection.classList.remove('d-block');
+    usersSection.classList.add('d-none');
+  } else {
+    calendarSection.classList.remove('d-block');
+    calendarSection.classList.add('d-none');
+  }
+});
+
+document.getElementById('toggleUsers').addEventListener('click', function () {
+  const usersSection = document.getElementById('usersSection');
+  const calendarSection = document.getElementById('calendarSection');
+
+  if (usersSection.classList.contains('d-none')) {
+    usersSection.classList.remove('d-none');
+    usersSection.classList.add('d-block');
+    calendarSection.classList.remove('d-block');
+    calendarSection.classList.add('d-none');
+  } else {
+    usersSection.classList.remove('d-block');
+    usersSection.classList.add('d-none');
+  }
+});
+

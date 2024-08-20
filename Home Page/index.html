@@ -59,8 +59,16 @@
     <!-- Main Content -->
     <main>
       <div class="row">
+        <div class="col-12 d-md-none text-center">
+          <button id="toggleCalendar" class="btn btn-primary mb-3">
+            Show Calendar
+          </button>
+          <button id="toggleUsers" class="btn btn-primary mb-3">
+            Show Users
+          </button>
+        </div>
         <!-- Left Section -->
-        <aside class="col-md-3 col-6 order-1 order-md-1">
+        <aside id="calendarSection" class="col-md-3 col-12 order-1 order-md-1 d-none d-md-block">
           <div id="eventPopup" class="event-popup">
             <div class="event-popup-content">
               <div class="event-preview"></div>
@@ -97,7 +105,7 @@
         </aside>
 
         <!-- Right Section -->
-        <aside class="col-md-3 col-6 order-2 order-md-3 ">
+        <aside  id="usersSection" class="col-md-3 col-12 order-2 order-md-3 d-none d-md-block">
           <div class="one-user">
             <div class="user">
               <img

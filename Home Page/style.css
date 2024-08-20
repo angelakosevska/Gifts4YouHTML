@@ -316,6 +316,13 @@ span {
   background-size: cover;
   background-position: center center;
 }
+/* Ensure that calendar and users sections are hidden by default on small screens */
+@media (max-width: 767.98px) {
+  #calendarSection,
+  #usersSection {
+    display: none;
+  }
+}
 
 /* for people you may know */
 
