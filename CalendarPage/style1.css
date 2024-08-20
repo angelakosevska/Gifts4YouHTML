@@ -21,16 +21,17 @@
     background: var(--primary-clr);
     border-radius: 50px;
   }
+ main{
+  height: 100%;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
   
-  body {
-    position: relative;
-    min-height: 100vh;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    padding-bottom: 30px;
-    background-color: #cabcde;
-  }
+  flex: 1;
+     padding-bottom: 50px;
+     padding-top: 20px;
+    
+ }
   .container {
     position: relative;
     width: 1200px;
@@ -39,7 +40,7 @@
     padding: 5px;
     color: #fff;
     display: flex;
-    border-radius: 10px;
+    border-radius: 30px;
     background-color: #4970b5;
   }
   .left {
@@ -53,9 +54,10 @@
     display: flex;
     flex-direction: column;
     flex-wrap: wrap;
-    justify-content: space-between;
-    color: #b587f6;
-    border-radius: 5px;
+    justify-content: center;
+    align-items: center;
+    color: #2e4288;
+    border-radius: 10px;
     background-color: #fff;
   }
   /* set after behind the main element */
@@ -67,7 +69,8 @@
     left: 100%;
     width: 11px;
     height: 98%;
-    border-radius: 0 5px 5px 0;
+  border-top-right-radius: 30px;
+  border-bottom-right-radius: 30px;
     background-color: #ffffffc6;
     transform: translateY(-50%);
   }
@@ -78,22 +81,24 @@
   }
   .calendar .month {
     width: 100%;
-    height: 150px;
+    height: 100px;
     display: flex;
     align-items: center;
-    justify-content: space-between;
-    padding: 0 50px;
-    font-size: 1.2rem;
-    font-weight: 500;
+    justify-content: space-around;
+    padding-top:50px;
+    font-size:x-large;
+    font-weight: bold;
+    
     text-transform: capitalize;
   }
   .calendar .month .prev,
   .calendar .month .next {
     cursor: pointer;
-    margin-top: 50px;  
     font-size: 14px;
     width: 40px;
     text-align: center;
+    justify-content: center;
+    align-items: center;
     line-height: 40px;
     font-size: 14px;
     background: #f8f7fa;
@@ -102,13 +107,13 @@
   }
   .calendar .month .prev:hover,
   .calendar .month .next:hover {
-    color: var(--primary-clr);
+    
     border-radius: 40px;
-  background-color: #f8f7fa;
-  color: rgb(112, 71, 235);
+color: #f8f7fa;
+  background-color: var(--primary-clr);
   transition: 0.1s;
   cursor: pointer;
-  box-shadow: inset 0px 0px 0px 1.5px rgb(112, 71, 235);
+  
   }
   .calendar .weekdays {
     width: 100%;
@@ -149,7 +154,7 @@
     color: var(--primary-clr);
     border: 1px solid #f5f5f5;
     padding: 5px 10px;
-    border-radius: 15px;
+    border-radius: 40px;
     background-color: transparent;
   }
   .calendar .days .day:nth-child(7n + 1) {
@@ -176,20 +181,19 @@
  
   .calendar .days .active {
     position: relative;
-    border-radius: 15px;
+    border-radius:40px;
     font-size: 2rem;
     color: #fff;
     background-color: var(--primary-clr);
   }
   .calendar .days .active::before {
     content: "";
-    border-radius: 15px;
+    border-radius: 40px;
     position: absolute;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
-    box-shadow: 0 0 10px 2px var(--primary-clr);
   }
   .calendar .days .today {
     font-size: 2rem;
@@ -202,14 +206,14 @@
     position: absolute;
     bottom: 10%;
     left: 50%;
-    width: 75%;
+    width: 40%;
     height: 6px;
     border-radius: 30px;
     transform: translateX(-50%);
     background-color: var(--primary-clr);
   }
   .calendar .days .day:hover.event::after {
-    background-color: #fff;
+    background-color: #b1a2a2;
   }
   .calendar .days .active.event::after {
     background-color: #fff;
@@ -238,18 +242,18 @@
   }
   .calendar .goto-today .goto input {
     width: 100%;
-    height: 30px;
+    height: 35px;
     outline: none;
     border: none;
-    border-radius: 5px;
-    padding: 0 20px;
+    border-radius: 20px;
+   padding: 0 20px;
     color: var(--primary-clr);
-    border-radius: 5px;
+   
   }
   .calendar .goto-today button {
     padding: 5px 10px;
     border: 1px solid var(--primary-clr);
-    border-radius: 5px;
+    border-radius: 10px;
     background-color: transparent;
     cursor: pointer;
     color: var(--primary-clr);
@@ -259,12 +263,14 @@
     background-color: var(--primary-clr);
   }
   .calendar .goto-today .goto button {
+    outline: none;
     border: none;
     padding: 5px 10px;
-    border-left: 1px solid var(--primary-clr);
-    border-radius: 5px;
+    border-radius: 3px;
+    height: 35px;
     font-size: 16px;
     cursor: pointer;
+    
   }
   .container .right {
     position: relative;
@@ -562,23 +568,204 @@
       padding: 20px;
     }
   }
+
+
+
+
+
+
+
+
+
+
+  .header {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 100%;
+    height: 80px;
+    align-items: center;
+    gap: 5px;
+    color: #fefefe;
+    background:linear-gradient(-90deg,#8c79b7,transparent);
+
+  }
   
-  .credits {
+  .logo {
     position: absolute;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    text-align: center;
-    padding: 10px;
-    font-size: 12px;
-    color: #fff;
-    background-color: #b38add;
+    width: 30%;
+    left: 60%;
+    color: #ffffff;
+    font-size: 26px;
+    font-weight: 700;
+    padding: 50px;
+    transform: translateX(-50%);
   }
-  .credits a {
-    color: #fff;
-    text-decoration: none;
-    font-weight: 600;
+  .searchBar {
+    display: flex;
+    
+    justify-content: flex-start;
   }
-  .credits a:hover {
-    text-decoration: underline;
+  .search-bar-form {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
   }
+  .input-search {
+    width:60%;
+    height: 40px;
+    border-top-left-radius: 40px;
+    border-bottom-left-radius: 40px;
+    padding: 10px 20px;
+    border: 2px solid #8c79b7;
+  }
+  .input-search:focus {
+    outline: none;
+    border: 1px solid #ffffff;
+  }
+  .btn-search {
+    height: 40px;
+    border-top-right-radius: 40px;
+    border-bottom-right-radius: 40px;
+    padding: 10px 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    outline: none;
+    border: 0px solid #ffffff;
+    background-color: #8c79b7;
+    color: #fefefe;
+  }
+  .btn-search:hover {
+    background-color: #fefefe;
+    color: #8c79b7;
+  }
+  .profile {
+     flex: 1;
+    width: 30%;
+    display: flex;
+    justify-content: flex-end;
+    padding: 16px;
+  }
+  
+ 
+  /* for footer */
+  
+.footer {
+  width: 100%;
+  position: relative;
+  height: 50%;
+  clear: both;
+  background: #8c79b7;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  padding: 10px 0;
+}
+
+.social-icon,
+.menu {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 5px 0;
+  flex-wrap: wrap;
+  z-index: 2000;
+}
+
+.social-icon__item,
+.menu__item {
+  list-style: none;
+}
+
+.social-icon__link {
+  font-size: 2rem;
+  color: #fff;
+  margin: 0 10px;
+  display: inline-block;
+  transition: 0.5s;
+}
+.social-icon__link:hover {
+  transform: translateY(-10px);
+}
+
+.menu__link {
+  font-size: 1.2rem;
+  color: #fff;
+  margin: 0 10px;
+  display: inline-block;
+  transition: 0.5s;
+  text-decoration: none;
+  opacity: 0.75;
+  font-weight: 300;
+}
+
+.menu__link:hover {
+  opacity: 1;
+}
+
+.footer p {
+  color: #fff;
+  margin: 7.5px 0 5px 0;
+  font-size: 0.8rem;
+  font-weight: 300;
+}
+
+.wave {
+  position: absolute;
+  top: -30px;
+  left: 0;
+  width: 100%;
+  height:40px;
+  background: url("Vector 1wave.png");
+  background-size: 500px 50px;
+}
+
+.wave#wave1 {
+  z-index: 1000;
+  opacity: 1;
+  bottom: 0;
+  animation: animateWaves 4s linear infinite;
+}
+
+.wave#wave2 {
+  z-index: 999;
+  opacity: 0.5;
+  bottom: 10px;
+  animation: animateWave 4s linear infinite !important;
+}
+
+.wave#wave3 {
+  z-index: 1000;
+  opacity: 0.2;
+  bottom: 15px;
+  animation: animateWaves 3s linear infinite;
+}
+
+.wave#wave4 {
+  z-index: 999;
+  opacity: 0.7;
+  bottom: 20px;
+  animation: animateWave 3s linear infinite;
+}
+
+@keyframes animateWaves {
+  0% {
+    background-position-x: 1000px;
+  }
+  100% {
+    background-positon-x: 0px;
+  }
+}
+
+@keyframes animateWave {
+  0% {
+    background-position-x: -1000px;
+  }
+  100% {
+    background-positon-x: 0px;
+  }
+}

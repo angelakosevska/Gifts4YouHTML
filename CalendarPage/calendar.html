@@ -21,6 +21,45 @@
     <title>Calendar</title>
   </head>
   <body>
+    <header class="header">
+      <div class="logo">Feed</div>
+      <div class="searchBar">
+        <form class="search-bar-form">
+          <input type="text" placeholder="Search..." class="input-search" />
+          <button type="submit" class="btn-search">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="16"
+              height="16"
+              fill="currentColor"
+              class="bi bi-search"
+              viewBox="0 0 16 16"
+            >
+              <path
+                d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zm-5.742 1.106a5.5 5.5 0 1 1 0-11 5.5 5.5 0 0 1 0 11z"
+              />
+            </svg>
+          </button>
+        </form>
+      </div>
+      <div class="profile">
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          width="30"
+          height="30"
+          fill="currentColor"
+          class="bi bi-person-circle"
+          viewBox="0 0 16 16"
+        >
+          <path d="M11 6a3 3 0 1 1-6 0 3 3 0 0 1 6 0" />
+          <path
+            fill-rule="evenodd"
+            d="M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8m8-7a7 7 0 0 0-5.468 11.37C3.242 11.226 4.805 10 8 10s4.757 1.225 5.468 2.37A7 7 0 0 0 8 1"
+          />
+        </svg>
+      </div>
+    </header>
+    <main>
     <div class="container">
       <div class="left">
         <div class="calendar">
@@ -96,7 +135,55 @@
         </svg></i>
       </button>
     </div>
-
+</main>
+<footer class="page-footer footer">
+  <div class="waves">
+    <div class="wave" id="wave1"></div>
+    <div class="wave" id="wave2"></div>
+    <div class="wave" id="wave3"></div>
+    <div class="wave" id="wave4"></div>
+  </div>
+  <ul class="social-icon">
+    <li class="social-icon__item">
+      <a class="social-icon__link" href="#">
+        <ion-icon name="logo-facebook"></ion-icon>
+      </a>
+    </li>
+    <li class="social-icon__item">
+      <a class="social-icon__link" href="#">
+        <ion-icon name="logo-twitter"></ion-icon>
+      </a>
+    </li>
+    <li class="social-icon__item">
+      <a class="social-icon__link" href="#">
+        <ion-icon name="logo-linkedin"></ion-icon>
+      </a>
+    </li>
+    <li class="social-icon__item">
+      <a class="social-icon__link" href="#">
+        <ion-icon name="logo-instagram"></ion-icon>
+      </a>
+    </li>
+  </ul>
+  <ul class="menu">
+    <li class="menu__item"><a class="menu__link" href="#">Home</a></li>
+    <li class="menu__item"><a class="menu__link" href="#">About</a></li>
+    <li class="menu__item">
+      <a class="menu__link" href="#">Services</a>
+    </li>
+    <li class="menu__item"><a class="menu__link" href="#">Team</a></li>
+    <li class="menu__item"><a class="menu__link" href="#">Contact</a></li>
+  </ul>
+  <p>&copy;2021 Nadine Coelho | All Rights Reserved</p>
+</footer>
+      <script
+      type="module"
+      src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"
+      ></script>
+      <script
+      nomodule
+      src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"
+      ></script>
     <script src="calendar.js"></script>
   </body>
 </html>
