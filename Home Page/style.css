@@ -272,6 +272,8 @@ aside {
   display: flex;
   flex-direction: column;
   width: 100%;
+
+  min-width: 400px;
   height: fit-content;
   position: relative;
   top: 0;
@@ -535,5 +537,94 @@ footer {
   .weekdays li,
   .days li {
     width: 3.2%;
+  }
+}
+
+/* calendar*/
+@media (max-width: 768px) {
+  .calendar-container {
+    width: 100%;
+    margin: 0 auto;
+  }
+
+  .cardCalendar {
+    width: 100%;
+    margin: 0 auto;
+    background-color: #ffffff;
+    border-radius: 15px;
+    box-shadow: 0 4px 5px #5e4d9a33;
+    border: 0px solid #8c79b7;
+  }
+
+  .calendar-toolbar > .current-month {
+    font-size: 18px;
+  }
+
+  .calendar-toolbar > [class$="month-btn"] {
+    width: 35px;
+    line-height: 35px;
+    font-size: 12px;
+  }
+
+  .weekday-name,
+  [class$="-day"] {
+    width: 12%;
+    height: auto;
+    text-align: center;
+    font-size: 1rem;
+    line-height: 2rem;
+  }
+
+  .btn {
+    padding: 10px;
+    font-size: 0.9rem;
+  }
+
+  .goto-buttons {
+    padding-block: 10px;
+  }
+}
+
+@media (max-width: 480px) {
+  .calendar-container {
+    width: 100%;
+    margin: 0 auto;
+  }
+
+  .cardCalendar {
+    width: 100%;
+    margin: 0 auto;
+    background-color: #ffffff;
+    border-radius: 15px;
+    box-shadow: 0 4px 5px #5e4d9a33;
+    border: 0px solid #8c79b7;
+  }
+
+  .calendar-toolbar > .current-month {
+    font-size: 16px;
+  }
+
+  .calendar-toolbar > [class$="month-btn"] {
+    width: 30px;
+    line-height: 30px;
+    font-size: 10px;
+  }
+
+  .weekday-name,
+  [class$="-day"] {
+    width: 14%;
+    height: auto;
+    text-align: center;
+    font-size: 0.9rem;
+    line-height: 1.8rem;
+  }
+
+  .btn {
+    padding: 8px;
+    font-size: 0.8rem;
+  }
+
+  .goto-buttons {
+    padding-block: 8px;
   }
 }
