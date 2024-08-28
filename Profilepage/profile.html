@@ -16,24 +16,14 @@
 <body>
     <header class="header">
         <div class="logo">Gifts4You</div>
-        <div class="searchBar">
-          <form class="search-bar-form">
-            <input type="textbox" placeholder="Search..." class="input-search" />
-            <button type="submit" class="btn-search">
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                width="16"
-                height="16"
-                fill="currentColor"
-                class="bi bi-search"
-                viewBox="0 0 16 16"
-              >
-                <path
-                  d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zm-5.742 1.106a5.5 5.5 0 1 1 0-11 5.5 5.5 0 0 1 0 11z"
-                />
-              </svg>
-            </button>
-          </form>
+        <!--searchbox-->
+        <div class="box">
+          <div class="container-2">
+            <span class="icon">
+              <i class="fa fa-search"></i>
+            </span>
+            <input type="search" id="search" placeholder="Search...">
+          </div>
         </div>
         <div class="profile">
           <svg
@@ -55,132 +45,62 @@
 
     <main>
       <div class="header_wrapper">
-        <nav></nav>
+      <nav></nav>
       <div class="cols-container">
-        <div class="left-col">
-          <div class="img-container">
-            <img src="7d0c5bdfb852124e00e3f784c043a0ec.jpg" alt="Marija Tashevska"/>
-            <span></span>
+          <div class="left-col">
+              <div class="img-container">
+                  <img src="7d0c5bdfb852124e00e3f784c043a0ec.jpg" alt="Marija Tashevska"/>
+                  <span></span>
+              </div>
+              <h2>Marija Tashevska</h2>
+              <ul class="about">
+                  <li><span>100</span> Followers</li> <!-- Added space for clarity -->
+                  <li><span>120</span> Following</li> <!-- Added space for clarity -->
+                  <li><span>20</span> Posts</li> <!-- Added space for clarity -->
+              </ul>
+              
+              <div class="content">
+                  <p>
+                      Welcome to my blog, where I share my favourite gifts from my favourite people.
+                  </p>
+                  <aside>
+                      <div class="cald">
+                          <div class="calendar-toolbar">
+                              <button class="prev month-btn">
+                                  <i class="fas fa-chevron-left"></i>
+                              </button>
+                              <div class="current-month"></div>
+                              <button class="next month-btn">
+                                  <i class="fas fa-chevron-right"></i>
+                              </button>
+                          </div>
+                          <div class="calendar">
+                              <div class="weekdays">
+                                  <div class="weekday-name">Su</div>
+                                  <div class="weekday-name">Mo</div>
+                                  <div class="weekday-name">Tu</div>
+                                  <div class="weekday-name">We</div>
+                                  <div class="weekday-name">Th</div>
+                                  <div class="weekday-name">Fr</div>
+                                  <div class="weekday-name">Sa</div>
+                              </div>
+                              <div class="calendar-days"></div>
+                          </div>
+                          <div class="goto-buttons">
+                              <button type="button" class="btn prev-year">Prev Year</button>
+                              <button type="button" class="btn today">Today</button>
+                              <button type="button" class="btn next-year">Next Year</button>
+                          </div>
+                      </div>
+                  </aside>
+              </div>
           </div>
-          <h2>Marija Tashevska</h2>
-          <ul class="about">
-            <li><span>100</span>Followers</li>
-            <li><span>120</span>Following</li>
-            <li><span>20</span>Posts</li>
-          </ul>
-          
-          <div class="content">
-            <p>
-            Welcome to my blog, where I share my favourite gifts from my favourite people.
-            </p>
-            <aside>
-            <div class="cald">
-              <div class="calendar-toolbar">
-                <button class="prev month-btn">
-                  <i class="fas fa-chevron-left"></i>
-                </button>
-                <div class="current-month"></div>
-                <button class="next month-btn">
-                  <i class="fas fa-chevron-right"></i>
-                </button>
-              </div>
-              <div class="calendar">
-                <div class="weekdays">
-                  <div class="weekday-name">Su</div>
-                  <div class="weekday-name">Mo</div>
-                  <div class="weekday-name">Tu</div>
-                  <div class="weekday-name">We</div>
-                  <div class="weekday-name">Th</div>
-                  <div class="weekday-name">Fr</div>
-                  <div class="weekday-name">Sa</div>
-                </div>
-                <div class="calendar-days"></div>
-              </div>
-              <div class="goto-buttons">
-                <button type="button" class="btn prev-year">Prev Year</button>
-                <button type="button" class="btn today">Today</button>
-                <button type="button" class="btn next-year">Next Year</button>
-              </div>
-            </div>
-          </aside>
+          <div class="right-col">
+            
+
           </div>
-        </div>
-        <div class="right-col">
-          <div class="container">
-            <div class="card" style="--cards:5">
-              <div class="child">
-                <h2>Why do I need a will</h2>
-                <p>5 articles</p>
-              </div>
-              <div class="child"></div>
-              <div class="child"></div>
-              <div class="child"></div>
-              <div class="child"></div>
-            </div>
-            <div class="card" style="--cards:3">
-              <div class="child">
-                <h2>How to choose who inherits your estate</h2>
-                <p>3 articles</p>
-              </div>
-              <div class="child"></div>
-              <div class="child"></div>
-            </div>
-            <div class="card" style="--cards:2">
-              <div class="child">
-                <h2>What happens when you die</h2>
-                <p>2 articles</p>
-              </div>
-            </div>
-            <div class="card" style="--cards:4">
-              <div class="child">
-                <h2>How to choose guardians</h2>
-                <p>4 articles</p>
-              </div>
-              <div class="child"></div>
-              <div class="child"></div>
-              <div class="child"></div>
-            </div>
-            <div class="card" style="--cards:4">
-              <div class="child">
-                <h2>Why you've been disinherited</h2>
-                <p>4 articles</p>
-              </div>
-              <div class="child"></div>
-              <div class="child"></div>
-              <div class="child"></div>
-            </div>
-            <div class="card" style="--cards:3">
-              <div class="child">
-                <h2>How to commit fraud, legally</h2>
-                <p>3 articles</p>
-              </div>
-              <div class="child"></div>
-              <div class="child"></div>
-            </div>
-            <div class="card" style="--cards:5">
-              <div class="child">
-                <h2>Stay together for the kids</h2>
-                <p>5 articles</p>
-              </div>
-              <div class="child"></div>
-              <div class="child"></div>
-              <div class="child"></div>
-              <div class="child"></div>
-            </div>
-            <div class="card" style="--cards:3">
-              <div class="child">
-                <h2>Picking music for your funeral</h2>
-                <p>3 articles</p>
-              </div>
-              <div class="child"></div>
-              <div class="child"></div>
-            </div>
-          </div>
-            </div>
-            </div>
-        </div>
       </div>
-    </div>
+  </div>
     </main>
 
     <footer class="page-footer footer">
@@ -223,17 +143,21 @@
         </ul>
         <p>&copy;2021 Nadine Coelho | All Rights Reserved</p>
     </footer>
-    <script src="prof-cal.js"></script>
+
+    <script  src="prof-cal.js"></script>
     <script
-type="module"
-src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"
-></script>
-<script
-nomodule
-src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"
-></script>
-<style>
-  @import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400..700&family=Lobster&family=Lobster+Two:ital,wght@0,400;0,700;1,400;1,700&display=swap');
-  </style>
+            type="module"
+            src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"
+            >
+    </script>
+    <script
+            nomodule
+            src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"
+            >
+    </script>
+      
+    <style>
+              @import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400..700&family=Lobster&family=Lobster+Two:ital,wght@0,400;0,700;1,400;1,700&display=swap');
+              </style>
 </body>
 </html>
