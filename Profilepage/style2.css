@@ -1,4 +1,5 @@
 @import url("https://fonts.googleapis.com/css2?family=Noto+Serif:ital,wght@0,100..900;1,100..900&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400..700&family=Lobster&family=Lobster+Two:ital,wght@0,400;0,700;1,400;1,700&display=swap');
 
 html {
     background: #f5f7f8;
@@ -178,7 +179,7 @@ ul {
     .header__wrapper .cols__container .right__col nav {
       flex-direction: row;
     }
-    .header__wrapper .cols__container .right__col nav button {
+    .header__wrapper .cols__container .right__col nav  {
       margin-top: 0;
     }
   }
@@ -202,7 +203,7 @@ ul {
   .logo {
     position: absolute;
     width: 30%;
-    left: 57%;
+    left: 55%;
     color: #ffffff;
     font-size: 36px;
     font-weight: 300;
@@ -211,8 +212,23 @@ ul {
     transform: translateX(-50%);
     font-family:"Lobster Two";
   }
+.logo img{
+  width: 180px;
+  height: auto;
+  
+}
+@media (min-width: 768px) {
+  .logo img {
+      width: 150px; /* Larger size for bigger screens */
+  }
+}
 
-  /*for search button*/
+@media (min-width: 1200px) {
+  .logo img{
+      width: 200px; /* Largest size for wide screens */
+  }
+}
+  
   .box{
     margin: 100px auto;
     width: 10px;
@@ -514,4 +530,48 @@ ul {
 
 
 
+/*modal*/
 
+.frames .grid two-col .container {
+  max-width: 900px;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+  grid-gap: 48px;
+  margin: 0 auto;
+}
+.frames .grid two-col .container .card {
+  cursor: pointer;
+  position: relative;
+  height: 0;
+  padding-bottom: 120%;
+  --offset-multiplier: 4px;
+  transition: transform 0.6s ease;
+  --translate: 0;
+  transform: translate(var(--translate), var(--translate));
+}
+
+.card:hover {
+  --offset-multiplier: 6px;
+  --translate: calc(-1px * (var(--cards) - 1));
+  transition: transform 0.3s ease;
+}
+.child {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  padding: 20px;
+  box-sizing: border-box;
+  background: var(--card);
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1), 0px -4px 8px rgba(255, 255, 255, 0.8);
+  border-radius: 6px;
+  transition: inherit;
+  --translate: calc(var(--offset) * var(--offset-multiplier));
+  transform: translate(var(--translate), var(--translate));
+  z-index: 5;
+}
+
+/* Offset and Z-Index for Child Elements */
+.child:nth-child(1) {
+  --offset: 0;
+  z-index: 5;
+}

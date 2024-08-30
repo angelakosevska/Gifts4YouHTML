@@ -1,0 +1,273 @@
+.grid.grid.two-col > div {
+    height: 72px;
+    width: 88px;
+  }
+  
+  .frame {
+    translate: 0 10px;
+  }
+  
+  .frame header {
+    top: -60px;
+  }
+  
+  .frame h3 {
+    bottom: -24px;
+  }
+  
+  button {
+    background: #ffffff;
+    border: none;
+    border-radius: 40px;
+    padding: 11px 13px;
+    color: #19181a;
+    font-weight: 600;
+    font-size: 0.9rem;
+    margin-right: 1px;
+
+  }
+  
+  button:hover {
+    background: #4d4168;
+  }
+  
+  body {
+    background-color: #333037;
+  }
+  
+  h2 {
+    margin: 0;
+    font-weight: 400;
+  }
+  
+
+  
+  html.modal-active,
+  body.modal-active {
+    overflow: hidden;
+  }
+  
+  #modal-container {
+    position: fixed;
+    display: table;
+    height: 100%;
+    width: 100%;
+    top: 0;
+    left: 0;
+    transform: scale(0);
+    z-index: 1;
+    color: #222222;
+  }
+  #modal-container.two {
+    transform: scale(1);
+  }
+  #modal-container.two .modal-background {
+    background: rgba(0, 0, 0, 0);
+    animation: fadeIn 0.5s cubic-bezier(0.165, 0.84, 0.44, 1) forwards;
+  }
+  #modal-container.two .modal-background .modal {
+    opacity: 0;
+    animation: scaleUp 0.5s cubic-bezier(0.165, 0.84, 0.44, 1) forwards;
+  }
+  #modal-container.two + .content {
+    animation: scaleBack 0.5s cubic-bezier(0.165, 0.84, 0.44, 1) forwards;
+  }
+  #modal-container.two.out {
+    animation: quickScaleDown 0.85s linear forwards;
+  }
+  #modal-container.two.out .modal-background {
+    animation: fadeOut 1.5s cubic-bezier(0.165, 0.84, 0.44, 1) forwards;
+  }
+  #modal-container.two.out .modal-background .modal {
+    animation: scaleDown 1.5s cubic-bezier(0.165, 0.84, 0.44, 1) forwards;
+  }
+  #modal-container.two.out + .content {
+    animation: scaleForward 0.5s cubic-bezier(0.165, 0.84, 0.44, 1) forwards;
+  }
+ 
+  #modal-container .modal-background {
+    display: table-cell;
+    background: rgba(0, 0, 0, 0.8);
+    text-align: center;
+    vertical-align: middle;
+  }
+  #modal-container .modal-background .modal {
+    
+    width: 800px;
+    height: 600px;
+    display: flex;
+    overflow:auto;
+    flex-direction: column;
+    justify-content: start;
+    align-items: center;
+    border-radius: 6px;
+  }
+  .modal-content {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
+    gap: 10px; 
+    padding:20px; /* Spacing between images */
+}
+
+.modal-content img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
+  #modal-container .modal-background .modal .modal-svg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 500px;
+    width: 500px;
+    border-radius: 3px;
+  }
+  #modal-container .modal-background .modal .modal-svg rect {
+    stroke: #fff;
+    stroke-width: 2px;
+    stroke-dasharray: 778;
+    stroke-dashoffset: 778;
+  }
+  
+  #modal-container.side {
+    transform: scale(1);
+  }
+  
+  #modal-container.side .modal {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 240px;
+    position: fixed;
+    right: 0;
+    top: 0;
+    border-radius: 0;
+    transform: scale(1);
+    padding: 0;
+    left: auto;
+  }
+  
+  #modal-container.side .modal .modal-background {
+    transform: scale(1);
+  }
+  
+  #modal-container.side {
+    animation: sideIn 0.3s cubic-bezier(0.165, 0.84, 0.44, 1) forwards;
+  }
+  #modal-container.side .modal-background .modal {
+    animation: sideModalIn 0.75s cubic-bezier(0.165, 0.84, 0.44, 1) forwards;
+  }
+  
+  #modal-container.side.out {
+    transform: scale(1);
+    animation: sideOut 1s cubic-bezier(0.165, 0.84, 0.44, 1) forwards;
+  }
+  #modal-container.side.out .modal-background .modal {
+    animation: sideModalOut 0.5s cubic-bezier(0.165, 0.84, 0.44, 1) forwards;
+  }
+  
+  @keyframes sideIn {
+    0% {
+      opacity: 0;
+      background: rgba(0 0 0 / 0%);
+    }
+    100% {
+      opacity: 1;
+      background: rgba(0 0 0 / 50%);
+    }
+  }
+  
+  @keyframes sideOut {
+    100% {
+      opacity: 0;
+      visibility: hidden;
+      transform: scale(1);
+    }
+  }
+  
+  @keyframes sideModalIn {
+    0% {
+      opacity: 0;
+      transform: scale(1) translateX(240px);
+    }
+    100% {
+      opacity: 1;
+      transform: scale(1) translateX(0);
+    }
+  }
+  
+  @keyframes sideModalOut {
+    100% {
+      transform: translateX(240px);
+    }
+  }
+  
+  @keyframes fadeIn {
+    0% {
+      background: rgba(0, 0, 0, 0);
+    }
+    100% {
+      background: rgba(0, 0, 0, 0.7);
+    }
+  }
+  @keyframes fadeOut {
+    0% {
+      background: rgba(0, 0, 0, 0.7);
+    }
+    100% {
+      background: rgba(0, 0, 0, 0);
+    }
+  }
+  @keyframes scaleUp {
+    0% {
+      transform: scale(0.8) translateY(1000px);
+      opacity: 0;
+    }
+    100% {
+      transform: scale(1) translateY(0px);
+      opacity: 1;
+    }
+  }
+  @keyframes scaleDown {
+    0% {
+      transform: scale(1) translateY(0px);
+      opacity: 1;
+    }
+    100% {
+      transform: scale(0.8) translateY(1000px);
+      opacity: 0;
+    }
+  }
+  @keyframes scaleBack {
+    0% {
+      transform: scale(1);
+    }
+    100% {
+      transform: scale(0.85);
+    }
+  }
+  @keyframes scaleForward {
+    0% {
+      transform: scale(0.85);
+    }
+    100% {
+      transform: scale(1);
+    }
+  }
+  @keyframes quickScaleDown {
+    0% {
+      transform: scale(1);
+    }
+    99.9% {
+      transform: scale(1);
+    }
+    100% {
+      transform: scale(0);
+    }
+  }
+ 
+
+
+  
