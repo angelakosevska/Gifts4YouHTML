@@ -45,19 +45,19 @@
           </div>
         </div>
         <div class="profile">
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            width="30"
-            height="30"
-            fill="currentColor"
-            class="bi bi-person-circle"
-            viewBox="0 0 16 16"
-          >
-            <path d="M11 6a3 3 0 1 1-6 0 3 3 0 0 1 6 0" />
-            <path
-              fill-rule="evenodd"
-              d="M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8m8-7a7 7 0 0 0-5.468 11.37C3.242 11.226 4.805 10 8 10s4.757 1.225 5.468 2.37A7 7 0 0 0 8 1"
-            />
+          <svg xmlns="http://www.w3.org/2000/svg" 
+          width="30" 
+          height="30" 
+          fill="currentColor" 
+          
+          viewBox="0 0 16 16">
+            <path d="M8 6.982C9.664 5.309 13.825 8.236 
+            8 12 2.175 8.236 6.336 5.309 8 6.982"/>
+            <path d="M8.707 1.5a1 1 0 0 0-1.414 0L.646 8.146a.5.5 0 0 0 
+            .708.707L2 8.207V13.5A1.5 1.5 0 0 0 3.5 15h9a1.5 1.5 0 0 0 
+            1.5-1.5V8.207l.646.646a.5.5 0 0 0 .708-.707L13 5.793V2.5a.5.5 0 0
+             0-.5-.5h-1a.5.5 0 0 0-.5.5v1.293zM13 7.207V13.5a.5.5 0 0 
+             1-.5.5h-9a.5.5 0 0 1-.5-.5V7.207l5-5z"/>
           </svg>
         </div>
     </header>
@@ -119,18 +119,17 @@
               <div class="modal-background">
                 <div class="modal">
                   <div class="modal-content">
-                  <img src="image1.jpg" alt="aces">
-                  <img src="image2.jpg" alt="bouqet">
-                  <img src="image3.jpg" alt="song">
-                  <img src="image4.jpg" alt="charm">
-                  <img src="image5.jpg" alt="earrings"> 
-                  
-                  <svg
-                    class="modal-svg"
-                    xmlns="http://www.w3.org/2000/svg"
-                    width="800px"
-                    height="600px"
-                  ></svg>
+                    <img src="image1.jpg" alt="aces">
+                    <img src="image2.jpg" alt="bouqet">
+                    <img src="image3.jpg" alt="song">
+                    <img src="image4.jpg" alt="charm">
+                    <img src="image5.jpg" alt="earrings"> 
+                    <img src="image6.jpg" alt="magnets">
+                    <img src="image7.jpg" alt="jenga">
+                    <img src="image8.jpg" alt="pots"> 
+                    <img src="image9.jpg" alt="costers">
+                    <img src="image10.jpg" alt="candles">
+                 
                   </div>
                   
                 </div>
@@ -139,19 +138,27 @@
             <div class="frame">
               <div class="grid two-col buttons">
                 <div>
-                <!--<button type="button" onclick="handleClick('two')">Revealing</button>-->
                 <div class="container">
-                  
                     <div class="child">
                       <button type="button" onclick="handleClick('two')">Birthday
                       </button>
                     </div>
-
               </div> 
               </div>
             </div>
-          
           </div>
+          <div class="frame">
+            <div class="grid two-col buttons">
+              <div>
+              <div class="container">
+                  <div class="child">
+                    <button type="button" onclick="handleClick('two')">Secret Santa
+                    </button>
+                  </div>
+            </div> 
+            </div>
+          </div>
+        </div>
       </div>
   </div>
     </main>
@@ -198,16 +205,36 @@
     </footer>
   <script type="text/javascript">
       const modal = document.querySelector("#modal-container");
-
+      const modalContent = document.querySelector(".modal-content");
       const handleClick = (buttonId) => {
+     
         modal.classList = [];
-        modal.classList.add(buttonId);
+        modal.classList.add('two');
         document.body.classList.add("modal-active");
+        if (buttonId === 'Birthday') {
+        modalContent.innerHTML = 
+        `<img src="image1.jpg" alt="aces">
+                  <img src="image2.jpg" alt="bouqet">
+                  <img src="image3.jpg" alt="song">
+                  <img src="image4.jpg" alt="charm">
+                  <img src="image5.jpg" alt="earrings"> 
+        `;
+    } else if (buttonId === 'Secret Santa') {
+        modalContent.innerHTML =
+         ` <img src="image6.jpg" alt="magnets">
+            <img src="image7.jpg" alt="jenga">
+            <img src="image8.jpg" alt="pots"> 
+            <img src="image9.jpg" alt="costers">
+            <img src="image10.jpg" alt="candles">  
+        `;
+    }
       };
 
-      modal.addEventListener("click", () => {
-        modal.classList.add("out");
+      modal.addEventListener("click", (e) => {
+        if (e.target === modal || e.target.classList.contains("modal-background")) {
+        modal.classList.remove('two'); // Hide the modal
         document.body.classList.remove("modal-active");
+    }
       });
       </script>   
     

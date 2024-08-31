@@ -51,11 +51,12 @@ ul {
   a {
     text-decoration: none;
   }
-  .header_wrapper nav{
+  .header_wrapper nav {
     width: 100%;
-    background: url("../Profilepage/565ae04ac20d7b3b5e395f427f45a6f4.jpg") no-repeat 50% 20% / cover;
+    background: url("../Profilepage/cover3.jpg") no-repeat center  / cover;
     min-height: calc(100px + 15vw);
-  }
+    /* Optional: makes the background image fixed during scroll */
+}
   
   .header_wrapper .cols-container .left-col {
     padding: 25px 20px;
@@ -573,5 +574,19 @@ ul {
 /* Offset and Z-Index for Child Elements */
 .child:nth-child(1) {
   --offset: 0;
+  z-index: 5;
+}
+.child2{
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  padding: 20px;
+  box-sizing: border-box;
+  background: var(--card);
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1), 0px -4px 8px rgba(255, 255, 255, 0.8);
+  border-radius: 6px;
+  transition: inherit;
+  --translate: calc(var(--offset) * var(--offset-multiplier));
+  transform: translate(var(--translate), var(--translate));
   z-index: 5;
 }
