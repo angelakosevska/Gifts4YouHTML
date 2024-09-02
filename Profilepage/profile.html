@@ -360,6 +360,21 @@
                 modal.classList.add("out");
                 document.body.classList.remove("modal-active");
               });
+              // Function to show the modal and hide the footer
+function showModal() {
+  document.getElementById('modal-background').style.display = 'flex'; // Show the modal
+  document.getElementById('footer').classList.add('hidden'); // Hide the footer
+}
+
+// Function to hide the modal and show the footer
+function hideModal() {
+  document.getElementById('modal-background').style.display = 'none'; // Hide the modal
+  document.getElementById('footer').classList.remove('hidden'); // Show the footer
+}
+
+// Example of how to use these functions
+document.querySelector('.modal-background').addEventListener('click', hideModal); // Hide modal when clicking outside of it
+
     </script>
       <script type="text/javascript" src="prof-cal.js"></script>
 </body>
