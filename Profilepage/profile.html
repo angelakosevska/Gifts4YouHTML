@@ -8,11 +8,13 @@
     <link rel="stylesheet" href="style2.css">
     <link rel="stylesheet" href="index.css" />
     <link
-    href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" 
-    rel="stylesheet" 
-    integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" 
-    crossorigin="anonymous"/>  
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css" rel="stylesheet"/>
+    href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
+    rel="stylesheet"
+  /> 
+  <link
+  href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css"
+  rel="stylesheet"
+/>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -33,7 +35,7 @@
   </head>
 <body>
     <header class="header">
-        <div class="logo"><img src="13.png" alt="logo"/>
+        <div class="logo"><img src="pictures/13.png" alt="logo"/>
         </div>
         <!--searchbox-->
         <div class="box">
@@ -65,10 +67,11 @@
     <main>
       <div class="header_wrapper">
       <nav></nav>
+     
       <div class="cols-container">
           <div class="left-col">
               <div class="img-container">
-                  <img src="7d0c5bdfb852124e00e3f784c043a0ec.jpg" alt="Marija Tashevska"/>
+                  <img src="pictures/7d0c5bdfb852124e00e3f784c043a0ec.jpg" alt="Marija Tashevska"/>
                   <span></span>
               </div>
               <h2>Marija Tashevska</h2>
@@ -82,85 +85,174 @@
                   <p>
                       Welcome to my blog, where I share my favourite gifts from my favourite people.
                   </p>
-                  <aside>
-                      <div class="cald">
-                          <div class="calendar-toolbar">
-                              <button class="prev month-btn">
-                                  <i class="fas fa-chevron-left"></i>
-                              </button>
-                              <div class="current-month"></div>
-                              <button class="next month-btn">
-                                  <i class="fas fa-chevron-right"></i>
-                              </button>
-                          </div>
-                          <div class="calendar">
-                              <div class="weekdays">
-                                  <div class="weekday-name">Su</div>
-                                  <div class="weekday-name">Mo</div>
-                                  <div class="weekday-name">Tu</div>
-                                  <div class="weekday-name">We</div>
-                                  <div class="weekday-name">Th</div>
-                                  <div class="weekday-name">Fr</div>
-                                  <div class="weekday-name">Sa</div>
-                              </div>
-                              <div class="calendar-days"></div>
-                          </div>
-                          <div class="goto-buttons">
-                              <button type="button" class="btn prev-year">Prev Year</button>
-                              <button type="button" class="btn today">Today</button>
-                              <button type="button" class="btn next-year">Next Year</button>
-                          </div>
-                      </div>
-                  </aside>
               </div>
-          </div>
-          <div class="right-col">
-            <div id="modal-container">
-              <div class="modal-background">
-                <div class="modal">
-                  <div class="modal-content">
-                    <img src="image1.jpg" alt="aces">
-                    <img src="image2.jpg" alt="bouqet">
-                    <img src="image3.jpg" alt="song">
-                    <img src="image4.jpg" alt="charm">
-                    <img src="image5.jpg" alt="earrings"> 
-                    <img src="image6.jpg" alt="magnets">
-                    <img src="image7.jpg" alt="jenga">
-                    <img src="image8.jpg" alt="pots"> 
-                    <img src="image9.jpg" alt="costers">
-                    <img src="image10.jpg" alt="candles">
-                 
-                  </div>
-                  
-                </div>
-              </div>
-            </div>
-            <div class="frame">
-              <div class="grid two-col buttons">
-                <div>
-                <div class="container">
-                    <div class="child">
-                      <button type="button" onclick="handleClick('two')">Birthday
-                      </button>
-                    </div>
-              </div> 
-              </div>
-            </div>
-          </div>
-          <div class="frame">
-            <div class="grid two-col buttons">
-              <div>
-              <div class="container">
-                  <div class="child">
-                    <button type="button" onclick="handleClick('two')">Secret Santa
+              
+           
+              
+              <aside >
+                
+                <div class="cardCalendar">
+                  <div class="calendar-toolbar">
+                    <button class="prev month-btn">
+                      <i class="fas fa-chevron-left"></i>
+                    </button>
+                    <div class="current-month"></div>
+                    <button class="next month-btn">
+                      <i class="fas fa-chevron-right"></i>
                     </button>
                   </div>
-            </div> 
+                  <div class="calendar">
+                    <div class="weekdays">
+                      <div class="weekday-name">Su</div>
+                      <div class="weekday-name">Mo</div>
+                      <div class="weekday-name">Tu</div>
+                      <div class="weekday-name">We</div>
+                      <div class="weekday-name">Th</div>
+                      <div class="weekday-name">Fr</div>
+                      <div class="weekday-name">Sa</div>
+                    </div>
+                    <div class="calendar-days"></div>
+                  </div>
+                  <div class="goto-buttons">
+                    <button type="button" class="btn prev-year">Prev Year</button>
+                    <button type="button" class="btn today">Today</button>
+                    <button type="button" class="btn next-year">Next Year</button>
+                  </div>
+                </div>
+              </aside>
+            </div>
+          
+
+      <div class="right-col">
+
+          <div class="dashboard">
+            <div id="modal-container">
+            <div class="modal-background">
+                  <div class="modal">
+                    <div class="modal-content">
+                    <img src="pictures/image1.jpg" alt="aces">
+                    <img src="pictures/image2.jpg" alt="bouqet">
+                    <img src="pictures/image3.jpg" alt="cassete">
+                    <img src="pictures/image4.jpg" alt="necklace">
+                    <img src="pictures/image5.jpg" alt="earrings">
+                    <img src="pictures/image6.jpg" alt="earrings">
+                    <img src="pictures/image7.jpg" alt="earrings">
+                    <img src="pictures/image8.jpg" alt="earrings">
+                    <img src="pictures/image9.jpg" alt="earrings">
+                    <img src="pictures/image10.jpg" alt="earrings">
+                    </div>
+                  </div>
+                    
+              
             </div>
           </div>
+          
+            
+              <div class="card">
+                      <button  onclick="handleClick('one')"><h2>From Mihajlo</h2></button>
+                      <svg
+                          class="modal-svg"
+                          xmlns="http://www.w3.org/2000/svg"
+                          width="100%"
+                          height="100%"
+                          preserveAspectRatio="none"
+                        >
+                          <rect
+                            x="0"
+                            y="0"
+                            fill="none"
+                            width="226"
+                            height="162"
+                            rx="3"
+                            ry="3"
+                          ></rect>
+                        </svg>
+                    </div>
+                    <div class="card">
+                      <button type="button" onclick="handleClick('two')"><h2>From Maja</h2></button>
+                      <svg
+                          class="modal-svg"
+                          xmlns="http://www.w3.org/2000/svg"
+                          width="100%"
+                          height="100%"
+                          preserveAspectRatio="none"
+                        >
+                          <rect
+                            x="0"
+                            y="0"
+                            fill="none"
+                            width="226"
+                            height="162"
+                            rx="3"
+                            ry="3"
+                          ></rect>
+                        </svg>
+                    </div>
+                    <div class="card">
+                      <button type="button" onclick="handleClick('three')"><h2>From Keti</h2></button>
+                      <svg
+                          class="modal-svg"
+                          xmlns="http://www.w3.org/2000/svg"
+                          width="100%"
+                          height="100%"
+                          preserveAspectRatio="none"
+                        >
+                          <rect
+                            x="0"
+                            y="0"
+                            fill="none"
+                            width="226"
+                            height="162"
+                            rx="3"
+                            ry="3"
+                          ></rect>
+                        </svg>
+                    </div>
+                    <div class="card">
+                      <button type="button" onclick="handleClick('four')"><h2>From Natalija</h2></button>
+                      <svg
+                          class="modal-svg"
+                          xmlns="http://www.w3.org/2000/svg"
+                          width="100%"
+                          height="100%"
+                          preserveAspectRatio="none"
+                        >
+                          <rect
+                            x="0"
+                            y="0"
+                            fill="none"
+                            width="226"
+                            height="162"
+                            rx="3"
+                            ry="3"
+                          ></rect>
+                        </svg>
+                    </div>  
+              
+                    <div class="card">
+                      <button type="button" onclick="handleClick('five')"><h2>From Angela</h2></button>
+                        <svg
+                            class="modal-svg"
+                            xmlns="http://www.w3.org/2000/svg"
+                            width="100%"
+                            height="100%"
+                            preserveAspectRatio="none"
+                          >
+                            <rect
+                              x="0"
+                              y="0"
+                              fill="none"
+                              width="226"
+                              height="162"
+                              rx="3"
+                              ry="3"
+                            ></rect>
+                          </svg>
+                    </div>
+                  
+                
         </div>
       </div>
-  </div>
     </main>
 
     <footer class="page-footer footer">
@@ -203,41 +295,72 @@
         </ul>
         <p>&copy;2021 Nadine Coelho | All Rights Reserved</p>
     </footer>
-  <script type="text/javascript">
-      const modal = document.querySelector("#modal-container");
-      const modalContent = document.querySelector(".modal-content");
-      const handleClick = (buttonId) => {
-     
-        modal.classList = [];
-        modal.classList.add('two');
-        document.body.classList.add("modal-active");
-        if (buttonId === 'Birthday') {
-        modalContent.innerHTML = 
-        `<img src="image1.jpg" alt="aces">
-                  <img src="image2.jpg" alt="bouqet">
-                  <img src="image3.jpg" alt="song">
-                  <img src="image4.jpg" alt="charm">
-                  <img src="image5.jpg" alt="earrings"> 
-        `;
-    } else if (buttonId === 'Secret Santa') {
-        modalContent.innerHTML =
-         ` <img src="image6.jpg" alt="magnets">
-            <img src="image7.jpg" alt="jenga">
-            <img src="image8.jpg" alt="pots"> 
-            <img src="image9.jpg" alt="costers">
-            <img src="image10.jpg" alt="candles">  
-        `;
-    }
-      };
+      
+    <script type="text/javascript">
+                  const modal = document.querySelector("#modal-container");
+                  const modalContent = modal.querySelector(".modal-content");
 
-      modal.addEventListener("click", (e) => {
-        if (e.target === modal || e.target.classList.contains("modal-background")) {
-        modal.classList.remove('two'); // Hide the modal
-        document.body.classList.remove("modal-active");
-    }
-      });
-      </script>   
-    
+                const handleClick = (buttonId) => {
+                modal.classList = [];
+                modal.classList.add(buttonId);
+                document.body.classList.add("modal-active");
+
+                // Clear previous content
+                modalContent.innerHTML = '';
+
+                // Define image sets for each button
+                let images = [];
+                if (buttonId === 'one') {
+                  images = [
+                    { src: "pictures/image1.jpg", alt: "aces" },
+                    { src: "pictures/image2.jpg", alt: "bouqet" },
+                  
+                  ];
+                } else if (buttonId === 'two') {
+                  // Example: You can add different sets of images for different buttons
+                  images = [
+                  { src: "pictures/image3.jpg", alt: "cassete" },
+                    { src: "pictures/image4.jpg", alt: "necklace" },
+                  ];
+                }
+                if (buttonId === 'three') {
+                  // Example: You can add different sets of images for different buttons
+                  images = [
+                  { src: "pictures/image5.jpg", alt: "earrings" },
+                    { src: "pictures/image6.jpg", alt: "magnets" },
+                  ];
+                  }else if(buttonId==='four'){
+                    images = [
+                  { src: "pictures/image7.jpg", alt: "jenga" },
+                    { src: "pictures/image8.jpg", alt: "pots" },
+                  ];
+                  }
+                  if(buttonId==='five'){
+                    images = [
+                  { src: "pictures/image9.jpg", alt: "cousters" },
+                    { src: "pictures/image10.jpg", alt: "candles" },
+                  ];
+                  }
+
+                // Create a card for each image and append it to the modal content
+                images.forEach(image => {
+                  const card = document.createElement('div');
+                  card.classList.add('card');
+
+                  const img = document.createElement('img');
+                  img.src = image.src;
+                  img.alt = image.alt;
+
+                  card.appendChild(img);
+                  modalContent.appendChild(card);
+                });
+              };
+
+              modal.addEventListener("click", () => {
+                modal.classList.add("out");
+                document.body.classList.remove("modal-active");
+              });
+    </script>
       <script type="text/javascript" src="prof-cal.js"></script>
 </body>
 </html>

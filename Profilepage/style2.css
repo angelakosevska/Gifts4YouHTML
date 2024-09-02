@@ -53,7 +53,7 @@ ul {
   }
   .header_wrapper nav {
     width: 100%;
-    background: url("../Profilepage/cover3.jpg") no-repeat center  / cover;
+    background: url("../Profilepage/pictures/cover1.jpg") no-repeat center center / cover;
     min-height: calc(100px + 15vw);
     /* Optional: makes the background image fixed during scroll */
 }
@@ -166,21 +166,24 @@ ul {
     .header_wrapper .cols-container .left-col {
       padding: 25px 0px;
     }
+   
     .header_wrapper .cols-container .right-col nav ul {
       flex-direction: row;
       gap: 30px;
     }
-    
+    .header_wrapper .cols-container .right-col{
+      padding: 25px
+    }
   
   @media (min-width: 1017px) {
-    .header__wrapper .cols__container .left__col {
+    .header_wrapper .cols_container .left-col {
       margin: 0;
       margin-right: auto;
     }
-    .header__wrapper .cols__container .right__col nav {
+    .header_wrapper .cols_container .right-col nav {
       flex-direction: row;
     }
-    .header__wrapper .cols__container .right__col nav  {
+    .header_wrapper .cols_container .right-col nav  {
       margin-top: 0;
     }
   }
@@ -369,7 +372,7 @@ ul {
     left: 0;
     width: 100%;
     height:40px;
-    background: url("Vector 1wave.png");
+    background: url("pictures/Vector\ 1wave.png");
     background-size: 500px 50px;
   }
   .wave#wave1 {
@@ -412,181 +415,146 @@ ul {
       background-positon-x: 0px;
     }
   }
-  
-/* for calendar*/
-.cald {
-    width: 316px;
-    height: fit-content;
-    background-color: #FFFFFF;
-    border-radius: 15px;
-    box-shadow: 0px 0px 10px #efefef;
-  }
-.calendar-toolbar {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 16px;
-    padding-bottom: 15px;
-    border-bottom: 1px solid #efefef;
-  }
-  
-  .calendar-toolbar > .current-month {
-    font-size: 20px;
-    font-weight: bold;
-    color: #19181a;
-  }
-  
-  .calendar-toolbar > [class$="month-btn"] {
-    width: 40px;
-    text-align: center;
-    line-height: 40px;
-    font-size: 14px;
-    color: #19181a;
-    background: #f8f7fa;
-    border: none;
-    border-radius: 15px;
-  }
-  
-  .weekdays,
-  .calendar-days {
-    display: flex;
-    flex-wrap: wrap;
-    padding-inline: 18px;
-  }
-  .weekdays {
-    padding-top: 12px;
-  }
-  .calendar-days {
-    padding-bottom: 12px;
-  }
-  
-  .weekday-name,
-  [class$="-day"] {
-    width: 40px;
-    height: 40px;
-    color: #19181a;
-    text-align: center;
-    line-height: 40px;
-    font-weight: 500;
-    font-size: 1rem;
-  }
-  
-  .weekday-name {
-    color: #19181a;
-    font-weight: 700;
-  }
-  
-  .current-day {
-    background-color: #8c79b7;
-    color: #f8f7fa;
-    border-radius: 40px;
-    font-weight: 700;
-    transition: 0.5s;
-    cursor: pointer;
-  }
-  
-  .padding-day {
-    color: #a5a5a5;
-    user-select: none;
-  }
-  
-  .calendar-toolbar > [class$="month-btn"]:hover,
-  .month-day:hover,
-  .btn:hover {
-    border-radius: 40px;
-    background-color: #f8f7fa;
-    color: #8c79b7;
-    transition: 0.1s;
-    cursor: pointer;
-    box-shadow: inset 0px 0px 0px 1.5px #8c79b7;
-  }
-  
-  .calendar-toolbar > [class$="month-btn"]:focus,
-  .month-day:focus,
-  .btn:focus {
-    border-radius: 40px;
-    background-color: #8c79b7;
-    color: #f8f7fa;
-  }
-  
-  .goto-buttons {
-    border-top: 1px solid #efefef;
-    padding-block: 18px;
-    display: flex;
-    justify-content: space-evenly;
-  }
-  
-  .btn {
-    background: #ffffff;
-    border: none;
-    border-radius: 40px;
-    padding: 11px 13px;
-    color: #19181a;
-    font-weight: 600;
-    font-size: 0.9rem;
-    margin-right: 1px;
-    box-shadow: 0px 0px 0px #efefef;
-  }
+
+ 
 
 
-
-
-/*modal*/
-
-.frames .grid two-col .container {
-  max-width: 900px;
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
-  grid-gap: 48px;
+ /*for pop-up on calendar*/
+ 
+  /* for calendar*/ 
+.calendar-container {
+  width: 25%;
   margin: 0 auto;
 }
-.frames .grid two-col .container .card {
+
+.cardCalendar {
+  width: 320px;
+  height: fit-content;
+
+  background-color: #ffffff;
+  border-radius: 15px;
+  box-shadow: 0 4px 5px #5e4d9a33;
+  border: 0px solid #8c79b7;
+  &:hover {
+    top: -2px;
+    box-shadow: 0px 0px 10px #5e4d9aa4;
+  }
+}
+
+aside{
+  padding-inline: 12px;
+}
+.calendar-toolbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 16px;
+  padding-bottom: 15px;
+  border-bottom: 1px solid #efefef;
+}
+
+.calendar-toolbar > .current-month {
+  font-size: 20px;
+  font-weight: bold;
+  color: #19181a;
+}
+
+.calendar-toolbar > [class$="month-btn"] {
+  width: 40px;
+  text-align: center;
+  line-height: 40px;
+  font-size: 14px;
+  color: #19181a;
+  background: #f8f7fa;
+  border: none;
+  border-radius: 15px;
+}
+
+.weekdays,
+.calendar-days {
+  display: flex;
+  flex-wrap: wrap;
+  padding-inline: 18px;
+}
+.weekdays {
+  padding-top: 12px;
+}
+.calendar-days {
+  padding-bottom: 12px;
+}
+
+.weekday-name,
+[class$="-day"] {
+  width: 40px;
+  height: 40px;
+  color: #19181a;
+  text-align: center;
+  line-height: 40px;
+  font-weight: 500;
+  font-size: 1rem;
+}
+
+.weekday-name {
+  color: #19181a;
+  font-weight: 700;
+}
+
+.current-day {
+  background-color: #8c79b7;
+  color: #f8f7fa;
+  border-radius: 40px;
+  font-weight: 700;
+  transition: 0.5s;
   cursor: pointer;
-  position: relative;
-  height: 0;
-  padding-bottom: 120%;
-  --offset-multiplier: 4px;
-  transition: transform 0.6s ease;
-  --translate: 0;
-  transform: translate(var(--translate), var(--translate));
 }
 
-.card:hover {
-  --offset-multiplier: 6px;
-  --translate: calc(-1px * (var(--cards) - 1));
-  transition: transform 0.3s ease;
-}
-.child {
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  padding: 20px;
-  box-sizing: border-box;
-  background: var(--card);
-  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1), 0px -4px 8px rgba(255, 255, 255, 0.8);
-  border-radius: 6px;
-  transition: inherit;
-  --translate: calc(var(--offset) * var(--offset-multiplier));
-  transform: translate(var(--translate), var(--translate));
-  z-index: 5;
+.padding-day {
+  color: #a5a5a5;
+  user-select: none;
 }
 
-/* Offset and Z-Index for Child Elements */
-.child:nth-child(1) {
-  --offset: 0;
-  z-index: 5;
+.calendar-toolbar > [class$="month-btn"]:hover,
+.month-day:hover,
+.btn:hover {
+  border-radius: 40px;
+  background-color: #f8f7fa;
+  color: #8c79b7;
+  transition: 0.1s;
+  cursor: pointer;
+  box-shadow: inset 0px 0px 0px 1.5px #8c79b7;
 }
-.child2{
-  position: absolute;
+
+.calendar-toolbar > [class$="month-btn"]:focus,
+.month-day:focus,
+.btn:focus {
+  border-radius: 40px;
+  background-color: #8c79b7;
+  color: #f8f7fa;
+}
+
+.goto-buttons {
+  border-top: 1px solid #efefef;
+  padding-block: 18px;
+  display: flex;
+  justify-content: space-evenly;
+}
+
+.btn {
+  background: #ffffff;
+  border: none;
+  border-radius: 40px;
+  padding: 11px 13px;
+  color: #19181a;
+  font-weight: 600;
+  font-size: 0.9rem;
+  margin-right: 1px;
+  box-shadow: 0px 0px 0px #efefef;
+}
+
+.row {
+  justify-content: center;
   width: 100%;
-  height: 100%;
-  padding: 20px;
-  box-sizing: border-box;
-  background: var(--card);
-  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1), 0px -4px 8px rgba(255, 255, 255, 0.8);
-  border-radius: 6px;
-  transition: inherit;
-  --translate: calc(var(--offset) * var(--offset-multiplier));
-  transform: translate(var(--translate), var(--translate));
-  z-index: 5;
+  min-height: 90vh;
 }
+
+/*modal*/
