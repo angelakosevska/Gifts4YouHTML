@@ -414,9 +414,11 @@ a {
   }
 }
 
-/*for pop-up on calendar*/
-.event-popup {
-  display: none;
+ /*for pop-up on calendar*/
+ .event-popup {
+  
+  display: none;  
+  
   background-color: white;
   border: 1px solid #ccc;
   border-radius: 0px 20px 20px 20px;
@@ -427,12 +429,21 @@ a {
 
 .event-popup-content {
   width: fit-content;
-  word-wrap: break-word;
+
+
 }
 
 .event-popup .event-preview {
   font-size: 14px;
+  
 }
+.month-day:hover .event-popup,
+.month-day:focus .event-popup {
+  display: block;
+}
+
+
+
 
 /* for calendar*/
 .calendar-container {

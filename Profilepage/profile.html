@@ -66,199 +66,170 @@
 
     <main>
       <div class="header_wrapper">
-      <nav></nav>
-     
-      <div class="cols-container">
+        <nav></nav>
+    
+        <div class="cols-container">
+          <!-- Left Column -->
           <div class="left-col">
-              <div class="img-container">
-                  <img src="pictures/7d0c5bdfb852124e00e3f784c043a0ec.jpg" alt="Marija Tashevska"/>
-                  <span></span>
-              </div>
-              <h2>Marija Tashevska</h2>
-              <ul class="about">
-                  <li><span>100</span> Followers</li> 
-                  <li><span>120</span> Following</li> 
-                  <li><span>20</span> Posts</li> 
-              </ul>
+            <div class="img-container">
+              <img src="pictures/7d0c5bdfb852124e00e3f784c043a0ec.jpg" alt="Marija Tashevska" />
+              <span></span>
+            </div>
+            <h2>Marija Tashevska</h2>
+            <ul class="about">
+              <li><span>100</span> Followers</li>
+              <li><span>120</span> Following</li>
+              <li><span>20</span> Posts</li>
+            </ul>
+    
+            <div class="content">
+              <p>Welcome to my blog, where I share my favourite gifts from my favourite people.</p>
+            </div>
+         
+            <aside id="calendarSection">
               
-              <div class="content">
-                  <p>
-                      Welcome to my blog, where I share my favourite gifts from my favourite people.
-                  </p>
-              </div>
-              
-           
-              
-              <aside id="calendarSection">
-              
-                <div class="cardCalendar">
-                  <div class="calendar-toolbar">
-                    <button class="prev month-btn">
-                      <i class="fas fa-chevron-left"></i>
-                    </button>
-                    <div class="current-month"></div>
-                    <button class="next month-btn">
-                      <i class="fas fa-chevron-right"></i>
-                    </button>
+              <div class="cardCalendar">
+                <div class="calendar-toolbar">
+                  <button class="prev month-btn">
+                    <i class="fas fa-chevron-left"></i>
+                  </button>
+                  <div class="current-month"></div>
+                  <button class="next month-btn">
+                    <i class="fas fa-chevron-right"></i>
+                  </button>
+                </div>
+                <div class="calendar">
+                  <div class="weekdays">
+                    <div class="weekday-name">Su</div>
+                    <div class="weekday-name">Mo</div>
+                    <div class="weekday-name">Tu</div>
+                    <div class="weekday-name">We</div>
+                    <div class="weekday-name">Th</div>
+                    <div class="weekday-name">Fr</div>
+                    <div class="weekday-name">Sa</div>
                   </div>
-                  <div class="calendar">
-                    <div class="weekdays">
-                      <div class="weekday-name">Su</div>
-                      <div class="weekday-name">Mo</div>
-                      <div class="weekday-name">Tu</div>
-                      <div class="weekday-name">We</div>
-                      <div class="weekday-name">Th</div>
-                      <div class="weekday-name">Fr</div>
-                      <div class="weekday-name">Sa</div>
-                    </div>
-                    <div class="calendar-days"></div>
-                  </div>
-                  <div id="eventPopup" class="event-popup">
-                    <div class="event-popup-content">
-                      <div class="event-preview"></div>
-                    </div>
-                  </div>
-                  <div class="goto-buttons">
-                    <button type="button" class="btn prev-year">Prev Year</button>
-                    <button type="button" class="btn today">Today</button>
-                    <button type="button" class="btn next-year">Next Year</button>
+                  <div class="calendar-days"></div>
+                </div>
+                <div id="eventPopup" class="event-popup">
+                  <div class="event-popup-content">
+                    <div class="event-preview"></div>
                   </div>
                 </div>
-               
-              </aside>
-              
-            </div>
-          
+                <div class="goto-buttons">
+                  <button type="button" class="btn prev-year">Prev Year</button>
+                  <button type="button" class="btn today">Today</button>
+                  <button type="button" class="btn next-year">Next Year</button>
+                </div>
+              </div>
+             
+            </aside>
 
-      <div class="right-col">
-
-          <div class="dashboard">
-            <div id="modal-container">
-            <div class="modal-background">
+            
+          </div>
+    
+          <!-- Right Column -->
+          <div class="right-col">
+            <div class="dashboard">
+              <div id="modal-container">
+                <div class="modal-background">
                   <div class="modal">
                     <div class="modal-content">
-                    <img src="pictures/image1.jpg" alt="aces">
-                    <img src="pictures/image2.jpg" alt="bouqet">
-                    <img src="pictures/image3.jpg" alt="cassete">
-                    <img src="pictures/image4.jpg" alt="necklace">
-                    <img src="pictures/image5.jpg" alt="earrings">
-                    <img src="pictures/image6.jpg" alt="earrings">
-                    <img src="pictures/image7.jpg" alt="earrings">
-                    <img src="pictures/image8.jpg" alt="earrings">
-                    <img src="pictures/image9.jpg" alt="earrings">
-                    <img src="pictures/image10.jpg" alt="earrings">
+                      <img src="pictures/image1.jpg" alt="aces" />
+                      <img src="pictures/image2.jpg" alt="bouquet" />
+                      <img src="pictures/image3.jpg" alt="cassette" />
+                      <img src="pictures/image4.jpg" alt="necklace" />
+                      <img src="pictures/image5.jpg" alt="earrings" />
+                      <img src="pictures/image6.jpg" alt="earrings" />
+                      <img src="pictures/image7.jpg" alt="earrings" />
+                      <img src="pictures/image8.jpg" alt="earrings" />
+                      <img src="pictures/image9.jpg" alt="earrings" />
+                      <img src="pictures/image10.jpg" alt="earrings" />
                     </div>
                   </div>
-                    
-              
+                </div>
+              </div>
+    
+              <!-- Gift Cards -->
+              <div class="card">
+                <button onclick="handleClick('one')">
+                  <h2>From Mihajlo</h2>
+                </button>
+                <svg
+                  class="modal-svg"
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="100%"
+                  height="100%"
+                  preserveAspectRatio="none"
+                >
+                  <rect x="0" y="0" fill="none" width="226" height="162" rx="3" ry="3"></rect>
+                </svg>
+              </div>
+    
+              <div class="card">
+                <button type="button" onclick="handleClick('two')">
+                  <h2>From Maja</h2>
+                </button>
+                <svg
+                  class="modal-svg"
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="100%"
+                  height="100%"
+                  preserveAspectRatio="none"
+                >
+                  <rect x="0" y="0" fill="none" width="226" height="162" rx="3" ry="3"></rect>
+                </svg>
+              </div>
+    
+              <div class="card">
+                <button type="button" onclick="handleClick('three')">
+                  <h2>From Keti</h2>
+                </button>
+                <svg
+                  class="modal-svg"
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="100%"
+                  height="100%"
+                  preserveAspectRatio="none"
+                >
+                  <rect x="0" y="0" fill="none" width="226" height="162" rx="3" ry="3"></rect>
+                </svg>
+              </div>
+    
+              <div class="card">
+                <button type="button" onclick="handleClick('four')">
+                  <h2>From Natalija</h2>
+                </button>
+                <svg
+                  class="modal-svg"
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="100%"
+                  height="100%"
+                  preserveAspectRatio="none"
+                >
+                  <rect x="0" y="0" fill="none" width="226" height="162" rx="3" ry="3"></rect>
+                </svg>
+              </div>
+    
+              <div class="card">
+                <button type="button" onclick="handleClick('five')">
+                  <h2>From Angela</h2>
+                </button>
+                <svg
+                  class="modal-svg"
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="100%"
+                  height="100%"
+                  preserveAspectRatio="none"
+                >
+                  <rect x="0" y="0" fill="none" width="226" height="162" rx="3" ry="3"></rect>
+                </svg>
+              </div>
             </div>
           </div>
-          
-            
-              <div class="card">
-                      <button  onclick="handleClick('one')"><h2>From Mihajlo</h2></button>
-                      <svg
-                          class="modal-svg"
-                          xmlns="http://www.w3.org/2000/svg"
-                          width="100%"
-                          height="100%"
-                          preserveAspectRatio="none"
-                        >
-                          <rect
-                            x="0"
-                            y="0"
-                            fill="none"
-                            width="226"
-                            height="162"
-                            rx="3"
-                            ry="3"
-                          ></rect>
-                        </svg>
-                    </div>
-                    <div class="card">
-                      <button type="button" onclick="handleClick('two')"><h2>From Maja</h2></button>
-                      <svg
-                          class="modal-svg"
-                          xmlns="http://www.w3.org/2000/svg"
-                          width="100%"
-                          height="100%"
-                          preserveAspectRatio="none"
-                        >
-                          <rect
-                            x="0"
-                            y="0"
-                            fill="none"
-                            width="226"
-                            height="162"
-                            rx="3"
-                            ry="3"
-                          ></rect>
-                        </svg>
-                    </div>
-                    <div class="card">
-                      <button type="button" onclick="handleClick('three')"><h2>From Keti</h2></button>
-                      <svg
-                          class="modal-svg"
-                          xmlns="http://www.w3.org/2000/svg"
-                          width="100%"
-                          height="100%"
-                          preserveAspectRatio="none"
-                        >
-                          <rect
-                            x="0"
-                            y="0"
-                            fill="none"
-                            width="226"
-                            height="162"
-                            rx="3"
-                            ry="3"
-                          ></rect>
-                        </svg>
-                    </div>
-                    <div class="card">
-                      <button type="button" onclick="handleClick('four')"><h2>From Natalija</h2></button>
-                      <svg
-                          class="modal-svg"
-                          xmlns="http://www.w3.org/2000/svg"
-                          width="100%"
-                          height="100%"
-                          preserveAspectRatio="none"
-                        >
-                          <rect
-                            x="0"
-                            y="0"
-                            fill="none"
-                            width="226"
-                            height="162"
-                            rx="3"
-                            ry="3"
-                          ></rect>
-                        </svg>
-                    </div>  
-              
-                    <div class="card">
-                      <button type="button" onclick="handleClick('five')"><h2>From Angela</h2></button>
-                        <svg
-                            class="modal-svg"
-                            xmlns="http://www.w3.org/2000/svg"
-                            width="100%"
-                            height="100%"
-                            preserveAspectRatio="none"
-                          >
-                            <rect
-                              x="0"
-                              y="0"
-                              fill="none"
-                              width="226"
-                              height="162"
-                              rx="3"
-                              ry="3"
-                            ></rect>
-                          </svg>
-                    </div>
         </div>
       </div>
     </main>
+    
 
     <footer class="page-footer footer">
       <div class="waves">

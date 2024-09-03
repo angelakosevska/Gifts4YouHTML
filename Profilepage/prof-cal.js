@@ -181,4 +181,3 @@ document.getElementById('toggleUsers').addEventListener('click', function () {
     usersSection.classList.add('d-none');
   }
 });
-
