@@ -425,7 +425,7 @@ ul {
  .event-popup {
   
   display: none;  
-position:sticky;
+  
   background-color: white;
   border: 1px solid #ccc;
   border-radius: 0px 20px 20px 20px;
