@@ -64,10 +64,12 @@ function renderCalendar() {
     }
   }
   // Add click event to calendar days
-  document.querySelectorAll(".month-day").forEach((dayElement) => {
-    dayElement.addEventListener("click", function (e) {
-      let date = this.getAttribute("data-date");
-      showEventPopup(date, e);
+  document.addEventListener("DOMContentLoaded", function () {
+    document.querySelectorAll(".month-day").forEach((dayElement) => {
+      dayElement.addEventListener("click", function (e) {
+        let date = this.getAttribute("data-date");
+        showEventPopup(date, e);
+      });
     });
   });
 }
@@ -76,6 +78,9 @@ function showEventPopup(date, event) {
   const popup = document.getElementById("eventPopup");
   const preview = popup.querySelector(".event-preview");
   const eventData = events[date] || [];
+  const popupRect = popup.getBoundingClientRect();
+  const viewportWidth = window.innerWidth;
+  const viewportHeight = window.innerHeight;
 
   if (selectedDateElement) {
     selectedDateElement.style.backgroundColor = "";
@@ -96,10 +101,21 @@ function showEventPopup(date, event) {
           )
           .join("")
       : "<div>No events for this day.</div>";
-
+      
+      let left = event.clientX + 10;
+      let top = event.clientY + 10;
+      if (left + popupRect.width > viewportWidth) {
+        left = event.clientX - popupRect.width - 10;
+      }
+    
+      // Adjust if the popup would go off the bottom edge of the viewport
+      if (top + popupRect.height > viewportHeight) {
+        top = event.clientY - popupRect.height - 10;
+      }
   popup.style.display = "block";
-  popup.style.left = `${event.pageX + 10}px`; // Position to the right of the click
-  popup.style.top = `${event.pageY + 10}px`; // Position below the click
+  popup.style.left = `${left}px`;
+  popup.style.top = `${top}px`;
+
 }
 
 // Hide the popup when clicking outside

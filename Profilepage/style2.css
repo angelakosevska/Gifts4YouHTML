@@ -423,8 +423,9 @@ ul {
 
  /*for pop-up on calendar*/
  .event-popup {
-  position: absolute;
-  display: none;
+  
+  display: none;  
+position:sticky;
   background-color: white;
   border: 1px solid #ccc;
   border-radius: 0px 20px 20px 20px;
@@ -435,11 +436,13 @@ ul {
 
 .event-popup-content {
   width: fit-content;
-  word-wrap: break-word;
+
+
 }
 
 .event-popup .event-preview {
   font-size: 14px;
+  
 }
 .month-day:hover .event-popup,
 .month-day:focus .event-popup {
