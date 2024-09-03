@@ -310,6 +310,7 @@ ul {
     padding: 16px;
     padding-right: 50px;
   }
+  /*for footer*/
   
   .footer {
     width: 100%;
@@ -323,16 +324,7 @@ ul {
     flex-direction: column;
     padding: 10px 0;
   }
-  .footer {
-    /* Styling for the footer */
-    transition: opacity 0.3s ease; /* Smooth transition */
-  }
   
-  /* Hidden state of the footer */
-  .footer.hidden {
-    opacity: 0;
-    visibility: hidden;
-  }
   .social-icon,
   .menu {
     position: relative;
@@ -430,6 +422,33 @@ ul {
 
 
  /*for pop-up on calendar*/
+ .event-popup {
+  position: absolute;
+  display: none;
+  background-color: white;
+  border: 1px solid #ccc;
+  border-radius: 0px 20px 20px 20px;
+  padding: 16px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  z-index: 1000;
+}
+
+.event-popup-content {
+  width: fit-content;
+  word-wrap: break-word;
+}
+
+.event-popup .event-preview {
+  font-size: 14px;
+}
+.month-day:hover .event-popup,
+.month-day:focus .event-popup {
+  display: block;
+}
+
+
+
+
   /* for calendar*/ 
 .calendar-container {
   width: 25%;

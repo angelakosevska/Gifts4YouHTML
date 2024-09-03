@@ -15,7 +15,10 @@ html.modal-active,
 body.modal-active {
   overflow: hidden;
 }
-
+html.modal-active footer,
+body.modal-active footer {
+  display: none;
+}
 #modal-container {
   position: fixed;
   display: table;
