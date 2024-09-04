@@ -35,7 +35,8 @@
   </head>
 <body>
     <header class="header">
-        <div class="logo"><img src="pictures/13.png" alt="logo"/>
+        <div class="logo">
+          <img src="pictures/13.png" alt="logo"/>
         </div>
         <!--searchbox-->
         <div class="box">
@@ -47,7 +48,8 @@
           </div>
         </div>
         <div class="profile">
-          <svg xmlns="http://www.w3.org/2000/svg" 
+          <button class="homepage-button"onclick="document.location='index.html'">
+            <svg xmlns="http://www.w3.org/2000/svg" 
           width="30" 
           height="30" 
           fill="currentColor" 
@@ -60,7 +62,7 @@
             1.5-1.5V8.207l.646.646a.5.5 0 0 0 .708-.707L13 5.793V2.5a.5.5 0 0
              0-.5-.5h-1a.5.5 0 0 0-.5.5v1.293zM13 7.207V13.5a.5.5 0 0 
              1-.5.5h-9a.5.5 0 0 1-.5-.5V7.207l5-5z"/>
-          </svg>
+          </svg></button>
         </div>
     </header>
 
@@ -72,8 +74,10 @@
           <!-- Left Column -->
           <div class="left-col">
             <div class="img-container">
-              <img src="pictures/7d0c5bdfb852124e00e3f784c043a0ec.jpg" alt="Marija Tashevska" />
-              <span></span>
+              <img class="profile-pic" src="https://t3.ftcdn.net/jpg/03/46/83/96/360_F_346839683_6nAPzbhpSkIpb8pmAwufkC7c5eD7wYws.jpg">
+              <span class="p-image">
+                <i class="fa fa-camera upload-button"></i>
+                <input class="file-upload" type="file" accept="image/*"/></span>
             </div>
             <h2>Marija Tashevska</h2>
             <ul class="about">
@@ -129,7 +133,7 @@
     
           <!-- Right Column -->
           <div class="right-col">
-            <div class="dashboard">
+       <!--<div class="dashboard">
               <div id="modal-container">
                 <div class="modal-background">
                   <div class="modal">
@@ -149,7 +153,7 @@
                 </div>
               </div>
     
-              <!-- Gift Cards -->
+               Gift Cards 
               <div class="card">
                 <button onclick="handleClick('one')">
                   <h2>From Mihajlo</h2>
@@ -225,7 +229,75 @@
                 </svg>
               </div>
             </div>
+            -->     
+            <div class="add">
+              <a href="">
+                  <svg>
+                      <use xlink:href="#collectionIcon">
+                  </svg>
+              </a>
+              <a href="">
+                  <svg>
+                      <use xlink:href="#imageIcon">
+                  </svg>
+              </a>
+              <a href="">
+                  <svg>
+                      <use xlink:href="#personIcon">
+                  </svg>
+              </a>
+              <a href="">
+                  <svg>
+                      <use xlink:href="#eventIcon">
+                  </svg>
+              </a>
           </div>
+                  
+          <svg xmlns="http://www.w3.org/2000/svg" style="display: none;">
+              <symbol xmlns="http://www.w3.org/2000/svg" viewBox="0 0 10 10" id="collectionIcon">
+                  <path stroke="none" d="M0 13a1.5 1.5 0 0 0 1.5 1.5h13A1.5 1.5 0 0 0 16 13V6a1.5 1.5 0 0 0-1.5-1.5h-13A1.5 1.5 0 0 0 0 6zM2 3a.5.5 0 0 0 .5.5h11a.5.5 0 0 0 0-1h-11A.5.5 0 0 0 2 3m2-2a.5.5 0 0 0 .5.5h7a.5.5 0 0 0 0-1h-7A.5.5 0 0 0 4 1"></path>
+                  <polygon stroke="none" points="21.414 6 16 6 16 0.586 21.414 6"></polygon>
+              </symbol>
+              <symbol xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" id="imageIcon">
+                  <circle stroke="none" cx="9" cy="8" r="2"></circle>
+                  <path stroke="none" d="M23,1H1C0.448,1,0,1.447,0,2v20c0,0.553,0.448,1,1,1h22c0.552,0,1-0.447,1-1V2C24,1.447,23.552,1,23,1z M22,3v12l-5-5l-6,7l-5-4l-4,4V3H22z"></path>
+              </symbol>
+              <symbol xmlns="http://www.w3.org/2000/svg" viewBox="0 0 14 16" id="personIcon">
+                  <path stroke="none" d="M1 14s-1 0-1-1 1-4 6-4 6 3 6 4-1 1-1 1zm5-6a3 3 0 1 0 0-6 3 3 0 0 0 0 6"></path>
+                  <path fill-rule="evenodd" d="M13.5 5a.5.5 0 0 1 .5.5V7h1.5a.5.5 0 0 1 0 1H14v1.5a.5.5 0 0 1-1 0V8h-1.5a.5.5 0 0 1 0-1H13V5.5a.5.5 0 0 1 .5-.5"/>
+                </symbol>
+              <symbol xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" id="eventIcon">
+                  <g stroke="none">
+                      <path d="M3.5 0a.5.5 0 0 1 .5.5V1h8V.5a.5.5 0 0 1 1 0V1h1a2 2 0 0 1 2 2v11a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V3a2 2 0 0 1 2-2h1V.5a.5.5 0 0 1 .5-.5M2 2a1 1 0 0 0-1 1v1h14V3a1 1 0 0 0-1-1zm13 3H1v9a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1z"></path>
+                      <path d="M11 7.5a.5.5 0 0 1 .5-.5h1a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-1a.5.5 0 0 1-.5-.5z"/>
+                  </g>
+              </symbol>
+          </svg>
+                      
+          <!-- dribbble -->
+          <a class="dribbble" href="https://dribbble.com/shots/5419580-Add-Button-hover-animation" target="_blank"><img src="https://cdn.dribbble.com/assets/dribbble-ball-mark-2bd45f09c2fb58dbbfb44766d5d1d07c5a12972d602ef8b32204d28fa3dda554.svg" alt=""></a>
+          </div>
+
+        <!-- Modal for adding a new post -->
+          <div id="addPostModal" class="modal">
+            <div class="modal-content">
+              <span class="close">&times;</span>
+              <h2>Add New Post</h2>
+              <form id="addPostForm">
+                <label for="postTitle">Title:</label>
+                <input type="text" id="postTitle" name="postTitle" required>
+                
+                <label for="postContent">Description:</label>
+                <textarea id="postContent" name="postContent" required></textarea>
+
+                <label for="postImage">Upload Photo:</label>
+                <input type="file" id="postImage" name="postImage" accept="image/*" required>
+
+                <button type="submit">Add Post</button>
+              </form>
+            </div>
+          </div>
+          
         </div>
       </div>
     </main>
@@ -271,8 +343,8 @@
       </ul>
       
     </footer>
-      
-    <script type="text/javascript">
+
+  <script type="text/javascript">
                   const modal = document.querySelector("#modal-container");
                   const modalContent = modal.querySelector(".modal-content");
 
@@ -339,8 +411,8 @@
               //for footer to hide when modal is showing
               
              
-    </script>
-      <script type="text/javascript" src="prof-cal.js"></script>
+    </script> 
+      <script src="prof-cal.js"></script>
       <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
     <script
       type="module"

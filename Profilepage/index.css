@@ -9,8 +9,6 @@ h2 {
   font-weight: 400;
 }
 
-
-
 html.modal-active,
 body.modal-active {
   overflow: hidden;
@@ -30,7 +28,7 @@ body.modal-active footer {
   z-index: 1;
   color: #222222;
 }
-/*for modal containers*/
+    /*for modal containers*/
               /*one*/
               #modal-container.one {
                 transform: scale(1);
@@ -442,4 +440,10 @@ body.modal-active footer {
   .card.primary {
     background: var(--gradient);
   }
-  
+  .post-image {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+    margin-top: 10px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
