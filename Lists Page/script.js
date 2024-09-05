@@ -1,36 +1,59 @@
-document.addEventListener('DOMContentLoaded', function() {
-    const checkboxes = document.querySelectorAll('input[type="checkbox"]');
-
-    checkboxes.forEach(checkbox => {
-        checkbox.addEventListener('change', function() {
-            if (this.checked) {
-                this.parentElement.style.opacity = '0.5'; // Dim the item to show it's taken
-            } else {
-                this.parentElement.style.opacity = '1';
-            }
-        });
-    });
+// Wait for the DOM to be fully loaded
+document.addEventListener("DOMContentLoaded", function () {
+  console.log("DOM fully loaded and parsed");
+  renderItems(); // Render items on page load
 });
 
-document.addEventListener("DOMContentLoaded", function () {
-    const addItemButton = document.querySelector(".add-item");
-    const addItemWrapper = document.querySelector(".add-item-wrapper");
-    const closeButton = document.querySelector(".close");
-
-    addItemButton.addEventListener("click", function () {
-      addItemWrapper.classList.toggle("active");
-    });
-
-    closeButton.addEventListener("click", function () {
-      addItemWrapper.classList.remove("active");
-    });
-  });
 
 
-  // Function to create a new list item
-function createListItem(item) {
-    const listItem = document.createElement('li');
-    listItem.classList.add('gift-item');
+
+// Select necessary elements
+const addItemButton = document.querySelector(".add-item");
+const addItemWrapper = document.querySelector(".add-item-wrapper");
+const closeButton = document.querySelector(".close");
+const addItemBtn = document.querySelector(".add-item-btn");
+const giftList = document.querySelector("#gift-list");
+
+// Handle button click
+addItemButton.addEventListener("click", function () {
+  if (addItemWrapper.classList.contains("active")) {
+    handleAddItem();
+  } else {
+    console.log("Opening popup");
+    addItemWrapper.classList.add("active"); // Show the popup
+    addItemButton.style.display = "none"; // Hide the add-item button
+    addItemBtn.style.display = "block"; // Ensure the add-item-btn button is visible
+  }
+});
+
+// Close add item form
+closeButton.addEventListener("click", function () {
+  console.log("Closing popup");
+  addItemWrapper.classList.remove("active"); // Hide the popup
+  addItemButton.style.display = "block"; // Show the add-item button
+  addItemBtn.style.display = "none"; // Hide the add-item-btn button
+});
+
+// Save items to localStorage
+function saveItemsToLocalStorage(items) {
+  console.log("Saving items to localStorage:", items);
+  localStorage.setItem("giftListItems", JSON.stringify(items));
+}
+
+// Load items from localStorage
+function loadItemsFromLocalStorage() {
+  const items = localStorage.getItem("giftListItems");
+  console.log("Loaded items from localStorage:", items ? JSON.parse(items) : []);
+  return items ? JSON.parse(items) : [];
+}
+
+// Render items in the gift list
+function renderItems() {
+  const items = loadItemsFromLocalStorage();
+  giftList.innerHTML = ""; // Clear existing items
+  items.forEach((item, index) => {
+    const listItem = document.createElement("li");
+    listItem.classList.add("gift-item");
     listItem.innerHTML = `
       <div class="gift-details">
         <h3>${item.name}</h3>
@@ -39,79 +62,58 @@ function createListItem(item) {
         <p>${item.notes}</p>
       </div>
       <div class="got-it">
-        <input type="checkbox" id="item${item.id}" name="item${item.id}" class="checkbox" />
-        <label for="item${item.id}">I'll get it</label>
+        <input type="checkbox" id="item${index}" name="item${index}" class="checkbox" />
+        <label for="item${index}">I'll get it</label>
       </div>
     `;
-    return listItem;
-  }
-  
-  // Function to save items to local storage
-  function saveToLocalStorage(items) {
-    localStorage.setItem('giftList', JSON.stringify(items));
-  }
-  
-  // Function to load items from local storage
-  function loadFromLocalStorage() {
-    const storedItems = localStorage.getItem('giftList');
-    return storedItems ? JSON.parse(storedItems) : [];
-  }
-  
-  // Function to add an item
-  function addItem() {
-    const name = document.querySelector('.item-name').value;
-    const description = document.querySelector('.item-description').value;
-    const link = document.querySelector('.item-link').value;
-    const notes = document.querySelector('.item-notes').value;
-  
-    if (name && description && link) {
-      const items = loadFromLocalStorage();
-      const newItem = {
-        id: items.length ? items[items.length - 1].id + 1 : 1,
-        name,
-        description,
-        link,
-        notes
-      };
-  
-      items.push(newItem);
-      saveToLocalStorage(items);
-  
-      const list = document.getElementById('gift-list');
-      list.appendChild(createListItem(newItem));
-  
-      // Clear the input fields
-      document.querySelector('.item-name').value = '';
-      document.querySelector('.item-description').value = '';
-      document.querySelector('.item-link').value = '';
-      document.querySelector('.item-notes').value = '';
-  
-      // Close the add item section
-      document.querySelector('.add-item-wrapper').style.display = 'none';
-    } else {
-      alert('Please fill out all required fields.');
-    }
-  }
-  
-  // Load items from local storage when the page loads
-  document.addEventListener('DOMContentLoaded', () => {
-    const items = loadFromLocalStorage();
-    const list = document.getElementById('gift-list');
-    items.forEach(item => {
-      list.appendChild(createListItem(item));
-    });
+    giftList.appendChild(listItem);
   });
-  
-  // Add event listener to the "Add Item" button
-  document.querySelector('.add-item-btn').addEventListener('click', addItem);
-  
-  // Add event listener to the close button of the add item section
-  document.querySelector('.close').addEventListener('click', () => {
-    document.querySelector('.add-item-wrapper').style.display = 'none';
+}
+
+
+// Handle add item form submission
+function handleAddItem() {
+  console.log("Handling add item");
+
+  // Get input values
+  const itemName = document.querySelector(".item-name").value;
+  const itemDescription = document.querySelector(".item-description").value;
+  const itemLink = document.querySelector(".item-link").value;
+  const itemNotes = document.querySelector(".item-notes").value;
+
+  // Validate inputs
+  if (!itemName.trim()) {
+    alert("Item name is required.");
+    return;
+  }
+
+  // Load existing items
+  const items = loadItemsFromLocalStorage();
+
+  // Add new item
+  items.push({
+    name: itemName,
+    description: itemDescription,
+    link: itemLink,
+    notes: itemNotes,
   });
-  
-  // Add event listener to the main "Add Item" button
-  document.querySelector('.add-item').addEventListener('click', () => {
-    document.querySelector('.add-item-wrapper').style.display = 'block';
-  });
-  
+
+  // Save updated items
+  saveItemsToLocalStorage(items);
+
+  // Render updated list
+  renderItems();
+
+  // Clear form fields after adding
+  document.querySelector(".item-name").value = "";
+  document.querySelector(".item-description").value = "";
+  document.querySelector(".item-link").value = "";
+  document.querySelector(".item-notes").value = "";
+
+  // Hide form after adding
+  addItemWrapper.classList.remove("active");
+  addItemButton.style.display = "block"; // Show the add-item button
+}
+function deleteItems() {
+  localStorage.clear();
+}

@@ -2,13 +2,15 @@ body {
   margin: 0;
   background-color: #c4b2ed;
 }
+@import url("https://fonts.googleapis.com/css2?family=Noto+Serif:ital,wght@0,100..900;1,100..900&display=swap");
 * {
   box-sizing: border-box;
   margin: 0;
   padding: 0;
+  font-family: "Noto Serif", serif;
 }
 
-@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700;800;900&display=swap");
+
 
 /* for header*/
 .header {
@@ -152,11 +154,13 @@ p {
   align-items: center;
   justify-content: space-between;
   margin-bottom: 15px;
-  background-color: #fafafa;
+  background: linear-gradient(90deg, #588ec4, transparent);
   padding: 10px;
   border-radius: 5px;
 }
-
+.gift-item:hover {
+  background: linear-gradient(90deg, #8c79b7, transparent);
+}
 .gift-item img {
   width: 100px;
   height: 100px;
@@ -174,7 +178,7 @@ p {
 }
 
 .gift-details a {
-  color: #348dec;
+  color: #b2d0f1;
   text-decoration: none;
 }
 
@@ -210,11 +214,12 @@ input[type="checkbox"] {
   overflow: hidden;
   border-radius: 5px;
   background-color: #fff;
-
+  display: noen;
   transition: max-height 0.5s ease;
 }
 .add-item-wrapper.active {
   max-height: 300px;
+  display: block;
 }
 .add-item-header {
   width: 100%;
