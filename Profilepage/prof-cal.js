@@ -3,6 +3,156 @@ let calendarDays = document.querySelector(".calendar-days");
 let today = new Date();
 let date = new Date();
 let selectedDateElement = null;
+//for uploading profile photo
+document.addEventListener('DOMContentLoaded', function() {
+  function readURL(input) {
+      if (input.files && input.files[0]) {
+          var reader = new FileReader();
+
+          reader.onload = function(e) {
+              var profilePic = document.querySelector('.profile-pic');
+              if (profilePic) {
+                  profilePic.src = e.target.result;
+              }
+          }
+6
+          reader.readAsDataURL(input.files[0]);
+      }
+  }
+  var fileUpload = document.querySelector('.file-upload');
+  if (fileUpload) {
+      fileUpload.addEventListener('change', function() {
+          readURL(this);
+      });
+  }
+
+  var uploadButton = document.querySelector('.upload-button');
+  if (uploadButton) {
+      uploadButton.addEventListener('click', function() {
+          if (fileUpload) {
+              fileUpload.click();
+          }
+      });
+  }
+  });
+  //for uploading a post
+  document.addEventListener('DOMContentLoaded', function() {
+    // Function to handle adding a new item (post, collection, people, or event)
+    function addNewItem(type, title, content, imageUrl) {
+        const rightCol = document.querySelector('.right-col');
+
+        // Create a new card element
+        const newCard = document.createElement('div');
+        newCard.classList.add('card');
+
+        // Set the content of the card based on the type
+        if (type === 'post') {
+            newCard.innerHTML = `
+                <h2>${title}</h2>
+                <img src="${imageUrl}" alt="${title}" class="post-image">
+                <p>${content}</p>
+            `;
+        } else if (type === 'collection') {
+            newCard.innerHTML = `<h2>${title}</h2><p>${content}</p>`;
+        } else if (type === 'people') {
+            newCard.innerHTML = `<h2>${title}</h2><p>${content}</p>`;
+        } else if (type === 'event') {
+            newCard.innerHTML = `<h2>${title}</h2><p>${content}</p>`;
+        }
+
+        // Append the new card to the right column
+        rightCol.appendChild(newCard);
+    }
+
+    // Add event listeners to the .add button links
+    const addButtons = document.querySelectorAll('.add a');
+    addButtons.forEach((button, index) => {
+        button.addEventListener('click', function(event) {
+            event.preventDefault();
+            
+            let modal;
+            if (index === 0) {
+                modal = document.getElementById('addCollectionModal');
+            } else if (index === 1) {
+                modal = document.getElementById('addPostModal');
+            } else if (index === 2) {
+                modal = document.getElementById('addPersonModal');
+            } else if (index === 3) {
+                modal = document.getElementById('addEventModal');
+            }
+
+            if (modal) {
+                modal.style.display = "block";
+            }
+        });
+    });
+
+    // Close modals
+    const closeModalButtons = document.querySelectorAll('.modal .close');
+    closeModalButtons.forEach(button => {
+        button.addEventListener('click', function() {
+            button.closest('.modal').style.display = "none";
+        });
+    });
+
+    // Handle form submission for adding posts
+    document.getElementById('addPostForm').addEventListener('submit', function(event) {
+        event.preventDefault();
+
+        const title = document.getElementById('postTitle').value;
+        const content = document.getElementById('postContent').value;
+        const imageInput = document.getElementById('postImage');
+
+        // Read the uploaded image file
+        if (imageInput.files && imageInput.files[0]) {
+            const reader = new FileReader();
+            reader.onload = function(e) {
+                const imageUrl = e.target.result;
+                addNewItem('post', title, content, imageUrl);
+                document.getElementById('addPostModal').style.display = "none";
+            }
+            reader.readAsDataURL(imageInput.files[0]);
+        }
+    });
+
+    // Handle form submission for adding collections
+    document.getElementById('addCollectionForm').addEventListener('submit', function(event) {
+        event.preventDefault();
+        const title = document.getElementById('collectionTitle').value;
+        const content = document.getElementById('collectionDescription').value;
+        addNewItem('collection', title, content);
+        document.getElementById('addCollectionModal').style.display = "none";
+    });
+
+    // Handle form submission for adding people
+    document.getElementById('addPersonForm').addEventListener('submit', function(event) {
+        event.preventDefault();
+        const title = document.getElementById('personName').value;
+        const content = document.getElementById('personDetails').value;
+        addNewItem('people', title, content);
+        document.getElementById('addPersonModal').style.display = "none";
+    });
+
+    // Handle form submission for adding events
+    document.getElementById('addEventForm').addEventListener('submit', function(event) {
+        event.preventDefault();
+        const title = document.getElementById('eventName').value;
+        const content = document.getElementById('eventDetails').value;
+        addNewItem('event', title, content);
+        document.getElementById('addEventModal').style.display = "none";
+    });
+
+    // Close modal when clicking outside of the modal content
+    window.addEventListener('click', function(event) {
+        if (event.target.classList.contains('modal')) {
+            event.target.style.display = "none";
+        }
+    });
+});
+
+
+
+
 
 let events = {
   "2024-08-14": [
@@ -181,3 +331,39 @@ document.getElementById('toggleUsers').addEventListener('click', function () {
     usersSection.classList.add('d-none');
   }
 });
+
+
+document.addEventListener('DOMContentLoaded', function() {
+
+  function readURL(input) {
+      if (input.files && input.files[0]) {
+          var reader = new FileReader();
+
+          reader.onload = function(e) {
+              var profilePic = document.querySelector('.profile-pic');
+              if (profilePic) {
+                  profilePic.src = e.target.result;
+              }
+          }
+
+          reader.readAsDataURL(input.files[0]);
+      }
+  }
+
+  var fileUpload = document.querySelector('.file-upload');
+  if (fileUpload) {
+      fileUpload.addEventListener('change', function() {
+          readURL(this);
+      });
+  }
+
+  var uploadButton = document.querySelector('.upload-button');
+  if (uploadButton) {
+      uploadButton.addEventListener('click', function() {
+          if (fileUpload) {
+              fileUpload.click();
+          }
+      });
+  }
+
+  });
