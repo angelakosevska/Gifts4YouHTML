@@ -1,6 +1,5 @@
 body {
   margin: 0;
-  background-color: #c4b2ed;
 }
 @import url("https://fonts.googleapis.com/css2?family=Noto+Serif:ital,wght@0,100..900;1,100..900&display=swap");
 * {
@@ -9,8 +8,6 @@ body {
   padding: 0;
   font-family: "Noto Serif", serif;
 }
-
-
 
 /* for header*/
 .header {
@@ -136,17 +133,42 @@ main {
   justify-content: left;
   font-size: 16px;
 }
+.buttons-top{
+  display: flex;
+  gap: 8px;
+  align-items: center;
+}
+.edit-btn{
+  width: fit-content;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #aa7bc3;
+  border: 2px solid #aa7bc3;
+  opacity: 5;
+  border-radius: 20px;
+  padding: 4px 8px;
+  margin-top: 8px;
+  background-color: transparent;
+  cursor: pointer;
+}
 
 h1,
 h2 {
-  color: #333;
+  color: #000000;
 }
 p {
-  margin-bottom: 5px;
+  margin-bottom: 4px;
 }
 #gift-list {
   list-style-type: none;
   padding: 0;
+}
+#gift-list-title{
+  margin-top: 8px;
+  border-top: 1px solid #9a9a9a;
+  padding-top: 4px;
 }
 
 .gift-item {
@@ -169,16 +191,16 @@ p {
 
 .gift-details h3 {
   margin: 0;
-  color: #555;
+  color: #000000;
 }
 
 .gift-details p {
   margin: 5px 0;
-  color: #777;
+  color: #505050;
 }
 
 .gift-details a {
-  color: #b2d0f1;
+  color: #09ff6b;
   text-decoration: none;
 }
 
@@ -189,7 +211,11 @@ p {
 input[type="checkbox"] {
   margin-right: 15px;
   transform: scale(2.5);
-  accent-color: #1633c8;
+  accent-color: #6f81dd; /*od headero bojata*/
+}
+.checked-item {
+  color: #588ec4;
+  background: transparent;
 }
 
 /* za add item*/
@@ -199,7 +225,7 @@ input[type="checkbox"] {
   display: flex;
   align-items: center;
   justify-content: center;
-  color: #aa7bc3;
+  color: #ffffff;
   border: 2px solid #aa7bc3;
   opacity: 5;
   border-radius: 20px;
@@ -209,17 +235,46 @@ input[type="checkbox"] {
   cursor: pointer;
 }
 .add-item-wrapper {
-  width: 40%;
+  width: 30%;
   max-height: 0;
   overflow: hidden;
   border-radius: 5px;
   background-color: #fff;
-  display: noen;
-  transition: max-height 0.5s ease;
+  display: none;
+} /**/
+.add-item-wrapper {
+  position: fixed; /* Fixed positioning to stay in view */
+  top: 50%; /* Center vertically */
+  left: 50%; /* Center horizontally */
+  transform: translate(
+    -50%,
+    -50%
+  ); /* Offset by half of its own width and height */
+  width: 80%;
+  max-width: 500px; /* Optional: Set a maximum width */
+  height: auto;
+  background-color: #fff;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  z-index: 1000; /* Ensure it’s above other content */
+  display: none; /* Initially hidden */
+  opacity: 0; /* Initially invisible */
+  transition: opacity 0.3s ease, transform 0.3s ease; /* Smooth transition */
+  backdrop-filter: blur;
 }
+
 .add-item-wrapper.active {
-  max-height: 300px;
+  display: block; /* Show the modal when active */
+  opacity: 1;
+  transform: translate(-50%, -50%) scale(1); /* Center and scale the modal */
+}
+
+.add-item-wrapper.active {
+  max-height: fit-content;
   display: block;
+  position: absolute;
+  top: 50%;
+  left: 50%;
 }
 .add-item-header {
   width: 100%;

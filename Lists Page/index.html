@@ -54,27 +54,58 @@
       </div>
     </header>
     <main>
+      <div class="add-item-wrapper">
+        <div class="add-item-header">
+          <div class="title">Add Item</div>
+          <i class="bi bi-x-circle close"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20"  class="bi bi-x-circle" viewBox="0 0 16 16">
+            <path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14m0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16"/>
+            <path d="M4.646 4.646a.5.5 0 0 1 .708 0L8 7.293l2.646-2.647a.5.5 0 0 1 .708.708L8.707 8l2.647 2.646a.5.5 0 0 1-.708.708L8 8.707l-2.646 2.647a.5.5 0 0 1-.708-.708L7.293 8 4.646 5.354a.5.5 0 0 1 0-.708"/>
+          </svg></i>
+        </div>
+        <div class="add-item-body">
+          <div class="add-item-input">
+            <input type="text" placeholder="Item name" class="item-name" />
+          </div>
+          <div class="add-item-input">
+            <input
+              type="text"
+              placeholder="Item description"
+              class="item-description"
+            />
+          </div>
+          <div class="add-item-input">
+            <input
+              type="text"
+              placeholder="Item link"
+              class="item-link"
+            />
+          </div>
+        
+          <div class="add-item-input">
+            <input
+              type="text"
+              placeholder="Item notes"
+              class="item-notes"
+            />
+          </div>
+        </div>
+
+      </div>
       <div class="event-container">
         <div class="event-top">
           <div class="event-user">
             <h1>Event Title</h1>
-            <div class="user">
-              <img
-                class="profile-picture-user"
-                src="https://images.unsplash.com/photo-1667053508464-eb11b394df83?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTV8fHByb2ZpbGUlMjBwaWN0dXJlfGVufDB8fDB8fHww"
-              />
-
-              <div class="name">
-                <p class="first-last-name">Angela Kosevska</p>
-                <p class="username">@angela123</p>
-              </div>
-            </div>
+        
           </div>
-
-          <svg
+         <div class="buttons-top">
+          <button class="add-item add-item-btn">
+            Add item
+          </button>
+          <button class="edit-btn">
+            <svg
             xmlns="http://www.w3.org/2000/svg"
-            width="28"
-            height="28"
+            width="20"
+            height="20"
             fill="currentColor"
             class="bi bi-pencil-square"
             viewBox="0 0 16 16"
@@ -89,58 +120,31 @@
               d="M1 13.5A1.5 1.5 0 0 0 2.5 15h11a1.5 1.5 0 0 0 1.5-1.5v-6a.5.5 0 0 0-1 0v6a.5.5 0 0 1-.5.5h-11a.5.5 0 0 1-.5-.5v-11a.5.5 0 0 1 .5-.5H9a.5.5 0 0 0 0-1H2.5A1.5 1.5 0 0 0 1 2.5z"
             />
           </svg>
+          </button>
+     </div>
         </div>
+        <div class="user">
+          <img
+            class="profile-picture-user"
+            src="https://images.unsplash.com/photo-1667053508464-eb11b394df83?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTV8fHByb2ZpbGUlMjBwaWN0dXJlfGVufDB8fDB8fHww"
+          />
 
+          <div class="name">
+          
+            <p class="username">@angela123</p>
+          </div>
+        </div>
         <p>Date: August 25, 2024</p>
         <p>Location: 123 Party Lane</p>
 
-        <h2>Gift List</h2>
+        <h2 id="gift-list-title">Gift List</h2>
         <ul id="gift-list">
         
 
           <!-- Add more items as needed -->
         </ul>
         <!--Adding a new item-->
-        <div class="add-item-wrapper">
-          <div class="add-item-header">
-            <div class="title">Add Item</div>
-            <i class="bi bi-x-circle close"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20"  class="bi bi-x-circle" viewBox="0 0 16 16">
-              <path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14m0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16"/>
-              <path d="M4.646 4.646a.5.5 0 0 1 .708 0L8 7.293l2.646-2.647a.5.5 0 0 1 .708.708L8.707 8l2.647 2.646a.5.5 0 0 1-.708.708L8 8.707l-2.646 2.647a.5.5 0 0 1-.708-.708L7.293 8 4.646 5.354a.5.5 0 0 1 0-.708"/>
-            </svg></i>
-          </div>
-          <div class="add-item-body">
-            <div class="add-item-input">
-              <input type="text" placeholder="Item name" class="item-name" />
-            </div>
-            <div class="add-item-input">
-              <input
-                type="text"
-                placeholder="Item description"
-                class="item-description"
-              />
-            </div>
-            <div class="add-item-input">
-              <input
-                type="text"
-                placeholder="Item link"
-                class="item-link"
-              />
-            </div>
-          
-            <div class="add-item-input">
-              <input
-                type="text"
-                placeholder="Item notes"
-                class="item-notes"
-              />
-            </div>
-          </div>
- 
-        </div>
-        <button class="add-item add-item-btn">
-          Add item
-        </button>
+       
       </div>
    
       </div>

@@ -4,9 +4,6 @@ document.addEventListener("DOMContentLoaded", function () {
   renderItems(); // Render items on page load
 });
 
-
-
-
 // Select necessary elements
 const addItemButton = document.querySelector(".add-item");
 const addItemWrapper = document.querySelector(".add-item-wrapper");
@@ -21,7 +18,6 @@ addItemButton.addEventListener("click", function () {
   } else {
     console.log("Opening popup");
     addItemWrapper.classList.add("active"); // Show the popup
-    addItemButton.style.display = "none"; // Hide the add-item button
     addItemBtn.style.display = "block"; // Ensure the add-item-btn button is visible
   }
 });
@@ -31,7 +27,6 @@ closeButton.addEventListener("click", function () {
   console.log("Closing popup");
   addItemWrapper.classList.remove("active"); // Hide the popup
   addItemButton.style.display = "block"; // Show the add-item button
-  addItemBtn.style.display = "none"; // Hide the add-item-btn button
 });
 
 // Save items to localStorage
@@ -43,7 +38,10 @@ function saveItemsToLocalStorage(items) {
 // Load items from localStorage
 function loadItemsFromLocalStorage() {
   const items = localStorage.getItem("giftListItems");
-  console.log("Loaded items from localStorage:", items ? JSON.parse(items) : []);
+  console.log(
+    "Loaded items from localStorage:",
+    items ? JSON.parse(items) : []
+  );
   return items ? JSON.parse(items) : [];
 }
 
@@ -51,6 +49,7 @@ function loadItemsFromLocalStorage() {
 function renderItems() {
   const items = loadItemsFromLocalStorage();
   giftList.innerHTML = ""; // Clear existing items
+
   items.forEach((item, index) => {
     const listItem = document.createElement("li");
     listItem.classList.add("gift-item");
@@ -66,15 +65,14 @@ function renderItems() {
         <label for="item${index}">I'll get it</label>
       </div>
     `;
-    giftList.appendChild(listItem);
+    giftList.insertBefore(listItem, giftList.firstChild);
   });
+  // Add event listeners to new checkboxes
+  addCheckboxListeners();
 }
-
 
 // Handle add item form submission
 function handleAddItem() {
-  console.log("Handling add item");
-
   // Get input values
   const itemName = document.querySelector(".item-name").value;
   const itemDescription = document.querySelector(".item-description").value;
@@ -114,6 +112,36 @@ function handleAddItem() {
   addItemWrapper.classList.remove("active");
   addItemButton.style.display = "block"; // Show the add-item button
 }
-function deleteItems() {
-  localStorage.clear();
+
+// Handle checkbox change
+function handleCheckboxChange(event) {
+  const checkbox = event.target;
+  const listItem = checkbox.closest(".gift-item");
+
+  // Find the .gift-details and the checkbox label
+  const giftDetails = listItem.querySelector(".gift-details");
+  const label = listItem.querySelector(".got-it label");
+
+  if (checkbox.checked) {
+    giftDetails.classList.add("checked-item");
+    listItem.classList.add("checked-item");
+  } else {
+    giftDetails.classList.remove("checked-item");
+    listItem.classList.remove("checked-item");
+  }
 }
+
+// Add event listeners to checkboxes
+function addCheckboxListeners() {
+  const checkboxes = document.querySelectorAll(".checkbox");
+  checkboxes.forEach((checkbox) => {
+    checkbox.addEventListener("change", handleCheckboxChange);
+  });
+}
+
+// Initial call to add event listeners
+document.addEventListener("DOMContentLoaded", function () {
+  console.log("DOM fully loaded and parsed");
+  renderItems(); // Render items on page load
+  addCheckboxListeners(); // Add event listeners to existing checkboxes
+});
