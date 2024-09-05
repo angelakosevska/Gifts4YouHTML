@@ -57,10 +57,20 @@
       <div class="add-item-wrapper">
         <div class="add-item-header">
           <div class="title">Add Item</div>
-          <i class="bi bi-x-circle close"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20"  class="bi bi-x-circle" viewBox="0 0 16 16">
-            <path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14m0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16"/>
-            <path d="M4.646 4.646a.5.5 0 0 1 .708 0L8 7.293l2.646-2.647a.5.5 0 0 1 .708.708L8.707 8l2.647 2.646a.5.5 0 0 1-.708.708L8 8.707l-2.646 2.647a.5.5 0 0 1-.708-.708L7.293 8 4.646 5.354a.5.5 0 0 1 0-.708"/>
-          </svg></i>
+          <i class="bi bi-x-circle close"
+            ><svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="20"
+              height="20"
+              class="bi bi-x-circle"
+              viewBox="0 0 16 16"
+            >
+              <path
+                d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14m0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16"
+              />
+              <path
+                d="M4.646 4.646a.5.5 0 0 1 .708 0L8 7.293l2.646-2.647a.5.5 0 0 1 .708.708L8.707 8l2.647 2.646a.5.5 0 0 1-.708.708L8 8.707l-2.646 2.647a.5.5 0 0 1-.708-.708L7.293 8 4.646 5.354a.5.5 0 0 1 0-.708"
+              /></svg ></i>
         </div>
         <div class="add-item-body">
           <div class="add-item-input">
@@ -74,54 +84,90 @@
             />
           </div>
           <div class="add-item-input">
+            <input type="text" placeholder="Item link" class="item-link" />
+          </div>
+
+          <div class="add-item-input">
+            <input type="text" placeholder="Item notes" class="item-notes" />
+          </div>
+        </div>
+      </div>
+
+      <!-- Edit Event Popup -->
+      <div class="edit-event-wrapper">
+        <div class="edit-event-header">
+          <div class="title">Edit Event</div>
+          <i class="bi bi-x-circle close">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="20"
+              height="20"
+              class="bi bi-x-circle"
+              viewBox="0 0 16 16"
+            >
+              <path
+                d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14m0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16"
+              />
+              <path
+                d="M4.646 4.646a.5.5 0 0 1 .708 0L8 7.293l2.646-2.647a.5.5 0 0 1 .708.708L8.707 8l2.647 2.646a.5.5 0 0 1-.708.708L8 8.707l-2.646 2.647a.5.5 0 0 1-.708-.708L7.293 8 4.646 5.354a.5.5 0 0 1 0-.708"
+              />
+            </svg>
+          </i>
+        </div>
+        <div class="edit-event-body">
+          <div class="edit-event-input">
+            <input type="text" placeholder="Event Title" class="event-title" />
+          </div>
+          <div class="edit-event-input">
+            <input type="date" placeholder="Event Date" class="event-date" />
+          </div>
+          <div class="edit-event-input">
             <input
               type="text"
-              placeholder="Item link"
-              class="item-link"
+              placeholder="Event Location"
+              class="event-location"
             />
           </div>
-        
-          <div class="add-item-input">
+          <div class="edit-event-input">
             <input
-              type="text"
-              placeholder="Item notes"
-              class="item-notes"
+              type="time"
+              placeholder="Event Time (optional)"
+              class="event-time"
             />
           </div>
         </div>
-
+        <div class="edit-event-footer">
+          <button class="save-edit-btn">Save</button>
+        </div>
       </div>
+
       <div class="event-container">
         <div class="event-top">
           <div class="event-user">
             <h1>Event Title</h1>
-        
           </div>
-         <div class="buttons-top">
-          <button class="add-item add-item-btn">
-            Add item
-          </button>
-          <button class="edit-btn">
-            <svg
-            xmlns="http://www.w3.org/2000/svg"
-            width="20"
-            height="20"
-            fill="currentColor"
-            class="bi bi-pencil-square"
-            viewBox="0 0 16 16"
-            style="color: rgb(255, 255, 255)"
-            class="edit"
-          >
-            <path
-              d="M15.502 1.94a.5.5 0 0 1 0 .706L14.459 3.69l-2-2L13.502.646a.5.5 0 0 1 .707 0l1.293 1.293zm-1.75 2.456-2-2L4.939 9.21a.5.5 0 0 0-.121.196l-.805 2.414a.25.25 0 0 0 .316.316l2.414-.805a.5.5 0 0 0 .196-.12l6.813-6.814z"
-            />
-            <path
-              fill-rule="evenodd"
-              d="M1 13.5A1.5 1.5 0 0 0 2.5 15h11a1.5 1.5 0 0 0 1.5-1.5v-6a.5.5 0 0 0-1 0v6a.5.5 0 0 1-.5.5h-11a.5.5 0 0 1-.5-.5v-11a.5.5 0 0 1 .5-.5H9a.5.5 0 0 0 0-1H2.5A1.5 1.5 0 0 0 1 2.5z"
-            />
-          </svg>
-          </button>
-     </div>
+          <div class="buttons-top">
+            <button class="add-item add-item-btn">Add item</button>
+            <button class="edit-btn">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="20"
+                height="20"
+                fill="currentColor"
+                class="bi bi-pencil-square"
+                viewBox="0 0 16 16"
+                style="color: rgb(255, 255, 255)"
+              >
+                <path
+                  d="M15.502 1.94a.5.5 0 0 1 0 .706L14.459 3.69l-2-2L13.502.646a.5.5 0 0 1 .707 0l1.293 1.293zm-1.75 2.456-2-2L4.939 9.21a.5.5 0 0 0-.121.196l-.805 2.414a.25.25 0 0 0 .316.316l2.414-.805a.5.5 0 0 0 .196-.12l6.813-6.814z"
+                />
+                <path
+                  fill-rule="evenodd"
+                  d="M1 13.5A1.5 1.5 0 0 0 2.5 15h11a1.5 1.5 0 0 0 1.5-1.5v-6a.5.5 0 0 0-1 0v6a.5.5 0 0 1-.5.5h-11a.5.5 0 0 1-.5-.5v-11a.5.5 0 0 1 .5-.5H9a.5.5 0 0 0 0-1H2.5A1.5 1.5 0 0 0 1 2.5z"
+                />
+              </svg>
+            </button>
+          </div>
         </div>
         <div class="user">
           <img
@@ -130,7 +176,7 @@
           />
 
           <div class="name">
-          
+            <p class="first-last-name">Angela Kosevska</p>
             <p class="username">@angela123</p>
           </div>
         </div>
@@ -139,16 +185,10 @@
 
         <h2 id="gift-list-title">Gift List</h2>
         <ul id="gift-list">
-        
-
           <!-- Add more items as needed -->
         </ul>
         <!--Adding a new item-->
-       
       </div>
-   
-      </div>
-     
     </main>
     <footer class="page-footer footer">
       <div class="waves">

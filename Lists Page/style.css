@@ -133,18 +133,17 @@ main {
   justify-content: left;
   font-size: 16px;
 }
-.buttons-top{
+.buttons-top {
   display: flex;
   gap: 8px;
   align-items: center;
 }
-.edit-btn{
+.edit-btn {
   width: fit-content;
   height: 40px;
   display: flex;
   align-items: center;
   justify-content: center;
-  color: #aa7bc3;
   border: 2px solid #aa7bc3;
   opacity: 5;
   border-radius: 20px;
@@ -165,7 +164,7 @@ p {
   list-style-type: none;
   padding: 0;
 }
-#gift-list-title{
+#gift-list-title {
   margin-top: 8px;
   border-top: 1px solid #9a9a9a;
   padding-top: 4px;
@@ -235,7 +234,7 @@ input[type="checkbox"] {
   cursor: pointer;
 }
 .add-item-wrapper {
-  width: 30%;
+  width: 100%;
   max-height: 0;
   overflow: hidden;
   border-radius: 5px;
@@ -250,7 +249,7 @@ input[type="checkbox"] {
     -50%,
     -50%
   ); /* Offset by half of its own width and height */
-  width: 80%;
+  width: 100%;
   max-width: 500px; /* Optional: Set a maximum width */
   height: auto;
   background-color: #fff;
@@ -264,18 +263,14 @@ input[type="checkbox"] {
 }
 
 .add-item-wrapper.active {
-  display: block; /* Show the modal when active */
-  opacity: 1;
-  transform: translate(-50%, -50%) scale(1); /* Center and scale the modal */
-}
-
-.add-item-wrapper.active {
   max-height: fit-content;
   display: block;
+  opacity: 1;
   position: absolute;
   top: 50%;
   left: 50%;
 }
+
 .add-item-header {
   width: 100%;
   height: 50px;
@@ -474,4 +469,94 @@ input[type="checkbox"] {
   100% {
     background-positon-x: 0px;
   }
+}
+
+.edit-event-wrapper {
+  display: none; /* Initially hidden */
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  width: 100%;
+  max-width: 500px;
+  transform: translate(-50%, -50%);
+  height: auto;
+  background-color: #ffffff;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+  border-radius: 20px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  display: none; /* Initially hidden */
+  opacity: 0; /* Initially invisible */
+  transition: opacity 0.3s ease, transform 0.3s ease; /* Smooth transition */
+  backdrop-filter: blur;
+  padding: 8px;
+}
+.edit-event-wrapper.active {
+  max-height: fit-content;
+  display: flex;
+  flex-direction: column;
+  opacity: 1;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+}
+
+.edit-event-header {
+  width: 100%;
+  height: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 20px;
+  color: #373c4f;
+  border-bottom: 1px solid #f5f5f5;
+}
+.edit-event-header .close {
+  font-size: 1.5rem;
+  cursor: pointer;
+}
+
+.edit-event-body {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  padding: 8px;
+}
+
+.edit-event-input {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+ 
+  
+}
+
+.edit-event-input input {
+  width: 100%;
+  padding: 0.5rem;
+}
+
+.edit-event-footer {
+  background-color: #fff;
+  padding: 1rem;
+  border-top: 1px solid #ddd;
+  text-align: right;
+}
+
+.save-edit-btn {
+  padding: 0.5rem 1rem;
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  cursor: pointer;
+}
+
+.save-edit-btn:hover {
+  background-color: #0056b3;
 }
