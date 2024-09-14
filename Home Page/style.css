@@ -328,7 +328,6 @@ span {
 
 /* for people you may know */
 
-
 .one-user {
   max-width: 420px;
   display: flex;
@@ -351,8 +350,8 @@ span {
 .user {
   display: flex;
   flex-direction: row;
-  flex-wrap:nowrap;
-  
+  flex-wrap: nowrap;
+
   align-items: center;
   gap: 10px;
   border-radius: 40px;

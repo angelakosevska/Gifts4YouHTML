@@ -12,16 +12,15 @@ const addItemWrapper = document.querySelector(".add-item-wrapper");
 const closeButton = document.querySelector(".close");
 const addItemBtn = document.querySelector(".add-item-btn");
 const giftList = document.querySelector("#gift-list");
+const submitItemButton = document.querySelector(".submit-item-btn");
 
 // Handle add item button click
 addItemButton.addEventListener("click", function () {
-  if (addItemWrapper.classList.contains("active")) {
-    handleAddItem();
-  } else {
-    console.log("Opening popup");
-    addItemWrapper.classList.add("active"); // Show the popup
-    addItemBtn.style.display = "block"; // Ensure the add-item-btn button is visible
-  }
+  addItemWrapper.classList.add("active"); // Show the popup
+  addItemBtn.style.display = "block"; // Ensure the add-item-btn button is visible
+});
+submitItemButton.addEventListener("click", function () {
+  handleAddItem(); // Call the function to handle adding the item
 });
 
 // Close add item form
@@ -194,7 +193,8 @@ function loadEventDetails() {
   if (eventDetails) {
     document.querySelector(".event-title").value = eventDetails.title || "";
     document.querySelector(".event-date").value = eventDetails.date || "";
-    document.querySelector(".event-location").value = eventDetails.location || "";
+    document.querySelector(".event-location").value =
+      eventDetails.location || "";
     document.querySelector(".event-time").value = eventDetails.time || "";
   }
 }
