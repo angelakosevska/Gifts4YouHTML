@@ -134,15 +134,31 @@
       <div class="event-container">
         <div class="event-top">
           <div class="event-user">
-            <h1>Event Title</h1>
+            <h1 class="event-title">Event Title</h1>
           </div>
           <div class="buttons-top">
-            <button class="add-item add-item-btn">+</button>
+            <button class="add-item add-item-btn">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="24"
+                height="24"
+                fill="currentColor"
+                class="bi bi-plus-circle"
+                viewBox="0 0 16 16"
+              >
+                <path
+                  d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14m0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16"
+                />
+                <path
+                  d="M8 4a.5.5 0 0 1 .5.5v3h3a.5.5 0 0 1 0 1h-3v3a.5.5 0 0 1-1 0v-3h-3a.5.5 0 0 1 0-1h3v-3A.5.5 0 0 1 8 4"
+                />
+              </svg>
+            </button>
             <button class="edit-btn">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
-                width="20"
-                height="20"
+                width="24"
+                height="24"
                 fill="currentColor"
                 class="bi bi-pencil-square"
                 viewBox="0 0 16 16"
@@ -166,18 +182,17 @@
           />
 
           <div class="name">
-            <p class="first-last-name">Angela Kosevska</p>
-            <p class="username">@angela123</p>
+            <h5 class="first-last-name">Angela Kosevska</h5>
+            <h5 class="username">@angela123</h5>
           </div>
         </div>
-        <p>Date: August 25, 2024</p>
-        <p>Location: 123 Party Lane</p>
+        <p><b>Date:</b> August 25, 2024</p>
+        <p><b>Location:</b> 123 Party Lane</p>
 
-        <h2 id="gift-list-title">Gift List</h2>
+        <h2 id="gift-list-title">  Gift List</h2>
         <ul id="gift-list">
           <!-- Add more items as needed -->
         </ul>
-        <!--Adding a new item-->
       </div>
     </main>
     <footer class="page-footer footer">

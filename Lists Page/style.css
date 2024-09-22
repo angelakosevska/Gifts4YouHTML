@@ -78,7 +78,7 @@ main {
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
-  margin: 0px auto 20px;
+  margin: 0px 0px 20px;
   min-height: 90vh;
   gap: 16px;
   justify-content: center;
@@ -90,17 +90,19 @@ main {
   padding: 40px;
   margin: 16px auto 70px;
   border-radius: 30px;
+  color: white;
 }
+
 .event-top {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  flex-wrap: wrap-reverse;
+  flex-wrap: wrap;
 }
-.event-user {
-  display: flex;
-  align-items: center;
-  gap: 10px;
+.event-title {
+  color: whitesmoke;
+  font-weight: 700;
+  flex-wrap: wrap;
 }
 .user {
   display: flex;
@@ -110,11 +112,12 @@ main {
   gap: 10px;
   border-radius: 40px;
   height: fit-content;
+  font-size: large;
 }
 .name {
   display: flex;
   gap: 10px;
-  align-items: center;
+  align-items: center
 }
 .profile-picture-user {
   width: 30px;
@@ -125,14 +128,13 @@ main {
 .first-last-name {
   margin: 0;
   justify-content: left;
-  font-weight: 400;
-  font-size: 14px;
+
 }
 .username {
   margin: 0;
   padding: 0;
   justify-content: left;
-  font-size: 16px;
+
 }
 .buttons-top {
   display: flex;
@@ -145,18 +147,18 @@ main {
   display: flex;
   align-items: center;
   justify-content: center;
-  border: 2px solid #aa7bc3;
+  border: 0px solid #aa7bc3;
   opacity: 5;
   border-radius: 20px;
-  padding: 4px 8px;
-  margin-top: 8px;
+
   background-color: transparent;
   cursor: pointer;
 }
 
 h1,
 h2 {
-  color: #000000;
+  color: whitesmoke;
+
 }
 p {
   margin-bottom: 4px;
@@ -167,8 +169,9 @@ p {
 }
 #gift-list-title {
   margin-top: 8px;
-  border-top: 1px solid #9a9a9a;
+  border-top: 1px solid #cacaca;
   padding-top: 4px;
+  font-weight: 500;
 }
 
 .gift-item {
@@ -191,16 +194,16 @@ p {
 
 .gift-details h3 {
   margin: 0;
-  color: #000000;
+  color: #eeeeee;
 }
 
 .gift-details p {
   margin: 5px 0;
-  color: #505050;
+  color: #ffe0e0;
 }
 
 .gift-details a {
-  color: #09ff6b;
+  color: #fffb00;
   text-decoration: none;
 }
 
@@ -210,12 +213,14 @@ p {
 
 input[type="checkbox"] {
   margin-right: 15px;
-  transform: scale(2.5);
+  transform: scale(3);
   accent-color: #6f81dd; /*od headero bojata*/
+  border: 0px;
 }
 .checked-item {
-  color: #588ec4;
+  color: #dfdfdf;
   background: transparent;
+
 }
 
 /* za add item*/
@@ -229,8 +234,6 @@ input[type="checkbox"] {
   border: 2px solid #aa7bc3;
   opacity: 5;
   border-radius: 20px;
-  padding: 4px 8px;
-  margin-top: 8px;
   background-color: transparent;
   cursor: pointer;
 }
@@ -244,6 +247,7 @@ input[type="checkbox"] {
   ); /* Offset by half of its own width and height */
 
   height: auto;
+  width: 50vw;
   background-color: #fff;
   border-radius: 10px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
@@ -251,8 +255,7 @@ input[type="checkbox"] {
   display: none; /* Initially hidden */
   opacity: 0; /* Initially invisible */
   transition: opacity 0.3s ease, transform 0.3s ease; /* Smooth transition */
-  backdrop-filter: blur;
-
+  backdrop-filter: blur(5px);
 }
 
 .add-item-wrapper.active {
@@ -325,7 +328,7 @@ input[type="checkbox"] {
 .add-item-body .add-item-input input:focus::placeholder {
   color: var(--primary-clr);
 }
-.btn{
+.btn {
   height: 40px;
   font-size: 1rem;
   font-weight: 500;
@@ -338,7 +341,7 @@ input[type="checkbox"] {
   margin-bottom: 8px;
 }
 
-.btn:hover{
+.btn:hover {
   border: 1px solid #8c79b7;
   color: #8c79b7;
 }
@@ -352,11 +355,9 @@ input[type="checkbox"] {
   align-items: center;
   justify-content: center;
   color: #ffffff;
-  border: 2px solid #aa7bc3;
+  border: 0px solid #aa7bc3;
   opacity: 5;
   border-radius: 20px;
-  padding: 4px 8px;
-  margin-top: 8px;
   background-color: transparent;
   cursor: pointer;
 }
@@ -378,7 +379,6 @@ input[type="checkbox"] {
   opacity: 0; /* Initially invisible */
   transition: opacity 0.3s ease, transform 0.3s ease; /* Smooth transition */
   backdrop-filter: blur;
-
 }
 
 .edit-item-wrapper.active {
@@ -570,23 +570,22 @@ input[type="checkbox"] {
   }
 }
 
-
-
-
-/* Default styles - for mobile first approach */
-
 /* For screens that are at least 576px wide (small devices like smartphones in landscape mode) */
-@media screen and (min-width: 576px) {
-  .add-item-wrapperX{
-    max-width: 80%;
+@media screen and (max-width: 576px) {
+  .event-container{
+    width: 100%;
+    margin: 0px;
+    margin-bottom: 90px;
+    border-radius: 0px;
+  }
+  main {
+    padding: 0px;
+    margin: 0px;
   }
 }
 
 /* For screens that are at least 768px wide (medium devices like tablets) */
 @media screen and (min-width: 768px) {
-  .add-item-wrapperX{
-    max-width: 50%;
-  }
 }
 
 /* For screens that are at least 992px wide (large devices like laptops) */
@@ -595,7 +594,4 @@ input[type="checkbox"] {
 
 /* For screens that are at least 1200px wide (extra-large devices like desktops) */
 @media screen and (min-width: 1200px) {
-  .add-item-wrapperX{
-    max-width: 50%;
-  }
 }
