@@ -57,22 +57,24 @@
       <div class="add-item-wrapper">
         <div class="add-item-header">
           <div class="title">Add Item</div>
-          <i class="bi bi-x-circle close"
-            ><svg
-              xmlns="http://www.w3.org/2000/svg"
-              width="20"
-              height="20"
-              class="bi bi-x-circle"
-              viewBox="0 0 16 16"
-            >
-              <path
-                d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14m0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16"
-              />
-              <path
-                d="M4.646 4.646a.5.5 0 0 1 .708 0L8 7.293l2.646-2.647a.5.5 0 0 1 .708.708L8.707 8l2.647 2.646a.5.5 0 0 1-.708.708L8 8.707l-2.646 2.647a.5.5 0 0 1-.708-.708L7.293 8 4.646 5.354a.5.5 0 0 1 0-.708"
-              />
-            </svg>
-          </i>
+          <div>
+            <i class="bi bi-x-circle close"
+              ><svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="20"
+                height="20"
+                class="bi bi-x-circle"
+                viewBox="0 0 16 16"
+              >
+                <path
+                  d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14m0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16"
+                />
+                <path
+                  d="M4.646 4.646a.5.5 0 0 1 .708 0L8 7.293l2.646-2.647a.5.5 0 0 1 .708.708L8.707 8l2.647 2.646a.5.5 0 0 1-.708.708L8 8.707l-2.646 2.647a.5.5 0 0 1-.708-.708L7.293 8 4.646 5.354a.5.5 0 0 1 0-.708"
+                />
+              </svg>
+            </i>
+          </div>
         </div>
         <div class="add-item-body">
           <div class="add-item-input">
@@ -97,10 +99,10 @@
       </div>
 
       <!-- Edit Event Popup -->
-      <div class="edit-item-wrapper">
-        <div class="edit-item-header">
+      <div class="edit-event-wrapper">
+        <div class="edit-event-header">
           <div class="title">Edit event</div>
-          <i class="bi bi-x-circle close"
+          <i class="bi bi-x-circle closeEdit"
             ><svg
               xmlns="http://www.w3.org/2000/svg"
               width="20"
@@ -117,18 +119,18 @@
             </svg>
           </i>
         </div>
-        <div class="edit-item-body">
-          <div class="edit-item-input">
+        <div class="edit-event-body">
+          <div class="edit-event-input">
             <input type="text" placeholder="Event title" class="event-title" />
           </div>
-          <div class="edit-item-input">
+          <div class="edit-event-input">
             <input type="date" placeholder="Date" class="event-date" />
           </div>
-          <div class="edit-item-input">
+          <div class="edit-event-input">
             <input type="text" placeholder="Location" class="event-location" />
           </div>
         </div>
-        <button class="submit-item-btn btn">Update</button>
+        <button class="save-edit-btn btn">Update</button>
       </div>
 
       <div class="event-container">
@@ -189,7 +191,7 @@
         <p><b>Date:</b> August 25, 2024</p>
         <p><b>Location:</b> 123 Party Lane</p>
 
-        <h2 id="gift-list-title">  Gift List</h2>
+        <h2 id="gift-list-title">Gift List</h2>
         <ul id="gift-list">
           <!-- Add more items as needed -->
         </ul>

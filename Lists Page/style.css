@@ -117,7 +117,7 @@ main {
 .name {
   display: flex;
   gap: 10px;
-  align-items: center
+  align-items: center;
 }
 .profile-picture-user {
   width: 30px;
@@ -128,13 +128,11 @@ main {
 .first-last-name {
   margin: 0;
   justify-content: left;
-
 }
 .username {
   margin: 0;
   padding: 0;
   justify-content: left;
-
 }
 .buttons-top {
   display: flex;
@@ -158,7 +156,6 @@ main {
 h1,
 h2 {
   color: whitesmoke;
-
 }
 p {
   margin-bottom: 4px;
@@ -214,13 +211,12 @@ p {
 input[type="checkbox"] {
   margin-right: 15px;
   transform: scale(3);
-  accent-color: #6f81dd; /*od headero bojata*/
+  accent-color: #8c79b7; /*od headero bojata*/
   border: 0px;
 }
 .checked-item {
-  color: #dfdfdf;
+  color: #8c79b7;
   background: transparent;
-
 }
 
 /* za add item*/
@@ -271,13 +267,20 @@ input[type="checkbox"] {
   justify-content: center;
   padding: 5px 10px;
 }
-
 .add-item-header {
   width: 100%;
   height: 50px;
   display: flex;
   align-items: center;
   justify-content: space-between;
+  padding: 0 20px;
+  color: #373c4f;
+  border-bottom: 1px solid #f5f5f5;
+}
+.edit-event-body {
+  width: 100%;
+  height: auto;
+  display: flex;
   padding: 0 20px;
   color: #373c4f;
   border-bottom: 1px solid #f5f5f5;
@@ -362,7 +365,7 @@ input[type="checkbox"] {
   cursor: pointer;
 }
 
-.edit-item-wrapper {
+.edit-event-wrapper {
   top: 50%; /* Center vertically */
   left: 50%; /* Center horizontally */
   transform: translate(
@@ -381,7 +384,7 @@ input[type="checkbox"] {
   backdrop-filter: blur;
 }
 
-.edit-item-wrapper.active {
+.edit-event-wrapper.active {
   max-height: fit-content;
   display: block;
   opacity: 1;
@@ -395,7 +398,7 @@ input[type="checkbox"] {
   padding: 5px 10px;
 }
 
-.edit-item-header {
+.edit-event-header {
   width: 100%;
   height: 50px;
   display: flex;
@@ -405,18 +408,18 @@ input[type="checkbox"] {
   color: #373c4f;
   border-bottom: 1px solid #f5f5f5;
 }
-.edit-item-header .close {
+.edit-event-header .closeEdit {
   font-size: 1.5rem;
   cursor: pointer;
 }
-.edit-item-header .close:hover {
+.edit-event-header .closeEdit:hover {
   color: var(--primary-clr);
 }
-.edit-item-header .title {
+.edit-event-header .title {
   font-size: 1.2rem;
   font-weight: 500;
 }
-.edit-item-body {
+.edit-event-body {
   width: 100%;
   height: 100%;
   display: flex;
@@ -424,14 +427,14 @@ input[type="checkbox"] {
   gap: 5px;
   padding: 20px;
 }
-.edit-item-body .edit-item-input {
+.edit-event-body .edit-event-input {
   width: 100%;
   height: 40px;
   display: flex;
   align-items: center;
   gap: 10px;
 }
-.edit-item-body .edit-item-input input {
+.edit-event-body .edit-event-input input {
   width: 100%;
   height: 100%;
   outline: none;
@@ -440,15 +443,15 @@ input[type="checkbox"] {
   padding: 0 10px;
   font-size: 1rem;
   font-weight: 400;
-  color: #373c4f;
-}
-.edit-item-body .edit-item-input input::placeholder {
   color: #b587f6;
 }
-.edit-item-body .edit-item-input input:focus {
+.edit-event-body .edit-event-input input::placeholder {
+  color: #b587f6;
+}
+.edit-event-body .edit-event-input input:focus {
   border-bottom: 1px solid var(--primary-clr);
 }
-.edit-item-body .edit-item-input input:focus::placeholder {
+.edit-event-body .edit-event-input input:focus::placeholder {
   color: var(--primary-clr);
 }
 /* for footer */
@@ -572,7 +575,7 @@ input[type="checkbox"] {
 
 /* For screens that are at least 576px wide (small devices like smartphones in landscape mode) */
 @media screen and (max-width: 576px) {
-  .event-container{
+  .event-container {
     width: 100%;
     margin: 0px;
     margin-bottom: 90px;

@@ -16,9 +16,12 @@ const submitItemButton = document.querySelector(".submit-item-btn");
 
 // Handle add item button click
 addItemButton.addEventListener("click", function () {
+  closeAllModals(); // Ensure other modals are closed
   addItemWrapper.classList.add("active"); // Show the popup
   addItemBtn.style.display = "block"; // Ensure the add-item-btn button is visible
 });
+
+// Handle item submission
 submitItemButton.addEventListener("click", function () {
   handleAddItem(); // Call the function to handle adding the item
 });
@@ -58,7 +61,7 @@ function renderItems() {
       <div class="gift-details">
         <h3>${item.name}</h3>
         <p>${item.description}</p>
-        <a href="${item.link}" target="_blank">Buy Online</a>
+        <a href="${item.link}" target="_blank">Link</a>
         <p>${item.notes}</p>
       </div>
       <div class="got-it">
@@ -113,6 +116,29 @@ function handleAddItem() {
   addItemWrapper.classList.remove("active");
   addItemButton.style.display = "block"; // Show the add-item button
 }
+// Function to move checked items to the bottom of the list
+function moveCheckedItemsToBottom() {
+  const items = loadItemsFromLocalStorage();
+  const checkedItems = [];
+  const uncheckedItems = [];
+
+  // Separate checked and unchecked items
+  items.forEach((item, index) => {
+    const checkbox = document.getElementById(`item${index}`);
+    if (checkbox && checkbox.checked) {
+      checkedItems.push(item);
+    } else {
+      uncheckedItems.push(item);
+    }
+  });
+
+  // Combine unchecked items followed by checked items
+  const updatedItems = [...uncheckedItems, ...checkedItems];
+
+  // Save the updated items to localStorage
+  saveItemsToLocalStorage(updatedItems);
+  renderItems(); // Re-render the list to reflect changes
+}
 
 // Handle checkbox change
 function handleCheckboxChange(event) {
@@ -130,6 +156,8 @@ function handleCheckboxChange(event) {
     giftDetails.classList.remove("checked-item");
     listItem.classList.remove("checked-item");
   }
+
+  moveCheckedItemsToBottom();
 }
 
 // Add event listeners to checkboxes
@@ -140,15 +168,23 @@ function addCheckboxListeners() {
   });
 }
 
-// Select necessary elements for edit event popup
+// Close all modals
+function closeAllModals() {
+  addItemWrapper.classList.remove("active"); // Hide add item popup
+  editEventWrapper.classList.remove("active"); // Hide edit event popup
+}
+
+// For edit event popup
 const editEventButton = document.querySelector(".edit-btn");
 const editEventWrapper = document.querySelector(".edit-event-wrapper");
-const editCloseButton = document.querySelector(".edit-event-wrapper .close");
+const editCloseButton = document.querySelector(
+  ".edit-event-wrapper .closeEdit"
+);
 const saveEditButton = document.querySelector(".save-edit-btn");
 
 // Handle edit button click
 editEventButton.addEventListener("click", function () {
-  console.log("Opening edit event popup");
+  closeAllModals(); // Ensure other modals are closed
   editEventWrapper.classList.add("active"); // Show the popup
   loadEventDetails(); // Load event details into form fields
 });
@@ -181,10 +217,22 @@ saveEditButton.addEventListener("click", function () {
     time: eventTime,
   };
 
+  console.log("Saving event details:", eventDetails); // Log the event details before saving
+
+  // Update local storage
   localStorage.setItem("eventDetails", JSON.stringify(eventDetails));
+
+  // Clear the input fields after saving
+  document.querySelector(".event-title").value = "";
+  document.querySelector(".event-date").value = "";
+  document.querySelector(".event-location").value = "";
+  document.querySelector(".event-time").value = "";
 
   // Close the popup after saving
   editEventWrapper.classList.remove("active");
+
+  // Optionally update the displayed event details
+  displayEventDetails(eventDetails);
 });
 
 // Load event details from local storage
@@ -197,4 +245,10 @@ function loadEventDetails() {
       eventDetails.location || "";
     document.querySelector(".event-time").value = eventDetails.time || "";
   }
+}
+
+// Display event details (optional function)
+function displayEventDetails(details) {
+  // Update your UI with the new event details here if needed
+  // For example, update some elements in your main view
 }
