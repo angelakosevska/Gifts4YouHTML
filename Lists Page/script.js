@@ -65,16 +65,17 @@ function renderItems() {
         <p>${item.notes}</p>
       </div>
       <div class="got-it">
-        <input type="checkbox" id="item${index}" name="item${index}" class="checkbox" />
+        <input type="checkbox" id="item${index}" name="item${index}" class="checkbox" ${item.checked ? 'checked' : ''} />
         <label for="item${index}">I'll get it</label>
       </div>
     `;
-    giftList.insertBefore(listItem, giftList.firstChild);
+    giftList.appendChild(listItem);
   });
   // Add event listeners to new checkboxes
   addCheckboxListeners();
 }
 
+// Handle add item form submission
 // Handle add item form submission
 function handleAddItem() {
   // Get input values
@@ -92,12 +93,13 @@ function handleAddItem() {
   // Load existing items
   const items = loadItemsFromLocalStorage();
 
-  // Add new item
-  items.push({
+  // Add new item at the top of the unchecked items
+  items.unshift({ // Using unshift to add to the beginning of the array
     name: itemName,
     description: itemDescription,
     link: itemLink,
     notes: itemNotes,
+    checked: false // Initialize as unchecked
   });
 
   // Save updated items
@@ -116,48 +118,55 @@ function handleAddItem() {
   addItemWrapper.classList.remove("active");
   addItemButton.style.display = "block"; // Show the add-item button
 }
-// Function to move checked items to the bottom of the list
-function moveCheckedItemsToBottom() {
+
+// Rearrange items based on checked status
+function rearrangeItems() {
   const items = loadItemsFromLocalStorage();
-  const checkedItems = [];
-  const uncheckedItems = [];
+  const checkedItems = items.filter(item => item.checked);
+  const uncheckedItems = items.filter(item => !item.checked);
+  
+  // Rearranged items: all unchecked items first, then checked items
+  const rearrangedItems = [...uncheckedItems, ...checkedItems];
 
-  // Separate checked and unchecked items
-  items.forEach((item, index) => {
-    const checkbox = document.getElementById(`item${index}`);
-    if (checkbox && checkbox.checked) {
-      checkedItems.push(item);
-    } else {
-      uncheckedItems.push(item);
-    }
-  });
-
-  // Combine unchecked items followed by checked items
-  const updatedItems = [...uncheckedItems, ...checkedItems];
-
-  // Save the updated items to localStorage
-  saveItemsToLocalStorage(updatedItems);
-  renderItems(); // Re-render the list to reflect changes
+  // Save rearranged items
+  saveItemsToLocalStorage(rearrangedItems);
+  
+  // Render updated list
+  renderItems();
 }
+
 
 // Handle checkbox change
 function handleCheckboxChange(event) {
   const checkbox = event.target;
   const listItem = checkbox.closest(".gift-item");
+  const index = Array.from(giftList.children).indexOf(listItem);
 
-  // Find the .gift-details and the checkbox label
-  const giftDetails = listItem.querySelector(".gift-details");
-  const label = listItem.querySelector(".got-it label");
+  // Load existing items
+  const items = loadItemsFromLocalStorage();
 
-  if (checkbox.checked) {
-    giftDetails.classList.add("checked-item");
-    listItem.classList.add("checked-item");
-  } else {
-    giftDetails.classList.remove("checked-item");
-    listItem.classList.remove("checked-item");
-  }
+  // Update the checked status of the item
+  items[index].checked = checkbox.checked;
 
-  moveCheckedItemsToBottom();
+  // Save updated items
+  saveItemsToLocalStorage(items);
+
+  // Rearrange items based on their checked status
+  rearrangeItems();
+}
+
+// Rearrange items based on checked status
+function rearrangeItems() {
+  const items = loadItemsFromLocalStorage();
+  const checkedItems = items.filter(item => item.checked);
+  const uncheckedItems = items.filter(item => !item.checked);
+  const rearrangedItems = [...uncheckedItems, ...checkedItems]; // Unchecked first, then checked
+
+  // Save rearranged items
+  saveItemsToLocalStorage(rearrangedItems);
+  
+  // Render updated list
+  renderItems();
 }
 
 // Add event listeners to checkboxes
@@ -177,9 +186,7 @@ function closeAllModals() {
 // For edit event popup
 const editEventButton = document.querySelector(".edit-btn");
 const editEventWrapper = document.querySelector(".edit-event-wrapper");
-const editCloseButton = document.querySelector(
-  ".edit-event-wrapper .closeEdit"
-);
+const editCloseButton = document.querySelector(".edit-event-wrapper .closeEdit");
 const saveEditButton = document.querySelector(".save-edit-btn");
 
 // Handle edit button click
@@ -195,60 +202,5 @@ editCloseButton.addEventListener("click", function () {
   editEventWrapper.classList.remove("active"); // Hide the popup
 });
 
-// Save edited event details
-saveEditButton.addEventListener("click", function () {
-  // Get input values
-  const eventTitle = document.querySelector(".event-title").value;
-  const eventDate = document.querySelector(".event-date").value;
-  const eventLocation = document.querySelector(".event-location").value;
-  const eventTime = document.querySelector(".event-time").value;
-
-  // Validate inputs
-  if (!eventTitle.trim()) {
-    alert("Event title is required.");
-    return;
-  }
-
-  // Save event details to local storage
-  const eventDetails = {
-    title: eventTitle,
-    date: eventDate,
-    location: eventLocation,
-    time: eventTime,
-  };
-
-  console.log("Saving event details:", eventDetails); // Log the event details before saving
-
-  // Update local storage
-  localStorage.setItem("eventDetails", JSON.stringify(eventDetails));
-
-  // Clear the input fields after saving
-  document.querySelector(".event-title").value = "";
-  document.querySelector(".event-date").value = "";
-  document.querySelector(".event-location").value = "";
-  document.querySelector(".event-time").value = "";
-
-  // Close the popup after saving
-  editEventWrapper.classList.remove("active");
-
-  // Optionally update the displayed event details
-  displayEventDetails(eventDetails);
-});
-
-// Load event details from local storage
-function loadEventDetails() {
-  const eventDetails = JSON.parse(localStorage.getItem("eventDetails"));
-  if (eventDetails) {
-    document.querySelector(".event-title").value = eventDetails.title || "";
-    document.querySelector(".event-date").value = eventDetails.date || "";
-    document.querySelector(".event-location").value =
-      eventDetails.location || "";
-    document.querySelector(".event-time").value = eventDetails.time || "";
-  }
-}
-
-// Display event details (optional function)
-function displayEventDetails(details) {
-  // Update your UI with the new event details here if needed
-  // For example, update some elements in your main view
-}
+localStorage.removeItem("giftListItems");
+//izbrishi go ova ko kj evnesvash ubaj itemi

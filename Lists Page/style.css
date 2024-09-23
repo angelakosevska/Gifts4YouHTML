@@ -189,14 +189,20 @@ p {
   margin-right: 20px;
 }
 
+.gift-details{
+  width: 100%;
+  overflow-wrap: break-word;
+}
+
 .gift-details h3 {
   margin: 0;
   color: #eeeeee;
+ 
 }
 
 .gift-details p {
   margin: 5px 0;
-  color: #ffe0e0;
+  color: #fff1f1;
 }
 
 .gift-details a {
@@ -584,7 +590,9 @@ input[type="checkbox"] {
   main {
     padding: 0px;
     margin: 0px;
+    background-color: #4970b5;
   }
+
 }
 
 /* For screens that are at least 768px wide (medium devices like tablets) */
