@@ -39,7 +39,7 @@ document.addEventListener('DOMContentLoaded', function() {
   document.addEventListener('DOMContentLoaded', function() {
     // Function to handle adding a new item (post, collection, people, or event)
     function addNewItem(type, title, content, imageUrl) {
-        const rightCol = document.querySelector('.right-col');
+        const rightCol = document.querySelector('.gallery');
 
         // Create a new card element
         const newCard = document.createElement('div');
@@ -71,9 +71,7 @@ document.addEventListener('DOMContentLoaded', function() {
             event.preventDefault();
             
             let modal;
-            if (index === 0) {
-                modal = document.getElementById('addCollectionModal');
-            } else if (index === 1) {
+           if (index === 0) {
                 modal = document.getElementById('addPostModal');
             } else if (index === 2) {
                 modal = document.getElementById('addPersonModal');
@@ -114,34 +112,6 @@ document.addEventListener('DOMContentLoaded', function() {
             reader.readAsDataURL(imageInput.files[0]);
         }
     });
-
-    // Handle form submission for adding collections
-    document.getElementById('addCollectionForm').addEventListener('submit', function(event) {
-        event.preventDefault();
-        const title = document.getElementById('collectionTitle').value;
-        const content = document.getElementById('collectionDescription').value;
-        addNewItem('collection', title, content);
-        document.getElementById('addCollectionModal').style.display = "none";
-    });
-
-    // Handle form submission for adding people
-    document.getElementById('addPersonForm').addEventListener('submit', function(event) {
-        event.preventDefault();
-        const title = document.getElementById('personName').value;
-        const content = document.getElementById('personDetails').value;
-        addNewItem('people', title, content);
-        document.getElementById('addPersonModal').style.display = "none";
-    });
-
-    // Handle form submission for adding events
-    document.getElementById('addEventForm').addEventListener('submit', function(event) {
-        event.preventDefault();
-        const title = document.getElementById('eventName').value;
-        const content = document.getElementById('eventDetails').value;
-        addNewItem('event', title, content);
-        document.getElementById('addEventModal').style.display = "none";
-    });
-
     // Close modal when clicking outside of the modal content
     window.addEventListener('click', function(event) {
         if (event.target.classList.contains('modal')) {

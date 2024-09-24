@@ -201,6 +201,7 @@ a {
   }
   .header_wrapper .cols-container .right-col {
     padding: 25px;
+
   }
 
   @media (min-width: 1017px) {
@@ -628,6 +629,17 @@ aside {
 }
 
 /*for add button*/
+.header_wrapper .cols-container .gallery{
+  display:flex;
+  width: 100%;
+  height: auto;
+justify-content: center;
+gap: 20px;
+flex-wrap:wrap;
+flex-direction: column;
+align-items: center;
+}
+
 .add {
   width: 84px;
   height: 84px;
@@ -760,6 +772,11 @@ aside {
 
 
 /* Modal container */
+.card{
+width: 30vw;
+position: center;
+
+}
 .modal {
   display: none;
   position: fixed;
@@ -786,7 +803,8 @@ aside {
 /* Close button */
 .close {
   color: #aaa;
-  float: right;
+  left: 45%;
+  position: relative;
   font-size: 28px;
   font-weight: bold;
 }
@@ -807,20 +825,23 @@ form label {
   margin-bottom: 5px;
   font-weight: bold;
 }
-
+#postImage{
+  background-color: #675b85;
+  color: white;
+}
 form input,
 form textarea {
   margin-bottom: 10px;
   padding: 8px;
   font-size: 16px;
-  border: 1px solid #ccc;
+  border: 2px solid #9191912b;
   border-radius: 5px;
 }
 
 form button {
   padding: 10px;
-  background-color: #8c79b7;
-  color: white;
+  background-color: #8c79b7c3;
+  color: rgb(255, 255, 255);
   border: none;
   border-radius: 5px;
   cursor: pointer;
