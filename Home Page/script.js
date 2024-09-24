@@ -151,6 +151,9 @@ document.querySelectorAll(".btn").forEach(function (element) {
 });
 
 
+
+//for calendar and users
+
 //hide
 document.getElementById('toggleCalendar').addEventListener('click', function () {
   const calendarSection = document.getElementById('calendarSection');

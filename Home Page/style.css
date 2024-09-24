@@ -5,94 +5,29 @@ body {
   box-sizing: border-box;
   margin: 0;
   padding: 0;
-  font-family: "Noto Serif", sansserif;
+  font-family: "Noto Serif", serif;
 }
 
 @import url("https://fonts.googleapis.com/css2?family=Noto+Serif:ital,wght@0,100..900;1,100..900&display=swap");
 
 /* for header*/
-
-.header {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  width: 100%;
+header {
+  width: 100vw;
   height: 80px;
-  align-items: center;
-  gap: 5px;
-  color: #fefefe;
-  background: #2e4288;
-}
-
-.logo {
-  position: absolute;
-  width: 30%;
-  left: 60%;
-  color: #ffffff;
-  font-size: 26px;
-  font-weight: 700;
-  padding: 50px;
-  transform: translateX(-50%);
-}
-.searchBar {
   display: flex;
-
-  justify-content: flex-start;
-}
-.search-bar-form {
-  display: flex;
+  flex-wrap: wrap;
   flex-direction: row;
-  justify-content: center;
-  align-items: center;
-}
-.input-search {
-  width: 60%;
-  height: 40px;
-  border-top-left-radius: 40px;
-  border-bottom-left-radius: 40px;
-  padding: 10px 20px;
-  border: 2px solid #8c79b7;
-}
-.input-search:focus {
-  outline: none;
-  border: 1px solid #ffffff;
-}
-.btn-search {
-  height: 40px;
-  border-top-right-radius: 40px;
-  border-bottom-right-radius: 40px;
-  padding: 10px 20px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  outline: none;
-  border: 0px solid #ffffff;
-  background-color: #8c79b7;
-  color: #fefefe;
-}
-.btn-search:hover {
-  background-color: #fefefe;
-  color: #8c79b7;
-}
-.profile {
-  flex: 1;
-  width: 30%;
-  display: flex;
-  justify-content: flex-end;
-  padding: 16px;
+  background-color: red;
 }
 
 /* for main section that contains calendar posts and people yoiu may know*/
 main {
-  width: 100%;
-  padding: 16px 0;
+  width: 100vw;
+  padding-top: 8px;
+
 }
-.row {
-  justify-content: center;
-  width: 100%;
-  min-height: 90vh;
-}
-/*for popup*/
+
+/*for event in calendar popup*/
 .event-popup {
   position: absolute;
   display: none;
@@ -113,13 +48,10 @@ main {
 }
 
 /* for calendar*/
-.calendar-container {
-  width: 25%;
-  margin: 0 auto;
-}
 
 .cardCalendar {
   width: 320px;
+  max-width: 400px;
   height: fit-content;
   margin: 0 auto;
   background-color: #ffffff;
@@ -247,9 +179,10 @@ aside {
 .posts-container {
   display: flex;
   flex-direction: column;
+  justify-items: left;
   gap: 8px;
-  margin-bottom: 100px;
-  width: 30%;
+  width: 40vw;
+  margin: 16px auto 100px;
 }
 
 .top-icons {
@@ -272,7 +205,7 @@ aside {
   display: flex;
   flex-direction: column;
   width: 100%;
-
+  margin: 0 auto;
   min-width: 400px;
   height: fit-content;
   position: relative;
@@ -296,6 +229,7 @@ article {
 h1 {
   font-size: 20px;
   margin: 0;
+  margin-bottom: 8px;
   color: #333;
 }
 
@@ -318,25 +252,17 @@ span {
   background-size: cover;
   background-position: center center;
 }
-/* Ensure that calendar and users sections are hidden by default on small screens */
-@media (max-width: 767.98px) {
-  #calendarSection,
-  #usersSection {
-    display: none;
-  }
-}
 
 /* for people you may know */
 
-
 .one-user {
-  max-width: 420px;
+  max-width: 400px;
   display: flex;
   flex-direction: row;
   align-items: center;
   justify-content: space-between;
-  padding: 16px;
-  margin: 0 auto 8px;
+  padding: 12px;
+  margin: 0 auto 4px;
   border-top-left-radius: 30px;
   border-bottom-left-radius: 30px;
   height: fit-content;
@@ -351,8 +277,7 @@ span {
 .user {
   display: flex;
   flex-direction: row;
-  flex-wrap:nowrap;
-  
+  flex-wrap: nowrap;
   align-items: center;
   gap: 10px;
   border-radius: 40px;
@@ -400,7 +325,7 @@ span {
 /* for footer */
 
 footer {
-  width: 100%;
+  width: 100vw;
   position: relative;
   height: fit-content;
   clear: both;
@@ -541,7 +466,7 @@ footer {
 }
 
 /* calendar*/
-@media (max-width: 768px) {
+@media (max-width: 768) {
   .calendar-container {
     width: 100%;
     margin: 0 auto;
@@ -550,10 +475,6 @@ footer {
   .cardCalendar {
     width: 100%;
     margin: 0 auto;
-    background-color: #ffffff;
-    border-radius: 15px;
-    box-shadow: 0 4px 5px #5e4d9a33;
-    border: 0px solid #8c79b7;
   }
 
   .calendar-toolbar > .current-month {
@@ -588,6 +509,7 @@ footer {
 @media (max-width: 480px) {
   .calendar-container {
     width: 100%;
+    max-width: 400px;
     margin: 0 auto;
   }
 
