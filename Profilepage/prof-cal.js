@@ -15,7 +15,7 @@ document.addEventListener('DOMContentLoaded', function() {
                   profilePic.src = e.target.result;
               }
           }
-6
+
           reader.readAsDataURL(input.files[0]);
       }
   }
