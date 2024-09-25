@@ -25,7 +25,7 @@ body {
     border: 2px solid rgba(255,255,255,.2);
     backdrop-filter: blur(20px);
     box-shadow: 0 0 10px rgba(0,0,0,.2);
-    color: #fff;
+    color: #ffffff;
     border-radius: 10px;
     padding: 30px 40px;
 }
@@ -39,6 +39,7 @@ body {
     width: 100%;
     height: 50px;
     margin:30px 0;
+    
 }
 
 .input-box input {
@@ -55,10 +56,12 @@ body {
     
 }
 .input-box .input:focus{
-    color: white;
+    color: rgb(255, 255, 255);
+    background-color: transparent;
 }
 .input-box .input::placeholder {
     color:#fff;
+    background-color: transparent;
 }
 
 .input-box svg {
@@ -67,6 +70,7 @@ body {
     top: 50%;
     transform: translateY(-50%);
     font-size: 20px;
+
 }
 
 .window .forgot-pass {
@@ -94,14 +98,14 @@ margin: -15px 0 15px;
 .window .btn {
     width: 100%;
     height:45px;
-    background: #fff;
+    background: #ffffffc1;
     border-color: #fff;
     outline: none;
     border-radius: 40px;
-    box-shadow: 0 0 10px rgba(0,0,0,.1);
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.886);
     cursor: pointer;
     font-size: 16px;
-    color:#333;
+    color:#333333;
     font-weight: 600;
     margin: 10px 0;
 }
@@ -138,6 +142,7 @@ margin: -15px 0 15px;
 .user_details .input-box input:focus,
 .user_details .input_box input:valid{
 border-color: #6663af;
+
 }
 form .gender_details .gender_title{
     font-size: 17px;
