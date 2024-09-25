@@ -41,6 +41,38 @@
             </div>
         </form>
       </div>
+      <!--<script>
+        document.getElementById("login-form").addEventListener("submit", function(event) {
+          event.preventDefault(); // Prevent default form submission
+      
+          const email = document.querySelector('input[type="email"]').value;
+          const password = document.querySelector('input[type="password"]').value;
+      
+          // Example validation (you should add real validation)
+          if (email === "tashevska254@gmail.com" && password === "marija1234") {
+            // Redirect to home page upon successful login
+            window.location.href = "../Home Page/home.html";
+          } else {
+            alert("Invalid email or password.");
+          }
+        });
+      </script>-->
+      <script>
+        document.getElementById("login-form").addEventListener("submit", function(event) {
+          event.preventDefault(); // Prevent default form submission
+      
+          // No specific validation, accept any email and password
+          const email = document.querySelector('input[type="email"]').value;
+          const password = document.querySelector('input[type="password"]').value;
+      
+          // You can optionally log the email and password (not recommended for production)
+          console.log("Email:", email);
+          console.log("Password:", password);
+      
+          // Redirect to home page upon any input
+          window.location.href = "../Home Page/home.html";
+        });
+      </script>
       <script src="respons.js"></script>
     </body>
 </html>

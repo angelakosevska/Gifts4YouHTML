@@ -39,4 +39,4 @@ document.addEventListener("DOMContentLoaded",function(){
 
     window.addEventListener("resize", handleResize);
     handleResize(); // Call on load
-})
+});
