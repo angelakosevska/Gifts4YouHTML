@@ -202,5 +202,5 @@ editCloseButton.addEventListener("click", function () {
   editEventWrapper.classList.remove("active"); // Hide the popup
 });
 
-localStorage.removeItem("giftListItems");
+//localStorage.removeItem("giftListItems");
 //izbrishi go ova ko kj evnesvash ubaj itemi

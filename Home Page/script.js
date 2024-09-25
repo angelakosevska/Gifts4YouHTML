@@ -5,9 +5,14 @@ let date = new Date();
 let selectedDateElement = null;
 
 let events = {
-  "2024-08-14": [
-    { name: "Baby Shower", user: "Jane Doe" },
-    { name: "Birthday Party", user: "John Smith" },
+  "2024-09-19": [
+    { name: "Ispit OVI", user: "KV" },
+  ],
+  "2024-09-27": [
+    { name: "Ispit WP", user: "NBT" },
+  ],
+  "2024-09-30": [
+    { name: "Birthday party", user: "@ema922" },
   ],
 };
 
